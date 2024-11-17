@@ -1,5 +1,6 @@
-/* start tailwind
-npx tailwindcss -i ./input.css -o ./output.css --watch */
+/* start tailwindcss */
+/* npx tailwindcss -i ./input.css -o ./output.css --watch */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
