@@ -1,3 +1,4 @@
+// JavaScript for typewriter effect
 const words = ["I'm Pre-final Year Student","I'm an Aspiring Software Engineer","Meditation and Gratitude are my Strengths"];
 let i = 0;
 let j = 0;
@@ -28,8 +29,9 @@ function type() {
 
 type();
 
+
+// JavaScript for Modal about me pop-up
     const aboutMeBtn = document.getElementById("aboutMeBtn");
-    const aboutMeBtn2 = document.getElementById("aboutMeBtn2");
     const aboutModal = document.getElementById("aboutModal");
     const closeModal = document.getElementById("closeModal");
     const mainContent = document.getElementById("main-content");
@@ -40,10 +42,7 @@ type();
       aboutModal.classList.remove("hidden");
       mainContent.classList.add("blurred-bg", "no-pointer-events");
     });
-    aboutMeBtn2.addEventListener("click", () => {
-        aboutModal.classList.remove("hidden");
-        mainContent.classList.add("blurred-bg", "no-pointer-events");
-      });
+
     // Close Modal on clicking the X button
     closeModal.addEventListener("click", () => {
       closeModalFunction();
