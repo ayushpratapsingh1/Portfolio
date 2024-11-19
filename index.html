@@ -12,13 +12,12 @@
 </head>
 <body class = "bg-[#111] text-white font-['Nunito']" >
     <section class = "flex flex-col justify-between h-screen">
-        <header class = "flex justify-between items-center w-full px-4 max-w-screen-xl mx-auto z-30 top-2">
+        <header class = "flex justify-between items-center w-full px-4 max-w-screen-xl mx-auto z-30 top-2" data-aos="slide-down" data-aos-duration="1000">
             <img class = "w-20" src="./assets/images/APS_transparent-.png" alt="">
             <nav>
                 <ul class="flex gap-2 md:gap-10">
                     <li class="hover:text-gray-400 text-[15px]"><a href="#">Home</a></li>
                     <li class="hover:text-gray-400 text-[15px]"><a href="#">My CV</a></li>
-                    <li class="hover:text-gray-400 text-[15px]"><a href="#">Projects</a></li>
                     <li class="hover:text-gray-400 text-[15px]"><a href="#">Contact me</a></li>
                 </ul>
             </nav>
@@ -65,20 +64,21 @@
             <div class="w-full max-w-screen-xl mx-auto flex md:flex-row items-center md:items-start">
               <!-- Left Side: Text -->
               <div class="text-center md:text-left md:w-1/2 px-4 md:px-0">
-                <h1 class="text-[40px] md:text-[64px] font-['Spartan'] animate-slide-up duration-1000">Ayush Pratap Singh</h1>
-                <p class="font-['Merriweather'] text-[12px] md:text-[24px] italic mb-8 md:my-4 animate-pulse duration-1000 animate-slide-up">- <span id = "typewriter"></span></p>
-                <button id="aboutMeBtn" class="bg-[#781c9c] py-2 px-5 rounded animate-slide-up font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] hover:scale-110 ease-in-out duration-100 pointer-events-auto">
+                <h1 class="text-[40px] md:text-[64px] font-['Spartan']" data-aos="slide-up" data-aos-duration="1000">Ayush Pratap Singh</h1>
+                <p class="font-['Merriweather'] text-[12px] md:text-[24px] italic mb-8 md:my-4 animate-pulse duration-1000" data-aos="slide-up" data-aos-duration="1000">- <span id = "typewriter"></span></p>
+                <button id="aboutMeBtn" class="animate-slide-right py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] hover:scale-110 
+                duration-100 pointer-events-auto">
                   About Me
                 </button>
               </div>
 
               <!-- Right Side: Image -->
-              <div class="mt-8 md:mt-0 md:w-1/2 flex justify-center md:justify-end">
-                <img class="h-[150px] sm:h-[250px] md:h-[350px] animate-slide-up duration-1000" src="./assets/images/logo3.png" alt="Profile Image">
+              <div class="hidden md:flex mt-8 md:mt-0 md:w-1/2 justify-center md:justify-end ">
+                <img class="h-[150px] sm:h-[250px] md:h-[350px] animate-slide-up duration-1000" data-aos="zoom-in-up" data-aos-duration="1000" src="./assets/images/logo3.png" alt="Profile Image">
               </div>
             </div>
           </div>
-            <ul class="fixed right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-lg p-2 rounded-lg shadow-md text-[#b0b2c3] space-y-6 hover:scale-110 ease-in-out duration-100">
+            <ul class="fixed right-4 top-1/3 -translate-y-1/2 bg-white/10 backdrop-blur-lg p-2 rounded-lg shadow-md text-[#b0b2c3] space-y-6 hover:scale-110 duration-100" data-aos="slide-left" data-aos-duration="1000">
                 <li>
                     <a href = "https://www.linkedin.com/in/ayushpratapsingh1/" target = "_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class = "hover:text-white block p-2 rounded-lg bg-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 transition-all duration-300 ease-in-out">
@@ -113,55 +113,212 @@
                 </li>
             </ul>
         </div>
-        <button class = "bg-[#781c9c] self-center mb-2 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] relative hover:scale-110 ease-in-out duration-100">My works</button>
+        <button class = "self-center mb-6 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] relative hover:scale-110
+        duration-100 pointer-events-auto animate-fade-in scroll-smooth" id="myWorksButton">My Projects</button>
+
+        
     </section>
     <section>
-        <div id="aboutModal" class="fixed inset-0 hidden z-50 flex items-center justify-center ease-in-out">
-
+        <div id="aboutModal" class="fixed inset-0 hidden z-50 flex items-center justify-center" data-aos="fade-in" data-aos-duration="1000">
             <!-- Overlay -->
-            <div 
-            class="absolute inset-0 bg-white/10 backdrop-blur-lg bg-opacity-150" 
-            id="outsideClick"></div>
-            
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-lg bg-opacity-150" id="outsideClick"></div>
+    
             <!-- Modal Content -->
-            <div 
-            class="relative bg-black/30 backdrop-blur-lg text-white rounded-lg shadow-lg w-11/12 max-w-4xl mx-auto my-10 p-8 flex flex-col md:flex-row">
-            
-            <!-- Close Button -->
-            <button 
-                id="closeModal" 
-                class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
-            
-            <!-- Text Content -->
-            <div class="flex-1 pr-6">
-                <h2 class="text-3xl font-bold mb-4">About Me</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Hello! I'm Ayush Pratap Singh, a dedicated and innovative software developer specializing in Data Science,
-                     Machine Learning, and Web Development. My expertise spans building machine learning models, creating 
-                     interactive web designs, and leveraging DevOps practices for streamlined development.
-                </p>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Notable projects include a plant disease detection system, 
-                    a Forbes Billionaires Data Analysis, and a Helping Hand Website for complaint registration.With strong skills in Python, C++, and Java, and 
-                    certifications in ChatGPT Advanced Data Analysis and Prompt Engineering, I continuously strive to enhance my 
-                    technical acumen.
-                </p>
-                <p class="text-gray-300 leading-relaxed">
-                     Outside of work, I enjoy exploring AI applications and collaborating on innovative projects.
-                    <br><b> Feel free to connect with me to share ideas or build something amazing together!</b>
-                </p>
+            <div class="relative bg-black/30 backdrop-blur-lg text-white rounded-lg w-11/12 max-w-4xl mx-auto my-10 p-8 flex flex-col 
+            md:flex-row shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]">
+                
+                <!-- Close Button -->
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold animate-spin">&times;</button>
+                
+                <!-- Text Content -->
+                <div class="flex-1 pr-6 mb-6 md:mb-0">
+                    <h2 class="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
+                        Hello! I'm Ayush Pratap Singh, a dedicated and innovative software developer specializing in Data Science, 
+                        Machine Learning, and Web Development. My expertise spans building machine learning models, creating 
+                        interactive web designs, and leveraging DevOps practices for streamlined development.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
+                        Notable projects include a plant disease detection system, 
+                        a Forbes Billionaires Data Analysis, and a Helping Hand Website for complaint registration. With strong skills in Python, C++, and Java, and 
+                        certifications in ChatGPT Advanced Data Analysis and Prompt Engineering, I continuously strive to enhance my 
+                        technical acumen.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        Outside of work, I enjoy exploring AI applications and collaborating on innovative projects.
+                        <br><b>Feel free to connect with me to share ideas or build something amazing together!</b>
+                    </p>
+                </div>
+    
+                <!-- Image -->
+                <div class="flex justify-center md:block hidden">
+                    <img src="./assets/images/octocat-1730282942820.png" alt="About Me" class="w-full max-w-xs object-contain rounded-lg animate-pulse duration-200">
+                </div>
             </div>
-
-            <!-- Image -->
-            <div class="flex">
-                <img 
-                src="./assets/images/octocat-1730282942820.png" 
-                alt="About Me" 
-                class="w-full max-w-xs object-contain rounded-lg animate-pulse duration-200">
-            </div>
-    </div>
-  </div>
+        </div>
     </section>
+    
+    <section class="max-w-screen-xl mx-auto py-10 px-4">
+        <h2 class="text-center text-[40px] text-white border-b-4 border-[#781c9c] inline-block " data-aos="fade-right" data-aos-duration="1000"> My Projects </h2>
+    
+        <!-- Grid for Main Projects -->
+        <div class="flex flex-wrap justify-center gap-6 mt-8">
+            <!-- Project Card Template -->
+            <div class="group bg-[#781c9c] rounded-lg shadow-lg overflow-hidden relative hover:shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]" data-aos="slide-up" data-aos-duration="1000">
+                <!-- Image -->
+                <img src="https://via.placeholder.com/300" alt="Plant Disease Detection" class="w-full h-auto group-hover:blur-sm duration-300">
+    
+                <!-- Hover Effect -->
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black opacity-0 group-hover:opacity-100 duration-300 flex flex-col justify-center items-center p-6 text-center">
+                    <h3 class="text-white text-[22px] font-bold mb-2">Plant Disease Detection</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        A plant disease detection system built using deep learning techniques.
+                    </p>
+                    <div class="text-gray-400 text-xs mb-4">
+                        <b>Tools Used:</b> Python, TensorFlow, Keras, NumPy
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-white text-[#781c9c] px-4 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-110">GitHub</a>
+                        <a href="#" class="bg-[#781c9c] text-white px-4 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-110">Live Site</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Forbes Billionaires -->
+            <div class="group bg-[#781c9c] rounded-lg shadow-lg overflow-hidden relative hover:shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]" data-aos="slide-up" data-aos-duration="1000">
+                <img src="https://via.placeholder.com/300" alt="Forbes Billionaires" class="w-full h-auto group-hover:blur-sm duration-300">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black opacity-0 group-hover:opacity-100 duration-300 flex flex-col justify-center items-center p-6 text-center">
+                    <h3 class="text-white text-[22px] font-bold mb-2">Forbes Billionaires</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        An analysis of Forbes Billionaires data using visualization tools.
+                    </p>
+                    <div class="text-gray-400 text-xs mb-4">
+                        <b>Tools Used:</b> MS Excel
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-white text-[#781c9c] px-4 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-110">GitHub</a>
+                        <a href="#" class="bg-[#781c9c] text-white px-4 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-110">Live Site</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Helping Hand -->
+            <div class="group bg-[#781c9c] rounded-lg shadow-lg overflow-hidden relative hover:shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]" data-aos="slide-up" data-aos-duration="1000">
+                <img src="https://via.placeholder.com/300" alt="Helping Hand" class="w-full h-auto group-hover:blur-sm duration-300">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black opacity-0 group-hover:opacity-100 duration-300 flex flex-col justify-center items-center p-6 text-center">
+                    <h3 class="text-white text-[22px] font-bold mb-2">Helping Hand</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        A complaint registration platform for public and private issues.
+                    </p>
+                    <div class="text-gray-400 text-xs mb-4">
+                        <b>Tools Used:</b> HTML, CSS, JavaScript, Firebase
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-white text-[#781c9c] px-4 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-110">GitHub</a>
+                        <a href="#" class="bg-[#781c9c] text-white px-4 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-110">Live Site</a>
+                    </div>
+                </div>
+            </div>
+            <!-- EV Charging Dashboard -->
+            <div class="group bg-[#781c9c] rounded-lg shadow-lg overflow-hidden relative hover:shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]" data-aos="slide-up" data-aos-duration="1000">
+                <img src="https://via.placeholder.com/300" alt="EV Charging Dashboard" class="w-full h-auto group-hover:blur-sm duration-300">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black opacity-0 group-hover:opacity-100 duration-300 flex flex-col justify-center items-center p-6 text-center">
+                    <h3 class="text-white text-[22px] font-bold mb-2">EV Charging Dashboard</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        A Tableau dashboard analyzing EV charging patterns and user behavior.
+                    </p>
+                    <div class="text-gray-400 text-xs mb-4">
+                        <b>Tools Used:</b> Tableau, EV Data
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-white text-[#781c9c] px-4 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-110">GitHub</a>
+                        <a href="#" class="bg-[#781c9c] text-white px-4 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-110">Live Site</a>
+                    </div>
+                </div>
+            </div>
+            <div class="group bg-[#781c9c] rounded-lg shadow-lg overflow-hidden relative hover:shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]" data-aos="slide-up" data-aos-duration="1000">
+                <img src="https://via.placeholder.com/300" alt="Forbes Billionaires" class="w-full h-auto group-hover:blur-sm duration-300">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black opacity-0 group-hover:opacity-100 duration-300 flex flex-col justify-center items-center p-6 text-center">
+                    <h3 class="text-white text-[22px] font-bold mb-2">Forbes Billionaires</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        An analysis of Forbes Billionaires data using visualization tools.
+                    </p>
+                    <div class="text-gray-400 text-xs mb-4">
+                        <b>Tools Used:</b> MS Excel
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-white text-[#781c9c] px-4 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-110">GitHub</a>
+                        <a href="#" class="bg-[#781c9c] text-white px-4 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-110">Live Site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Games Section -->
+        <h2 class="text-center text-[30px] p-4 mt-12 text-white border-b-4 border-[#781c9c] inline-block" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Some Games </h2>
+        <div class="flex flex-wrap justify-center gap-6 mt-8">
+            <!-- Tic Tac Toe -->
+            <div class="group bg-[#781c9c] rounded-lg shadow-lg overflow-hidden relative mx-auto hover:shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]" data-aos="slide-up" data-aos-duration="1000">
+                <img src="https://via.placeholder.com/300" alt="Tic Tac Toe" class="w-full h-auto group-hover:blur-sm duration-300 ">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black opacity-0 group-hover:opacity-100 duration-300 
+                flex flex-col justify-center items-center p-6 text-center">
+                    <h3 class="text-white text-[22px] font-bold mb-2">Tic Tac Toe</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        Classic Tic Tac Toe game with a responsive design.
+                    </p>
+                    <div class="text-gray-400 text-xs mb-4">
+                        <b>Tools Used:</b> HTML, CSS, JavaScript
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-white text-[#781c9c] px-4 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-110">GitHub</a>
+                        <a href="#" class="bg-[#781c9c] text-white px-4 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-110">Live Site</a>
+                    </div>
+                </div>
+            </div>
+            <div class="group bg-[#781c9c] rounded-lg shadow-lg overflow-hidden relative mx-auto hover:shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]" data-aos="slide-up" data-aos-duration="1000">
+                <img src="https://via.placeholder.com/300" alt="Tic Tac Toe" class="w-full h-auto group-hover:blur-sm duration-300 ">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black opacity-0 group-hover:opacity-100 duration-300 
+                flex flex-col justify-center items-center p-6 text-center">
+                    <h3 class="text-white text-[22px] font-bold mb-2">Tic Tac Toe</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        Classic Tic Tac Toe game with a responsive design.
+                    </p>
+                    <div class="text-gray-400 text-xs mb-4">
+                        <b>Tools Used:</b> HTML, CSS, JavaScript
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-white text-[#781c9c] px-4 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-110">GitHub</a>
+                        <a href="#" class="bg-[#781c9c] text-white px-4 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-110">Live Site</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Stone Paper Scissors -->
+            <div class="group bg-[#781c9c] rounded-lg shadow-lg overflow-hidden relative mx-auto hover:shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]" data-aos="slide-up" data-aos-duration="1000">
+                <img src="https://via.placeholder.com/300" alt="Stone Paper Scissors" class="w-full h-auto group-hover:blur-sm duration-300">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black opacity-0 group-hover:opacity-100 duration-300 flex flex-col justify-center items-center p-6 text-center">
+                    <h3 class="text-white text-[22px] font-bold mb-2">Stone Paper Scissors</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        A fun game of Stone-Paper-Scissors with interactive UI.
+                    </p>
+                    <div class="text-gray-400 text-xs mb-4">
+                        <b>Tools Used:</b> HTML, CSS, JavaScript
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-white text-[#781c9c] px-4 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-110">GitHub</a>
+                        <a href="#" class="bg-[#781c9c] text-white px-4 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-110">Live Site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- AOS Library JS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>

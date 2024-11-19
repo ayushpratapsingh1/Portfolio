@@ -58,3 +58,18 @@ type();
       aboutModal.classList.add("hidden");
       mainContent.classList.remove("blurred-bg", "no-pointer-events");
     }
+
+
+    const myWorksButton = document.getElementById("myWorksButton");
+
+    // Add event listener to scroll the page by 50% of the screen height
+    myWorksButton.addEventListener("click", () => {
+        // Calculate 50% of the viewport height
+        const scrollAmount = window.innerHeight * 0.5;
+
+        // Scroll the page smoothly to the new position
+        window.scrollTo({
+            top: window.scrollY + scrollAmount, 
+            behavior: 'smooth' // Smooth scroll behavior
+        });
+    });
