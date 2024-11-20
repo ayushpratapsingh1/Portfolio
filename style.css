@@ -45,4 +45,13 @@
     scroll-behavior: smooth;
 }
 
+
+/* Swiper Slide */
+.swiper-slide { /* Full width of the container */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Swiper Navigation Buttons */
+
+
   

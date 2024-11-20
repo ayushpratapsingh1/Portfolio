@@ -65,7 +65,7 @@ type();
     // Add event listener to scroll the page by 50% of the screen height
     myWorksButton.addEventListener("click", () => {
         // Calculate 50% of the viewport height
-        const scrollAmount = window.innerHeight * 0.5;
+        const scrollAmount = window.innerHeight;
 
         // Scroll the page smoothly to the new position
         window.scrollTo({
@@ -73,3 +73,21 @@ type();
             behavior: 'smooth' // Smooth scroll behavior
         });
     });
+
+
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+      loop: true, // Infinite scrolling
+      autoplay: {
+          delay: 4000,
+          disableOnInteraction: false, // Keeps autoplay active after interaction
+      },
+  });
+  
+  
+    
