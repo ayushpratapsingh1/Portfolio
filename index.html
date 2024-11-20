@@ -17,47 +17,14 @@
     <section class = "flex flex-col justify-between h-screen">
         <header class = "flex justify-between items-center w-full px-4 max-w-screen-xl mx-auto z-30 top-2" data-aos="slide-down" data-aos-duration="1000">
             <img class = "w-20" src="./assets/images/APS_transparent-.png" alt="">
-            <nav>
+            <!-- <nav>
                 <ul class="flex gap-2 md:gap-10">
                     <li class="hover:text-gray-400 text-[15px]"><a href="#">Home</a></li>
                     <li class="hover:text-gray-400 text-[15px]"><a href="#">My CV</a></li>
                     <li class="hover:text-gray-400 text-[15px]"><a href="#">Contact me</a></li>
                 </ul>
-            </nav>
-            <div class="flex gap-4 items-center z-20">
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                stroke-width="2" 
-                stroke-linecap="round" 
-                stroke-linejoin="round" 
-                class="hidden">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-            <!-- Sun Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                stroke-width="2" 
-                stroke-linecap="round" 
-                stroke-linejoin="round" 
-                class="feather feather-sun">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
+            </nav> -->
+            
             <a href="tel:+918470922268"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
         </div>
         </header>
@@ -80,8 +47,10 @@
                 <img class="h-[150px] sm:h-[250px] md:h-[350px] animate-slide-up duration-1000" data-aos="zoom-in-up" data-aos-duration="1000" src="./assets/images/logo3.png" alt="Profile Image">
               </div>
             </div>
-          </div>
-            <ul class="fixed right-4 top-1/3 -translate-y-1/2 bg-white/10 backdrop-blur-lg p-2 rounded-lg shadow-md text-[#b0b2c3] space-y-6 hover:scale-110 duration-100" data-aos="slide-left" data-aos-duration="1000">
+        </div>
+
+            <ul class="fixed right-4 top-1/3 -translate-y-1/2 bg-white/10 backdrop-blur-lg p-2 rounded-lg shadow-md text-[#b0b2c3] 
+            space-y-6 hover:scale-110 duration-100 z-30" data-aos="slide-left" data-aos-duration="1000">
                 <li>
                     <a href = "https://www.linkedin.com/in/ayushpratapsingh1/" target = "_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class = "hover:text-white block p-2 rounded-lg bg-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 transition-all duration-300 ease-in-out">
@@ -115,12 +84,10 @@
                     </a>
                 </li>
             </ul>
-        </div>
         <button class = "self-center mb-6 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] relative hover:scale-110
-        duration-100 pointer-events-auto animate-fade-in scroll-smooth" id="myWorksButton">My Projects</button>
-
-        
+        duration-100 pointer-events-auto animate-fade-in scroll-smooth" id="myWorksButton">My Projects</button>    
     </section>
+
     <section>
         <div id="aboutModal" class="fixed inset-0 hidden z-50 flex items-center justify-center" data-aos="fade-in" data-aos-duration="1000">
             <!-- Overlay -->
@@ -154,15 +121,15 @@
                 </div>
     
                 <!-- Image -->
-                <div class="flex justify-center md:block hidden">
+                <div class="flex justify-center translate-y-10 md:block hidden">
                     <img src="./assets/images/octocat-1730282942820.png" alt="About Me" class="w-full max-w-xs object-contain rounded-lg animate-pulse duration-200">
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="max-w-screen-xl mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden" data-aos="slide-up" data-aos-duration="1000">
-    <h2 class="text-center text-3xl md:text-4xl text-white border-b-4 border-[#781c9c] pb-4 mb-8">
+    <section class="max-w-screen-xl mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
+    <h2 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8">
         My Projects
     </h2>
 
@@ -175,7 +142,7 @@
                     <div class="flex flex-col md:flex-row gap-8">
                         <!-- Image Container - Fixed width, responsive -->
                         <div class="md:w-[300px] flex-shrink-0">
-                            <img src="https://via.placeholder.com/300" alt="Plant Disease Detection" 
+                            <img src="./assets/images/plant.png" alt="Plant Disease Detection" 
                                  class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
                         </div>
                         
@@ -205,18 +172,17 @@
                                     <h4 class="text-white font-semibold mb-2">Key Features:</h4>
                                     <ul class="list-disc ml-5 text-sm space-y-1">
                                         <li>Advanced image preprocessing with data augmentation techniques</li>
-                                        <li>Real-time disease detection with 95% accuracy</li>
-                                        <li>Comprehensive treatment recommendations</li>
+                                        <li>Real-time disease detection with 74% accuracy</li>
                                         <li>Mobile-responsive web interface</li>
-                                        <li>Offline detection capabilities</li>
                                     </ul>
                                 </div>
                             </div>
                             
                             <!-- Buttons -->
                             <div class="flex gap-4">
-                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
-                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                                <a href="https://github.com/ayushpratapsingh1/Plant-Disease-Classifier" target ="_blank" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="coming soon" target ="_blank" class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold 
+                                 hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
                             </div>
                         </div>
                     </div>                    
@@ -227,7 +193,7 @@
                     <div class="flex flex-col md:flex-row gap-8">
                         <!-- Image Container -->
                         <div class="md:w-[300px] flex-shrink-0">
-                            <img src="https://via.placeholder.com/300" alt="Electric Vehicle Analysis" 
+                            <img src="./assets/images/Tableau.png" alt="Electric Vehicle Analysis" 
                                  class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
                         </div>
                         
@@ -237,10 +203,8 @@
                             
                             <!-- Tools -->
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Python</span>
-                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">NumPy</span>
-                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Pandas</span>
-                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Matplotlib</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Tableau Prep</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Tableau Desktop</span>
                             </div>
                             
                             <!-- Description -->
@@ -258,16 +222,15 @@
                                     <ul class="list-disc ml-5 text-sm space-y-1">
                                         <li>Comprehensive EV market analysis</li>
                                         <li>Interactive data visualizations</li>
-                                        <li>Prediction models for EV adoption trends</li>
-                                        <li>Insights into government policies and incentives</li>
+                                        <li>Challenges and opportunities in the EV market</li>
                                     </ul>
                                 </div>
                             </div>
                             
                             <!-- Buttons -->
                             <div class="flex gap-4">
-                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
-                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                                <a href="#" target ="_blank" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="#" target ="_blank" class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
                             </div>
                         </div>
                     </div>
@@ -278,7 +241,7 @@
                     <div class="flex flex-col md:flex-row gap-8">
                         <!-- Image Container -->
                         <div class="md:w-[300px] flex-shrink-0">
-                            <img src="https://via.placeholder.com/300" alt="Forbes Billionaires Analysis" 
+                            <img src="./assets/images/Forbes.png" alt="Forbes Billionaires Analysis" 
                                  class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
                         </div>
                         
@@ -289,8 +252,6 @@
                             <!-- Tools -->
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">MS Excel</span>
-                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Python</span>
-                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Pandas</span>
                             </div>
                             
                             <!-- Description -->
@@ -316,8 +277,7 @@
                             
                             <!-- Buttons -->
                             <div class="flex gap-4">
-                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
-                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                                <a href="https://github.com/ayushpratapsingh1/Forbes-Data-Analysis" target ="_blank" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -328,7 +288,7 @@
                     <div class="flex flex-col md:flex-row gap-8">
                         <!-- Image Container -->
                         <div class="md:w-[300px] flex-shrink-0">
-                            <img src="https://via.placeholder.com/300" alt="Helping Hand Website" 
+                            <img src="./assets/images/Heping.png" alt="Helping Hand Website" 
                                  class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
                         </div>
                         
@@ -341,7 +301,6 @@
                                 <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">HTML</span>
                                 <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">CSS</span>
                                 <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">JavaScript</span>
-                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Firebase</span>
                             </div>
                             
                             <!-- Description -->
@@ -349,26 +308,23 @@
                                 <p class="text-sm">
                                     A dynamic web platform designed to help users register complaints, both public and private. The website allows users to share their issues, get feedback, and track the progress of their complaints.
                                 </p>
-                                <p class="text-sm">
-                                    The platform also provides additional features, including secure login, real-time notifications, and a user-friendly interface for interaction.
-                                </p>
                                 
                                 <!-- Features -->
                                 <div class="mt-4">
                                     <h4 class="text-white font-semibold mb-2">Key Features:</h4>
                                     <ul class="list-disc ml-5 text-sm space-y-1">
-                                        <li>Secure user registration and login</li>
-                                        <li>Real-time updates on complaint status</li>
-                                        <li>Responsive design for mobile and desktop</li>
-                                        <li>Firebase backend integration</li>
+                                        <li>Interactive user interface with smooth animations</li>
+                                        <li>Responsive design for seamless mobile and desktop views</li>
+                                        <li>Intuitive navigation for easy access to all sections</li>
                                     </ul>
                                 </div>
                             </div>
                             
                             <!-- Buttons -->
                             <div class="flex gap-4">
-                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
-                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                                <a href="https://github.com/ayushpratapsingh1/Helping-Hand-Website" target ="_blank" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="https://ayushpratapsingh1.github.io/Helping-Hand-Website/" target ="_blank" class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold
+                                 hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
                             </div>
                         </div>
                     </div>
@@ -379,7 +335,7 @@
                     <div class="flex flex-col md:flex-row gap-8">
                         <!-- Image Container -->
                         <div class="md:w-[300px] flex-shrink-0">
-                            <img src="https://via.placeholder.com/300" alt="Tic Tac Toe Game" 
+                            <img src="./assets/images/Tic-Tac-Toe.png" alt="Tic Tac Toe Game" 
                                  class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
                         </div>
                         
@@ -408,7 +364,6 @@
                                     <h4 class="text-white font-semibold mb-2">Key Features:</h4>
                                     <ul class="list-disc ml-5 text-sm space-y-1">
                                         <li>Two-player game mode</li>
-                                        <li>Simple AI for single-player mode</li>
                                         <li>Reset and restart functionality</li>
                                         <li>Responsive layout for desktop and mobile</li>
                                     </ul>
@@ -417,8 +372,9 @@
                             
                             <!-- Buttons -->
                             <div class="flex gap-4">
-                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
-                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                                <a href="https://github.com/ayushpratapsingh1/Tic-Tac-Toe-Game" target ="_blank" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="https://ayushpratapsingh1.github.io/Tic-Tac-Toe-Game/" target ="_blank" class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold 
+                                hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
                             </div>
                         </div>
                     </div>
@@ -429,7 +385,7 @@
                     <div class="flex flex-col md:flex-row gap-8">
                         <!-- Image Container -->
                         <div class="md:w-[300px] flex-shrink-0">
-                            <img src="https://via.placeholder.com/300" alt="Stone Paper Scissors Game" 
+                            <img src="./assets/images/Stone.png" alt="Stone Paper Scissors Game" 
                                  class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
                         </div>
                         
@@ -457,7 +413,6 @@
                                 <div class="mt-4">
                                     <h4 class="text-white font-semibold mb-2">Key Features:</h4>
                                     <ul class="list-disc ml-5 text-sm space-y-1">
-                                        <li>Interactive gameplay</li>
                                         <li>Score tracking</li>
                                         <li>Random opponent choices</li>
                                         <li>Responsive design</li>
@@ -467,8 +422,9 @@
                             
                             <!-- Buttons -->
                             <div class="flex gap-4">
-                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
-                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                                <a href="https://github.com/ayushpratapsingh1/Stone-Paper-Scissor-Game" target ="_blank" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="https://ayushpratapsingh1.github.io/Stone-Paper-Scissor-Game/" target ="_blank" class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold
+                                 hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
                             </div>
                         </div>
                     </div>
@@ -478,14 +434,306 @@
             <div class="swiper-button-next z-auto"></div>
             <div class="swiper-button-prev z-auto"></div>
         </div>
-    </div>
-       
+    </div>  
+    </section>    
+    <section id="experience" class="max-w-screen-xl mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
+        <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">My Experience</h2>
+          <div class="relative">
+            <!-- Experience Item -->
+            <div class="mb-10 ml-6">
+              <!-- <div class="absolute -left-6 top-0 w-7 h-7 rounded-full bg-purple-800 flex items-center justify-center text-white font-bold">
+              </div>&nbsp -->
+              <h3 class="text-xl font-semibold text-white">Data Science Intern</h3>
+              <p class="text-white text-sm mb-1">Bharat Intern | Mar 2024 - Apr 2024</p>
+              <p class="text-white">
+                Built models for image classification and spam detection using Python, pandas, and scikit-learn. Learned advanced machine learning concepts.
+            </p>
+            </div>
+            <!-- Experience Item
+            <div class="mb-10 ml-6">
+              <div class="absolute -left-6 top-0 w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold">
+                2
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">Frontend Developer</h3>
+              <p class="text-gray-600 text-sm mb-1">Bharat Intern | Mar 2024 - May 2024</p>
+              <p class="text-gray-700">
+                Developed interactive websites with animations using HTML, CSS, and JavaScript. Enhanced user experience and improved website performance by 30%.
+              </p>
+            </div> -->
+          </div>
+        </div>
+      </section>
+    
+      <section class="max-w-screen-xl mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
+        <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-10">Education</h2>
+            <div class="relative flex flex-col items-start">
+    
+                <!-- Education 1 -->
+                <div class="mb-10 flex items-start">
+                    <div class="w-8 h-8 rounded-full bg-purple-800 flex items-center justify-center text-white font-bold -ml-6">
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-xl font-semibold text-white">Bachelor of Technology in Computer Science</h3>
+                        <p class="text-white text-sm mb-1 leading-relaxed">Lovely Professional University | 2022 - Present</p>
+                    </div>
+                </div>
+    
+                <!-- Vertical Line -->
+                <div class="absolute top-0 -left-2 w-0.5 bg-purple-800 h-28"></div>
+    
+                <!-- Education 2 -->
+                <div class="mb-10 flex items-start">
+                    <div class="w-8 h-8 rounded-full bg-purple-800 flex items-center justify-center text-white font-bold -ml-6">
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-xl font-semibold text-white">Intermediate</h3>
+                        <p class="text-white text-sm mb-1 leading-relaxed">Naraysna Public School | 2021</p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+          <!-- Education 3
+          <div class="mb-10 ml-6">
+            <div class="absolute -left-6 top-0 w-12 h-12 rounded-full bg-purple-800 flex items-center justify-center text-white font-bold">
+              3
+            </div>
+            <h3 class="text-xl font-semibold text-white">Certifications in Web Development</h3>
+            <p class="text-white text-sm mb-1 leading-relaxed">FreeCodeCamp & Udemy | 2022</p>
+            <p class="text-white leading-relaxed">
+              Earned certifications in HTML, CSS, JavaScript, and React. Developed several interactive web applications as part of the curriculum.
+            </p>
+          </div> -->
+      </section>
+      
+    <!-- My Tech Stack Section -->
+    <section class="max-w-7xl mx-auto bg-black/40 backdrop-blur-lg rounded-lg p-8" data-aos="slide-up" data-aos-duration="1000">
+        <h3 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8" data-aos="slide-up" data-aos-duration="1000">
+            My Tech Stack
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6" data-aos="slide-up" data-aos-duration="1000">
+
+            <!-- AWS -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">AWS</span>
+            </div>
+
+            <!-- C++ -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">C++</span>
+            </div>
+
+            <!-- CSS -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">CSS3</span>
+            </div>
+
+            <!-- Figma -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Figma</span>
+            </div>
+
+            <!-- HTML -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">HTML5</span>
+            </div>
+
+            <!-- Python -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Python</span>
+            </div>
+
+            <!-- Java -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Java</span>
+            </div>
+        
+            <!-- React -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">React</span>
+            </div>
+        
+            <!-- Tailwind CSS -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Tailwind CSS</span>
+            </div>
+        
+            <!-- TensorFlow -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">TensorFlow</span>
+            </div>
+        
+            <!-- OpenCV -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">OpenCV</span>
+            </div>
+        
+            <!-- Pandas -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="Pandas" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Pandas</span>
+            </div>
+        
+            <!-- Scikit-Learn -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-Learn" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Scikit-Learn</span>
+            </div>
+        
+            <!-- Figma -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Figma</span>
+            </div>
+        
+            <!-- Seaborn -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Seaborn</span>
+            </div>
+        
+            <!-- Git -->
+            <div class="group flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" class="w-10 h-10">
+                </div>
+                <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Git</span>
+            </div>
+        </div>
     </section>
-    
-    
-    
+
+
+
+    <section id="contact-section" class="py-12 flex justify-center items-center max-w-screen-xl mx-auto px-4 relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
+        <!-- Contact Form Box -->
+        <div class="w-11/12 lg:w-3/4 bg-black/50 backdrop-blur-md rounded-xl shadow-lg p-8 flex flex-col lg:flex-row items-center">
+          <!-- Left Side: Contact Me -->
+          <div class="w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white" data-aos="slide-right" data-aos-duration="1000">Contact Me</h2>
+          </div>
+          <!-- Right Side: Form -->
+          <div class="w-full lg:w-1/2 bg-black/40 backdrop-blur-lg p-6 rounded-lg shadow-lg" data-aos="slide-left" data-aos-duration="1000">
+            <form action="#" method="POST" class="space-y-4">
+              <!-- Name Field -->
+              <div>
+                <label for="name" class="block text-sm font-medium text-white mb-2">Name</label>
+                <input type="text" id="name" name="name" class="w-full p-3 rounded-md border border-gray-700 bg-gray-800 
+                text-white focus:ring-2 focus:ring-[#c004ff] outline-none" placeholder="Enter your name" required>
+              </div>
+              <!-- Email Field -->
+              <div>
+                <label for="email" class="block text-sm font-medium text-white mb-2">Email</label>
+                <input type="email" id="email" name="email" class="w-full p-3 rounded-md border border-gray-700 bg-gray-800 
+                text-white focus:ring-2 focus:ring-[#c004ff] outline-none" placeholder="Enter your email" required>
+              </div>
+              <!-- Message Field -->
+              <div>
+                <label for="message" class="block text-sm font-medium text-white mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" class="w-full p-3 rounded-md border border-gray-700 bg-gray-800 
+                text-white focus:ring-2 focus:ring-[#c004ff] outline-none" placeholder="Write your message" required></textarea>
+              </div>
+              <!-- Submit Button -->
+              <div>
+                <button type="submit" class="w-full py-3 px-6 bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] hover:scale-110 text-white font-bold rounded-md shadow-md transition duration-300">
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
       
-      
+    <!-- Footer Section -->
+    <footer class="bg-black/50 backdrop-blur-md py-8 " data-aos="slide-up" data-aos-duration="1000">
+        <div class="container mx-auto text-center space-y-6">
+        <!-- Computer Science Quote -->
+        <p class="text-white text-lg italic font-semibold">
+            "Programs must be written for people to read, and only incidentally for machines to execute."
+        </p>
+    
+        <!-- Back to Top Button -->
+        <div class="relative inline-block">
+            <!-- Tooltip -->
+            <span class="absolute left-1/2 transform -translate-x-1/2 -translate-y-10 bg-[#c004ff] text-white text-xs rounded-md py-1 px-2 opacity-0 transition-opacity duration-300 tooltip">
+            Back to Top
+            </span>
+            <!-- Button -->
+            <button 
+            onclick="scrollToTop()" 
+            class="p-3 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700 transition duration-300">
+            <!-- Up Arrow Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+            </button>
+        </div>
+    
+        <!-- Attribution -->
+        <p class="text-gray-400 text-sm">
+            Inspired from <span class="text-[#c004ff] font-bold">Procodrrr</span>
+        </p>
+        </div>
+    </footer>
+    
     <!-- AOS Library JS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
@@ -494,8 +742,8 @@
         AOS.init();
     </script>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
     </body>
 </html>
