@@ -58,3 +58,36 @@ type();
       aboutModal.classList.add("hidden");
       mainContent.classList.remove("blurred-bg", "no-pointer-events");
     }
+
+
+    const myWorksButton = document.getElementById("myWorksButton");
+
+    // Add event listener to scroll the page by 50% of the screen height
+    myWorksButton.addEventListener("click", () => {
+        // Calculate 50% of the viewport height
+        const scrollAmount = window.innerHeight;
+
+        // Scroll the page smoothly to the new position
+        window.scrollTo({
+            top: window.scrollY + scrollAmount, 
+            behavior: 'smooth' // Smooth scroll behavior
+        });
+    });
+
+
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+      loop: true, // Infinite scrolling
+      autoplay: {
+          delay: 4000,
+          disableOnInteraction: false, // Keeps autoplay active after interaction
+      },
+  });
+  
+  
+    

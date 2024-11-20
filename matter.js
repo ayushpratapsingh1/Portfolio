@@ -104,7 +104,7 @@
          frictionAir: 0.02,
          angle: Math.round(Math.random() * 360),
          render: {
-           fillStyle: '#222222',
+           fillStyle: '#27292d',
            strokeStyle: `#000000`,
            lineWidth: 2,
          },
@@ -119,7 +119,7 @@
        friction: 0,
        frictionAir: 0.01,
        render: {
-         fillStyle: r > 0.3 ? `#27292d` : `#444444`,
+         fillStyle: r > 0.3 ? `#27292d` : `#000000`,
          strokeStyle: `#000000`,
          lineWidth: 2,
        },

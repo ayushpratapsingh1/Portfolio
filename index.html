@@ -9,16 +9,18 @@
     <title>Portfolio</title>
     <script src = "./matter.js" defer></script>
     <script src = "./script.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 </head>
 <body class = "bg-[#111] text-white font-['Nunito']" >
     <section class = "flex flex-col justify-between h-screen">
-        <header class = "flex justify-between items-center w-full px-4 max-w-screen-xl mx-auto z-30 top-2">
+        <header class = "flex justify-between items-center w-full px-4 max-w-screen-xl mx-auto z-30 top-2" data-aos="slide-down" data-aos-duration="1000">
             <img class = "w-20" src="./assets/images/APS_transparent-.png" alt="">
             <nav>
                 <ul class="flex gap-2 md:gap-10">
                     <li class="hover:text-gray-400 text-[15px]"><a href="#">Home</a></li>
                     <li class="hover:text-gray-400 text-[15px]"><a href="#">My CV</a></li>
-                    <li class="hover:text-gray-400 text-[15px]"><a href="#">Projects</a></li>
                     <li class="hover:text-gray-400 text-[15px]"><a href="#">Contact me</a></li>
                 </ul>
             </nav>
@@ -59,26 +61,27 @@
             <a href="tel:+918470922268"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
         </div>
         </header>
-        <div class = "absolute inset-0 hidden md:block max-w-full" id="wrapper-canvas">
+        <div class = "fixed inset-0 hidden md:block max-w-full bg-cover" id="wrapper-canvas">
         </div>
         <div class="flex -mt-6 relative pointer-events-none">
             <div class="w-full max-w-screen-xl mx-auto flex md:flex-row items-center md:items-start">
               <!-- Left Side: Text -->
               <div class="text-center md:text-left md:w-1/2 px-4 md:px-0">
-                <h1 class="text-[40px] md:text-[64px] font-['Spartan'] animate-slide-up duration-1000">Ayush Pratap Singh</h1>
-                <p class="font-['Merriweather'] text-[12px] md:text-[24px] italic mb-8 md:my-4 animate-pulse duration-1000 animate-slide-up">- <span id = "typewriter"></span></p>
-                <button id="aboutMeBtn" class="bg-[#781c9c] py-2 px-5 rounded animate-slide-up font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] hover:scale-110 ease-in-out duration-100 pointer-events-auto">
+                <h1 class="text-[40px] md:text-[64px] font-['Spartan']" data-aos="slide-up" data-aos-duration="1000">Ayush Pratap Singh</h1>
+                <p class="font-['Merriweather'] text-[12px] md:text-[24px] italic mb-8 md:my-4 animate-pulse duration-1000" data-aos="slide-up" data-aos-duration="1000">- <span id = "typewriter"></span></p>
+                <button id="aboutMeBtn" class="animate-slide-right py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] hover:scale-110 
+                duration-100 pointer-events-auto">
                   About Me
                 </button>
               </div>
 
               <!-- Right Side: Image -->
-              <div class="mt-8 md:mt-0 md:w-1/2 flex justify-center md:justify-end">
-                <img class="h-[150px] sm:h-[250px] md:h-[350px] animate-slide-up duration-1000" src="./assets/images/logo3.png" alt="Profile Image">
+              <div class="hidden md:flex mt-8 md:mt-0 md:w-1/2 justify-center md:justify-end ">
+                <img class="h-[150px] sm:h-[250px] md:h-[350px] animate-slide-up duration-1000" data-aos="zoom-in-up" data-aos-duration="1000" src="./assets/images/logo3.png" alt="Profile Image">
               </div>
             </div>
           </div>
-            <ul class="fixed right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-lg p-2 rounded-lg shadow-md text-[#b0b2c3] space-y-6 hover:scale-110 ease-in-out duration-100">
+            <ul class="fixed right-4 top-1/3 -translate-y-1/2 bg-white/10 backdrop-blur-lg p-2 rounded-lg shadow-md text-[#b0b2c3] space-y-6 hover:scale-110 duration-100" data-aos="slide-left" data-aos-duration="1000">
                 <li>
                     <a href = "https://www.linkedin.com/in/ayushpratapsingh1/" target = "_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class = "hover:text-white block p-2 rounded-lg bg-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 transition-all duration-300 ease-in-out">
@@ -113,57 +116,386 @@
                 </li>
             </ul>
         </div>
-        <button class = "bg-[#781c9c] self-center mb-2 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] relative hover:scale-110 ease-in-out duration-100">My works</button>
+        <button class = "self-center mb-6 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] relative hover:scale-110
+        duration-100 pointer-events-auto animate-fade-in scroll-smooth" id="myWorksButton">My Projects</button>
+
+        
     </section>
     <section>
-        <div id="aboutModal" class="fixed inset-0 hidden z-50 flex items-center justify-center ease-in-out">
-
+        <div id="aboutModal" class="fixed inset-0 hidden z-50 flex items-center justify-center" data-aos="fade-in" data-aos-duration="1000">
             <!-- Overlay -->
-            <div 
-            class="absolute inset-0 bg-white/10 backdrop-blur-lg bg-opacity-150" 
-            id="outsideClick"></div>
-            
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-lg bg-opacity-150" id="outsideClick"></div>
+    
             <!-- Modal Content -->
-            <div 
-            class="relative bg-black/30 backdrop-blur-lg text-white rounded-lg shadow-lg w-11/12 max-w-4xl mx-auto my-10 p-8 flex flex-col md:flex-row">
-            
-            <!-- Close Button -->
-            <button 
-                id="closeModal" 
-                class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
-            
-            <!-- Text Content -->
-            <div class="flex-1 pr-6">
-                <h2 class="text-3xl font-bold mb-4">About Me</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Hello! I'm Ayush Pratap Singh, a dedicated and innovative software developer specializing in Data Science,
-                     Machine Learning, and Web Development. My expertise spans building machine learning models, creating 
-                     interactive web designs, and leveraging DevOps practices for streamlined development.
-                </p>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Notable projects include a plant disease detection system, 
-                    a Forbes Billionaires Data Analysis, and a Helping Hand Website for complaint registration.With strong skills in Python, C++, and Java, and 
-                    certifications in ChatGPT Advanced Data Analysis and Prompt Engineering, I continuously strive to enhance my 
-                    technical acumen.
-                </p>
-                <p class="text-gray-300 leading-relaxed">
-                     Outside of work, I enjoy exploring AI applications and collaborating on innovative projects.
-                    <br><b> Feel free to connect with me to share ideas or build something amazing together!</b>
-                </p>
+            <div class="relative bg-black/30 backdrop-blur-lg text-white rounded-lg w-11/12 max-w-4xl mx-auto my-10 p-8 flex flex-col 
+            md:flex-row shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]">
+                
+                <!-- Close Button -->
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold animate-spin">&times;</button>
+                
+                <!-- Text Content -->
+                <div class="flex-1 pr-6 mb-6 md:mb-0">
+                    <h2 class="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
+                        Hello! I'm Ayush Pratap Singh, a dedicated and innovative software developer specializing in Data Science, 
+                        Machine Learning, and Web Development. My expertise spans building machine learning models, creating 
+                        interactive web designs, and leveraging DevOps practices for streamlined development.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
+                        Notable projects include a plant disease detection system, 
+                        a Forbes Billionaires Data Analysis, and a Helping Hand Website for complaint registration. With strong skills in Python, C++, and Java, and 
+                        certifications in ChatGPT Advanced Data Analysis and Prompt Engineering, I continuously strive to enhance my 
+                        technical acumen.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        Outside of work, I enjoy exploring AI applications and collaborating on innovative projects.
+                        <br><b>Feel free to connect with me to share ideas or build something amazing together!</b>
+                    </p>
+                </div>
+    
+                <!-- Image -->
+                <div class="flex justify-center md:block hidden">
+                    <img src="./assets/images/octocat-1730282942820.png" alt="About Me" class="w-full max-w-xs object-contain rounded-lg animate-pulse duration-200">
+                </div>
             </div>
-
-            <!-- Image -->
-            <div class="flex">
-                <img 
-                src="./assets/images/octocat-1730282942820.png" 
-                alt="About Me" 
-                class="w-full max-w-xs object-contain rounded-lg animate-pulse duration-200">
-            </div>
-    </div>
-  </div>
+        </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
+    
+    <section class="max-w-screen-xl mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden" data-aos="slide-up" data-aos-duration="1000">
+    <h2 class="text-center text-3xl md:text-4xl text-white border-b-4 border-[#781c9c] pb-4 mb-8">
+        My Projects
+    </h2>
+
+    <!-- Slider Container -->
+    <div class="swiper-container mt-8 relative">
+        <div class="swiper-wrapper">
+            <!-- Project Slide -->
+            <div class="swiper-slide">
+                <div class="bg-black/90 rounded-lg shadow-xl p-6">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Image Container - Fixed width, responsive -->
+                        <div class="md:w-[300px] flex-shrink-0">
+                            <img src="https://via.placeholder.com/300" alt="Plant Disease Detection" 
+                                 class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="flex-1 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Plant Disease Detection</h3>
+                            
+                            <!-- Tools -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Python</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">TensorFlow</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Keras</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">NumPy</span>
+                            </div>
+                            
+                            <!-- Description -->
+                            <div class="text-gray-300 space-y-4 mb-6">
+                                <p class="text-sm">
+                                    A sophisticated deep learning-based system designed to detect and classify plant diseases through image analysis. This project leverages state-of-the-art neural networks to provide farmers with accurate, real-time disease diagnostics.
+                                </p>
+                                <p class="text-sm">
+                                    The system integrates advanced image processing techniques with a user-friendly interface, making it accessible to both agricultural experts and small-scale farmers. It provides detailed analysis reports and treatment recommendations based on the detected diseases.
+                                </p>
+                                
+                                <!-- Features -->
+                                <div class="mt-4">
+                                    <h4 class="text-white font-semibold mb-2">Key Features:</h4>
+                                    <ul class="list-disc ml-5 text-sm space-y-1">
+                                        <li>Advanced image preprocessing with data augmentation techniques</li>
+                                        <li>Real-time disease detection with 95% accuracy</li>
+                                        <li>Comprehensive treatment recommendations</li>
+                                        <li>Mobile-responsive web interface</li>
+                                        <li>Offline detection capabilities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Buttons -->
+                            <div class="flex gap-4">
+                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="bg-black/90 rounded-lg shadow-xl p-6">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Image Container -->
+                        <div class="md:w-[300px] flex-shrink-0">
+                            <img src="https://via.placeholder.com/300" alt="Electric Vehicle Analysis" 
+                                 class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="flex-1 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Electric Vehicle Analysis</h3>
+                            
+                            <!-- Tools -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Python</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">NumPy</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Pandas</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Matplotlib</span>
+                            </div>
+                            
+                            <!-- Description -->
+                            <div class="text-gray-300 space-y-4 mb-6">
+                                <p class="text-sm">
+                                    A detailed data-driven analysis focused on the adoption of electric vehicles globally. The project explores trends, challenges, and opportunities in the EV market using statistical analysis and visualizations.
+                                </p>
+                                <p class="text-sm">
+                                    The system highlights key metrics such as growth in EV adoption, regional analysis, and CO2 emissions reductions. Insights are presented through interactive dashboards and charts.
+                                </p>
+                                
+                                <!-- Features -->
+                                <div class="mt-4">
+                                    <h4 class="text-white font-semibold mb-2">Key Features:</h4>
+                                    <ul class="list-disc ml-5 text-sm space-y-1">
+                                        <li>Comprehensive EV market analysis</li>
+                                        <li>Interactive data visualizations</li>
+                                        <li>Prediction models for EV adoption trends</li>
+                                        <li>Insights into government policies and incentives</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Buttons -->
+                            <div class="flex gap-4">
+                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="bg-black/90 rounded-lg shadow-xl p-6">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Image Container -->
+                        <div class="md:w-[300px] flex-shrink-0">
+                            <img src="https://via.placeholder.com/300" alt="Forbes Billionaires Analysis" 
+                                 class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="flex-1 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Forbes Billionaires Analysis</h3>
+                            
+                            <!-- Tools -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">MS Excel</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Python</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Pandas</span>
+                            </div>
+                            
+                            <!-- Description -->
+                            <div class="text-gray-300 space-y-4 mb-6">
+                                <p class="text-sm">
+                                    This project analyzes the wealth distribution and economic disparities among billionaires worldwide. Using data from Forbes, the project visualizes key trends in billionaire wealth over the years.
+                                </p>
+                                <p class="text-sm">
+                                    It offers insights into gender disparities, industry trends, and geographical wealth distribution through a dynamic Excel dashboard and comprehensive reports.
+                                </p>
+                                
+                                <!-- Features -->
+                                <div class="mt-4">
+                                    <h4 class="text-white font-semibold mb-2">Key Features:</h4>
+                                    <ul class="list-disc ml-5 text-sm space-y-1">
+                                        <li>Global wealth trend analysis from 2001 to 2023</li>
+                                        <li>Interactive Excel dashboards</li>
+                                        <li>Insights into billionaire gender disparity</li>
+                                        <li>Focus on wealth concentration in specific industries</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Buttons -->
+                            <div class="flex gap-4">
+                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="bg-black/90 rounded-lg shadow-xl p-6">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Image Container -->
+                        <div class="md:w-[300px] flex-shrink-0">
+                            <img src="https://via.placeholder.com/300" alt="Helping Hand Website" 
+                                 class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="flex-1 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Helping Hand Website</h3>
+                            
+                            <!-- Tools -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">HTML</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">CSS</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">JavaScript</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">Firebase</span>
+                            </div>
+                            
+                            <!-- Description -->
+                            <div class="text-gray-300 space-y-4 mb-6">
+                                <p class="text-sm">
+                                    A dynamic web platform designed to help users register complaints, both public and private. The website allows users to share their issues, get feedback, and track the progress of their complaints.
+                                </p>
+                                <p class="text-sm">
+                                    The platform also provides additional features, including secure login, real-time notifications, and a user-friendly interface for interaction.
+                                </p>
+                                
+                                <!-- Features -->
+                                <div class="mt-4">
+                                    <h4 class="text-white font-semibold mb-2">Key Features:</h4>
+                                    <ul class="list-disc ml-5 text-sm space-y-1">
+                                        <li>Secure user registration and login</li>
+                                        <li>Real-time updates on complaint status</li>
+                                        <li>Responsive design for mobile and desktop</li>
+                                        <li>Firebase backend integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Buttons -->
+                            <div class="flex gap-4">
+                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="bg-black/90 rounded-lg shadow-xl p-6">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Image Container -->
+                        <div class="md:w-[300px] flex-shrink-0">
+                            <img src="https://via.placeholder.com/300" alt="Tic Tac Toe Game" 
+                                 class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="flex-1 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Tic Tac Toe Game</h3>
+                            
+                            <!-- Tools -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">HTML</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">CSS</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">JavaScript</span>
+                            </div>
+                            
+                            <!-- Description -->
+                            <div class="text-gray-300 space-y-4 mb-6">
+                                <p class="text-sm">
+                                    A classic Tic Tac Toe game built with HTML, CSS, and JavaScript. The game allows players to play against each other on the same device or against a simple AI.
+                                </p>
+                                <p class="text-sm">
+                                    The project demonstrates fundamental game development logic, handling user interactions, and real-time updates.
+                                </p>
+                                
+                                <!-- Features -->
+                                <div class="mt-4">
+                                    <h4 class="text-white font-semibold mb-2">Key Features:</h4>
+                                    <ul class="list-disc ml-5 text-sm space-y-1">
+                                        <li>Two-player game mode</li>
+                                        <li>Simple AI for single-player mode</li>
+                                        <li>Reset and restart functionality</li>
+                                        <li>Responsive layout for desktop and mobile</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Buttons -->
+                            <div class="flex gap-4">
+                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="bg-black/90 rounded-lg shadow-xl p-6">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Image Container -->
+                        <div class="md:w-[300px] flex-shrink-0">
+                            <img src="https://via.placeholder.com/300" alt="Stone Paper Scissors Game" 
+                                 class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
+                        </div>
+                        
+                        <!-- Content Container -->
+                        <div class="flex-1 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Stone Paper Scissors Game</h3>
+                            
+                            <!-- Tools -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">HTML</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">CSS</span>
+                                <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">JavaScript</span>
+                            </div>
+                            
+                            <!-- Description -->
+                            <div class="text-gray-300 space-y-4 mb-6">
+                                <p class="text-sm">
+                                    An interactive Stone Paper Scissors game built with HTML, CSS, and JavaScript. The game allows the user to play against a virtual opponent.
+                                </p>
+                                <p class="text-sm">
+                                    Includes a dynamic scoreboard and a fun visual design that changes based on the game outcome.
+                                </p>
+                                
+                                <!-- Features -->
+                                <div class="mt-4">
+                                    <h4 class="text-white font-semibold mb-2">Key Features:</h4>
+                                    <ul class="list-disc ml-5 text-sm space-y-1">
+                                        <li>Interactive gameplay</li>
+                                        <li>Score tracking</li>
+                                        <li>Random opponent choices</li>
+                                        <li>Responsive design</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Buttons -->
+                            <div class="flex gap-4">
+                                <a href="#" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
+                                <a href="#" class="bg-[#781c9c] text-white px-6 py-2 rounded-full font-bold hover:bg-[#5c137c] hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Arrows -->
+            <div class="swiper-button-next z-auto"></div>
+            <div class="swiper-button-prev z-auto"></div>
+        </div>
+    </div>
+       
+    </section>
+    
+    
+    
+      
+      
+    <!-- AOS Library JS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script> -->
     </body>
 </html>
