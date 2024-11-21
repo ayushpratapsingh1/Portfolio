@@ -41,9 +41,6 @@
     animation: fade-in 2s ease-in-out;
   }
 
-  html {
-    scroll-behavior: smooth;
-}
 
 
 /* Swiper Slide */
@@ -52,6 +49,29 @@
 }
 
 /* Swiper Navigation Buttons */
+.loader {
+  animation: spin 2s linear infinite;
+}
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-  
+/* Centering content on click with margin adjustment */
+section {
+  transition: margin-top 0.3s ease-in-out;
+}
+
+.nav-link {
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover
+{
+  color: #9b5de5; /* Tailwind's purple-500 color */
+}
+/* Hide scrollbar when mobile menu is open */
+.overflow-hidden {
+  overflow: hidden;
+}

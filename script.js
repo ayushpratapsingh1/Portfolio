@@ -1,5 +1,5 @@
-// JavaScript for typewriter effect
-const words = ["I'm Pre-final Year Student","I'm an Aspiring Software Engineer","Meditation and Gratitude are my Strengths"];
+// Typewriter effect
+const words = ["I'm Pre-final Year Student", "I'm an Aspiring Software Engineer", "Meditation and Gratitude are my Strengths"];
 let i = 0;
 let j = 0;
 let currentWord = "";
@@ -7,20 +7,17 @@ let isDeleting = false;
 
 function type() {
   currentWord = words[i];
+  const typewriterElement = document.getElementById("typewriter");
+  
   if (isDeleting) {
-    document.getElementById("typewriter").textContent = currentWord.substring(0, j-1);
-    j--;
-    if (j == 0) {
+    typewriterElement.textContent = currentWord.substring(0, j--);
+    if (j === 0) {
       isDeleting = false;
-      i++;
-      if (i == words.length) {
-        i = 0;
-      }
+      i = (i + 1) % words.length; // Loop through the words
     }
   } else {
-    document.getElementById("typewriter").textContent = currentWord.substring(0, j+1);
-    j++;
-    if (j == currentWord.length) {
+    typewriterElement.textContent = currentWord.substring(0, ++j);
+    if (j === currentWord.length) {
       isDeleting = true;
     }
   }
@@ -29,85 +26,123 @@ function type() {
 
 type();
 
-
-// JavaScript for Modal about me pop-up
+// Modal about me pop-up
 const aboutMeBtn = document.getElementById("aboutMeBtn");
 const aboutModal = document.getElementById("aboutModal");
 const closeModal = document.getElementById("closeModal");
 const mainContent = document.getElementById("main-content");
 const outsideClick = document.getElementById("outsideClick");
 
-// Open Modal
 aboutMeBtn.addEventListener("click", () => {
     aboutModal.classList.remove("hidden");
     mainContent.classList.add("blurred-bg", "no-pointer-events");
 });
 
-// Close Modal on clicking the X button
-closeModal.addEventListener("click", () => {
-    closeModalFunction();
-  });
+closeModal.addEventListener("click", closeModalFunction);
+outsideClick.addEventListener("click", closeModalFunction);
 
-// Close Modal on clicking outside the modal
-outsideClick.addEventListener("click", () => {
-    closeModalFunction();
-  });
-
-// Function to close modal
 function closeModalFunction() {
     aboutModal.classList.add("hidden");
     mainContent.classList.remove("blurred-bg", "no-pointer-events");
-  }
+}
 
-
-const myWorksButton = document.getElementById("myWorksButton");
-// Add event listener to scroll the page by 50% of the screen height
-    myWorksButton.addEventListener("click", () => {
-        // Calculate 50% of the viewport height
-        const scrollAmount = window.innerHeight*0.96;
-        // Scroll the page smoothly to the new position
-        window.scrollTo({
-            top: window.scrollY + scrollAmount, 
-            behavior: 'smooth' // Smooth scroll behavior
+// Scroll to 50% of the screen height
+document.getElementById("myWorksButton").addEventListener("click", () => {
+    window.scrollTo({
+        top: window.scrollY + window.innerHeight * 0.96, 
+        behavior: 'smooth'
     });
 });
 
-
-const swiper = new Swiper('.swiper-container', {
+// Swiper setup
+new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    loop: true, // Infinite scrolling
+    loop: true,
     autoplay: {
         delay: 10000,
-        disableOnInteraction: false, // Keeps autoplay active after interaction
+        disableOnInteraction: false,
     },
 });
 
-// Scroll to Top Function
+// Loading screen fade-out
+window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.style.opacity = 0;
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+    }, 300);
+});
+
+const navbarToggle = document.getElementById("navbar-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+const closeMobileMenu = document.getElementById("close-mobile-menu");
+const mobileLinks = mobileMenu.querySelectorAll("a");
+
+// Open mobile menu on button click
+navbarToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("flex");
+});
+
+// Close mobile menu on close button click
+closeMobileMenu.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+    mobileMenu.classList.remove("flex");
+});
+
+// Close mobile menu if clicked outside (on the overlay)
+window.addEventListener("click", (e) => {
+    // Close the menu only if clicked on the overlay, but not on the links or the toggle button
+    if (mobileMenu.classList.contains("flex") && !mobileMenu.contains(e.target) && !navbarToggle.contains(e.target)) {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+    }
+});
+
+// Close mobile menu when a link is clicked
+mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+    });
+});
+
+// Show the tooltip when hovering over the button
+const button = document.querySelector('button');
+const tooltip = document.querySelector('.tooltip');
+
+button.addEventListener('mouseenter', () => {
+    tooltip.classList.remove('opacity-0'); // Make the tooltip visible
+    tooltip.classList.add('opacity-100');  // Add the opacity transition
+});
+
+button.addEventListener('mouseleave', () => {
+    tooltip.classList.remove('opacity-100'); // Hide the tooltip
+    tooltip.classList.add('opacity-0');  // Add the opacity transition
+});
+
+// Scroll to the top of the page when the button is clicked
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'  // Smooth scrolling effect
+    });
 }
 
-const toggleButton = document.getElementById("toggleSidebar");
-    const sidebar = document.getElementById("sidebar");
 
-    toggleButton.addEventListener("click", () => {
-        sidebar.classList.toggle("right-0"); // Toggle the sidebar visibility
-        sidebar.classList.toggle("right-[-300px]"); // Hide it when closed
-
-        // Automatically hide after 3 seconds
-        setTimeout(() => {
-            sidebar.classList.add("right-[-300px]");
-            sidebar.classList.remove("right-0");
-        }, 3000);
-    });
-
-
-
-  
-  
-    
+// Smooth Scrolling for navigation
+document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(e.target.getAttribute('href'));
+      window.scrollTo({
+          top: target.offsetTop - 50, // Add margin-top for offset
+          behavior: 'smooth'
+      });
+  });
+});
