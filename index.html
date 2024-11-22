@@ -33,6 +33,7 @@
                     <!-- Desktop Navigation -->
                     <nav class="hidden lg:flex w-full justify-center items-center space-x-6">
                         <a href="#home" class="nav-link text-white">Home</a>
+                        <a href="#project" class="nav-link text-white">Projects</a>
                         <a href="#experience" class="nav-link text-white">Experience</a>
                         <a href="#education" class="nav-link text-white">Education</a>
                         <a href="#tech" class="nav-link text-white">My Tech Stack</a>
@@ -68,13 +69,14 @@
                 <!-- Close Button -->
                 <button 
                     id="close-mobile-menu" 
-                    class="absolute top-6 right-6 text-white text-4xl"
+                    class="absolute top-6 right-6 text-white text-4xl animate-spin"
                 >
                     &times;
                 </button>
         
                 <!-- Mobile Navigation Links -->
                 <a href="#home" class="nav-link text-white text-2xl">Home</a>
+                <a href="#project" class="nav-link text-white text-2xl">Projects</a>
                 <a href="#experience" class="nav-link text-white text-2xl">Experience</a>
                 <a href="#education" class="nav-link text-white text-2xl">Education</a>
                 <a href="#tech" class="nav-link text-white text-2xl">My Tech Stack</a>
@@ -143,7 +145,7 @@
                     </li>
                 </ul>
             <button class = "self-center mb-6 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] relative hover:scale-110
-            duration-100 pointer-events-auto animate-fade-in scroll-smooth" id="myWorksButton">My Projects</button>    
+            duration-100 pointer-events-auto animate-fade-in scroll-smooth" id="myWorksButton">My Services</button>    
         </section>
 
         <section>
@@ -185,8 +187,46 @@
                 </div>
             </div>
         </section>
-        
-        <section class="max-w-screen-xl mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
+
+        <section id="services" class="bg-black/40 mt-8 backdrop-blur-lg rounded-lg py-16 mx-auto text-white px-4" data-aos="slide-up" data-aos-duration="1000">
+            <div class="container mx-auto px-4 text-center">
+              <h2 class="text-4xl font-extrabold mb-6">My Services</h2>
+              <p class="text-lg font-light mb-12">
+                I offer expertise in Machine Learning, Data Science, and Web Development.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div 
+                  class="service-card group bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] shadow-lg rounded-lg h-80 w-60 mx-auto flex flex-col justify-center items-center transition-all transform hover:shadow-purple-800 hover:shadow-md cursor-pointer"
+                  data-service-id="service1">
+                  <h3 class="text-2xl font-bold text-white-800 group-hover:text-purple-400 mb-4">Machine Learning</h3>
+                  <p class="description hidden text-white-600 text-center px-4">
+                    Python, R, Keras, Scikit-Learn, Matplotlib, TensorFlow, Seaborn and learning new things.
+                  </p>
+                </div>
+                <!-- Service Card 2 -->
+                <div 
+                  class="service-card group bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] shadow-lg rounded-lg h-80 w-60 mx-auto flex flex-col justify-center items-center transition-all transform hover:shadow-purple-800 hover:shadow-md cursor-pointer"
+                  data-service-id="service2">
+                  <h3 class="text-2xl font-bold text-white-800 group-hover:text-purple-400 mb-4">Data Science</h3>
+                  <p class="description hidden text-white-600 text-center px-4">
+                    Python, R, Microsoft Excel, Tableau, SQL, Data Analysis, Data Visualization and learning new things.
+                  </p>
+                </div>
+                <!-- Service Card 3 -->
+                <div 
+                  class="service-card group bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] shadow-lg rounded-lg h-80 w-60 mx-auto flex flex-col justify-center items-center transition-all transform hover:shadow-purple-800 hover:shadow-md cursor-pointer"
+                  data-service-id="service3">
+                  <h3 class="text-2xl font-bold text-white-800 group-hover:text-purple-400 mb-4">Web Development</h3>
+                  <p class="description hidden text-white-600 text-center px-4">
+                    HTML, CSS, JavaScript, Tailwind CSS, and learning new things.
+                  </p>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section id="project" class="max-w-screen-xl mx-auto mt-8 py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
         <h2 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8">
             My Projects
         </h2>
@@ -489,13 +529,13 @@
                     </div>
                 </div>
                 <!-- Navigation Arrows -->
-                <div class="swiper-button-next z-auto"></div>
-                <div class="swiper-button-prev z-auto"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>  
         </section>    
 
-        <section id="experience" class="max-w-screen-xl mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
+        <section id="experience" class="max-w-screen-xl mt-8 mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
             <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">My Experience</h2>
             <div class="relative">
@@ -524,7 +564,7 @@
             </div>
         </section>
         
-        <section id="education" class="max-w-screen-xl mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
+        <section id="education" class="max-w-screen-xl mt-8 mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
             <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-10">Education</h2>
                 <div class="relative flex flex-col items-start">
@@ -568,159 +608,143 @@
         </section>
         
         <!-- My Tech Stack Section -->
-        <section id="tech" class="max-w-7xl mx-auto bg-black/40 backdrop-blur-lg rounded-lg p-8" data-aos="slide-up" data-aos-duration="1000">
+        <section id="tech" class="max-w-7xl mx-auto bg-black/40 mt-8 backdrop-blur-lg rounded-lg p-8" data-aos="slide-up" data-aos-duration="1000">
             <h3 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8" data-aos="slide-up" data-aos-duration="1000">
                 My Tech Stack
             </h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6" data-aos="slide-up" data-aos-duration="1000">
-
-                <!-- AWS -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="w-10 h-10">
+            <div class="swiper-container2 overflow-hidden" data-aos="slide-up" data-aos-duration="1000">
+                <div class="swiper-wrapper">
+                    <!-- AWS -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">AWS</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">AWS</span>
-                </div>
-
-                <!-- C++ -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-10 h-10">
+                    <!-- C++ -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">C++</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">C++</span>
-                </div>
-
-                <!-- CSS -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" class="w-10 h-10">
+                    <!-- CSS -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">CSS3</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">CSS3</span>
-                </div>
-
-                <!-- Figma -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" class="w-10 h-10">
+                    <!-- Figma -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Figma</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Figma</span>
-                </div>
-
-                <!-- HTML -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" class="w-10 h-10">
+                    <!-- HTML -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">HTML5</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">HTML5</span>
-                </div>
-
-                <!-- Python -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="w-10 h-10">
+                    <!-- Python -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Python</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Python</span>
-                </div>
-
-                <!-- Java -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" class="w-10 h-10">
+                    <!-- Java -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Java</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Java</span>
-                </div>
-            
-                <!-- React -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" class="w-10 h-10">
+                    <!-- React -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">React</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">React</span>
-                </div>
-            
-                <!-- Tailwind CSS -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="w-10 h-10">
+                    <!-- Tailwind CSS -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Tailwind CSS</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Tailwind CSS</span>
-                </div>
-            
-                <!-- TensorFlow -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" class="w-10 h-10">
+                    <!-- TensorFlow -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">TensorFlow</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">TensorFlow</span>
-                </div>
-            
-                <!-- OpenCV -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" class="w-10 h-10">
+                    <!-- OpenCV -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">OpenCV</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">OpenCV</span>
-                </div>
-            
-                <!-- Pandas -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="Pandas" class="w-10 h-10">
+                    <!-- Pandas -->
+                    <div class=" swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="Pandas" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Pandas</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Pandas</span>
-                </div>
-            
-                <!-- Scikit-Learn -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-Learn" class="w-10 h-10">
+                    <!-- Scikit-Learn -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-Learn" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Scikit-Learn</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Scikit-Learn</span>
-                </div>
-            
-                <!-- Figma -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" class="w-10 h-10">
+                    <!-- Figma -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Figma</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Figma</span>
-                </div>
-            
-                <!-- Seaborn -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn" class="w-10 h-10">
+                    <!-- Seaborn -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Seaborn</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Seaborn</span>
-                </div>
-            
-                <!-- Git -->
-                <div class="group flex flex-col items-center">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                    transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" class="w-10 h-10">
+                    <!-- Git -->
+                    <div class="swiper-slide group flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
+                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
+                        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" class="w-10 h-10">
+                        </div>
+                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Git</span>
                     </div>
-                    <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Git</span>
                 </div>
             </div>
         </section>
-
-
 
         <section id="contact" class="py-12 flex justify-center top-8 items-center max-w-screen-xl mx-auto px-4 relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
             <!-- Contact Form Box -->
@@ -801,8 +825,8 @@
         AOS.init();
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script> -->
     </body>
 </html>

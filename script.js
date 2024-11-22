@@ -146,3 +146,35 @@ document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
       });
   });
 });
+
+const serviceCards = document.querySelectorAll('.service-card');
+
+  serviceCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Reset all cards to their initial state
+      serviceCards.forEach(c => {
+        c.classList.remove('clicked');
+        c.querySelector('.description').classList.add('hidden');
+      });
+
+      // Apply the clicked state to the current card
+      card.classList.add('clicked');
+      card.querySelector('.description').classList.remove('hidden');
+    });
+  });
+
+
+const swiper = new Swiper('.swiper-container2', {
+    slidesPerView: 5, // Adjust number of cards shown
+    spaceBetween: 5,
+    loop: true,
+    autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        640: { slidesPerView: 4 },
+        768: { slidesPerView: 7 },
+        1024: { slidesPerView: 10 },
+    },
+});

@@ -75,3 +75,14 @@ section {
 .overflow-hidden {
   overflow: hidden;
 }
+
+.service-card.clicked {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(128, 0, 128, 0.8); /* Purple glow on click */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next, .swiper-button-prev {
+  color: #9b5de5; /* Tailwind's purple-500 color */
+}
