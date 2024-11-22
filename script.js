@@ -76,6 +76,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         loadingScreen.style.display = "none";
     }, 300);
+    scrollToTop();
 });
 
 const navbarToggle = document.getElementById("navbar-toggle");
@@ -178,3 +179,10 @@ const swiper = new Swiper('.swiper-container2', {
         1024: { slidesPerView: 10 },
     },
 });
+
+document.getElementById("form").onsubmit = function() {
+    setTimeout(()=>{
+        scrollToTop();
+        document.getElementById("form").reset();
+    }, 1000);
+};

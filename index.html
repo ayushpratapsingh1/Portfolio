@@ -794,7 +794,7 @@
             </div>
             <!-- Right Side: Form -->
             <div class="w-full lg:w-1/2 bg-black/40 backdrop-blur-lg p-6 rounded-lg shadow-lg" data-aos="slide-left" data-aos-duration="1000">
-                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4" name="contactus" netlify>
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4" name="contactus" id="form">
                     <input type="hidden" name="access_key" value="d8a51c82-84cb-4ab1-8b78-37954d8d7f4c">
                     <!-- Name Field -->
                     <div>
@@ -814,9 +814,10 @@
                         <textarea id="message" name="message" rows="4" class="w-full p-3 rounded-md border border-gray-700 bg-gray-800 
                         text-white focus:ring-2 focus:ring-[#c004ff] outline-none" placeholder="Write your message" required></textarea>
                     </div>
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
                     <!-- Submit Button -->
                     <div>
-                        <button type="submit" class="w-full py-3 px-6 bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] hover:scale-110 text-white font-bold rounded-md shadow-md transition duration-300">
+                        <button id="btn" type="submit" class="w-full py-3 px-6 bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] hover:scale-110 text-white font-bold rounded-md shadow-md transition duration-300">
                         Send
                         </button>
                     </div>
