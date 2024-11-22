@@ -1,5 +1,5 @@
 // Typewriter effect
-const words = ["I'm Pre-final Year Student", "I'm an Aspiring Software Engineer", "Meditation and Gratitude are my Strengths"];
+const words = ["I'm Pre-final Year Student", "I'm an Aspiring Software Engineer", "Dream Big Aim High"];
 let i = 0;
 let j = 0;
 let currentWord = "";
