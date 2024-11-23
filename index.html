@@ -3,45 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Title of the page -->
     <title>Ayush Pratap Singh | Pre-Final Year Student</title>
-
-    <!-- Description of the page (appears in search results) -->
     <meta name="description" content="Ayush Pratap Singh's portfolio showcasing software development, data science, machine learning projects, and AI applications. Explore my work in programming, web development, and innovative solutions.">
-
-    <!-- Keywords related to your content (helps with search queries) -->
     <meta name="keywords" content="software developer, data science, machine learning, AI, web development, portfolio, Python, C++, React, TensorFlow, GitHub, AI applications, interactive websites, data analysis">
-
-    <!-- Author of the page -->
     <meta name="author" content="Ayush Pratap Singh">
-
-    <!-- Language of the page -->
     <meta name="language" content="English">
-
-    <!-- Open Graph meta tags for social media previews -->
     <meta property="og:title" content="Ayush Pratap Singh | Software Developer & Data Scientist">
     <meta property="og:description" content="Visit Ayush Pratap Singh's portfolio to explore software development, data science, machine learning, and AI projects. See my skills and innovative solutions in action.">
     <meta property="og:image" content="https://www.yourwebsite.com/path-to-your-image.jpg">
     <meta property="og:url" content="https://www.ayushpratapsingh.com">
     <meta property="og:type" content="website">
-
-    <!-- Twitter Card meta tags for Twitter previews -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ayush Pratap Singh | Software Developer & Data Scientist">
     <meta name="twitter:description" content="Explore the portfolio of Ayush Pratap Singh, a software developer specializing in data science, machine learning, and web development.">
     <meta name="twitter:image" content="https://www.yourwebsite.com/path-to-your-image.jpg">
-
-    <!-- Robots meta tag to control search engine indexing -->
     <meta name="robots" content="index, follow">
-
-    <!-- Canonical URL to avoid duplicate content issues -->
     <link rel="canonical" href="https://www.ayushpratapsingh.com">
-
-    <!-- Favicon (icon in the browser tab) -->
     <link rel="icon" href="https://www.yourwebsite.com/favicon.ico" type="image/x-icon">
-
-    <!-- Apple Touch Icon (for iPhone and iPad users) -->
     <link rel="apple-touch-icon" href="https://www.yourwebsite.com/apple-touch-icon.png">
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="font.css">
@@ -52,6 +30,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body class = "bg-[#111] text-white font-['Nunito']" >
+        <!-- Loading Screen -->
         <div id="loading-screen" class="fixed inset-0 bg-black flex items-center justify-center z-50 pointer-events-none">
             <div class="text-center">
               <div class="loader w-16 h-16 border-t-4 border-purple-500 border-solid rounded-full mx-auto mb-6"></div>
@@ -59,7 +38,7 @@
               <p class="text-white text-lg">Loading, please wait...</p>
             </div>
         </div>
-
+        <!-- Home Section -->
         <section class = "flex flex-col justify-between h-screen " id="home">
             <header class="fixed top-0 left-0 w-full bg-black/10 backdrop-blur-sm z-40">
                 <div class="max-w-screen-xl mx-auto px-4 h-16 flex items-center justify-between relative">
@@ -187,7 +166,7 @@
             <button class = "hidden md:block self-center mb-6 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] relative hover:scale-110
             duration-100 pointer-events-auto animate-bounce scroll-smooth" id="myWorksButton">My Services</button>    
         </section>
-
+        <!-- About Modal -->
         <section>
             <div id="aboutModal" class="fixed inset-0 hidden z-50 flex items-center justify-center" data-aos="fade-in" data-aos-duration="1000">
                 <!-- Overlay -->
@@ -227,7 +206,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- Services -->
         <section id="services" class="bg-black/40 mt-8 backdrop-blur-lg rounded-lg py-16 mx-auto text-white px-4" data-aos="slide-up" data-aos-duration="1000">
             <div class="container mx-auto px-4 text-center">
               <h2 class="text-4xl font-extrabold mb-6">My Services</h2>
@@ -265,7 +244,7 @@
               </div>
             </div>
         </section>
-
+        <!-- Projects -->
         <section id="project" class="max-w-screen-xl mx-auto mt-8 py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
         <h2 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8">
             My Projects
@@ -574,7 +553,7 @@
             </div>
         </div>  
         </section>    
-
+        <!-- Experience Section -->
         <section id="experience" class="max-w-screen-xl mt-8 mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
             <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">My Experience</h2>
@@ -603,7 +582,7 @@
             </div>
             </div>
         </section>
-        
+        <!--Education Section-->
         <section id="education" class="max-w-screen-xl mt-8 mx-auto py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
             <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-10">Education</h2>
@@ -776,7 +755,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- Contact Section -->
         <section id="contact" class="py-12 flex justify-center top-8 items-center max-w-screen-xl mx-auto px-4 relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
             <!-- Contact Form Box -->
             <div class="w-11/12 lg:w-3/4 bg-black/50 backdrop-blur-md rounded-xl shadow-lg p-8 flex flex-col lg:flex-row items-center">
@@ -817,7 +796,6 @@
             </div>
             </div>
         </section>
-        
         <!-- Footer Section -->
         <footer class="bg-black/50 backdrop-blur-md py-8 ">
             <div class="container mx-auto text-center space-y-6">
@@ -849,15 +827,10 @@
             </p>
             </div>
         </footer>
-    
     <!-- AOS Library JS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
+    <script> AOS.init(); </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>

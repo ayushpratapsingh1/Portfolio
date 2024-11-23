@@ -1,4 +1,4 @@
-// Typewriter effect
+//--------------------------------------------------------------Typewriter effect
 const words = ["I'm Pre-final Year Student", "I'm an Aspiring Software Engineer", "Dream Big Aim High"];
 let i = 0;
 let j = 0;
@@ -26,7 +26,9 @@ function type() {
 
 type();
 
-// Modal about me pop-up
+
+
+//---------------------------------------------------------------------- Modal about me pop-up
 const aboutMeBtn = document.getElementById("aboutMeBtn");
 const aboutModal = document.getElementById("aboutModal");
 const closeModal = document.getElementById("closeModal");
@@ -46,7 +48,9 @@ function closeModalFunction() {
     mainContent.classList.remove("blurred-bg", "no-pointer-events");
 }
 
-// Scroll to 50% of the screen height
+
+
+// --------------------------------------------Scroll to "My Works" section on button click
 document.getElementById("myWorksButton").addEventListener("click", () => {
     window.scrollTo({
         top: window.scrollY + window.innerHeight * 0.96, 
@@ -54,7 +58,8 @@ document.getElementById("myWorksButton").addEventListener("click", () => {
     });
 });
 
-// Swiper setup
+
+//-------------------------------------------------------- Swiper setup
 new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -69,7 +74,8 @@ new Swiper('.swiper-container', {
     },
 });
 
-// Loading screen fade-out
+
+//-------------------------------------------------------- Loading screen fade-out
 window.addEventListener("load", () => {
     const loadingScreen = document.getElementById("loading-screen");
     loadingScreen.style.opacity = 0;
@@ -79,6 +85,8 @@ window.addEventListener("load", () => {
     scrollToTop();
 });
 
+
+//---------------------------------------------------- Navbar and mobile menu functionality
 const navbarToggle = document.getElementById("navbar-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
 const closeMobileMenu = document.getElementById("close-mobile-menu");
@@ -113,7 +121,7 @@ mobileLinks.forEach(link => {
     });
 });
 
-// Show the tooltip when hovering over the button
+//--------------------------------------------Show the tooltip when hovering over the button
 const button = document.querySelector('button');
 const tooltip = document.querySelector('.tooltip');
 
@@ -127,7 +135,7 @@ button.addEventListener('mouseleave', () => {
     tooltip.classList.add('opacity-0');  // Add the opacity transition
 });
 
-// Scroll to the top of the page when the button is clicked
+//----------------------------------------Scroll to the top of the page when the button is clicked
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -136,7 +144,7 @@ function scrollToTop() {
 }
 
 
-// Smooth Scrolling for navigation
+//--------------------------------------------- Smooth Scrolling for navigation
 document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -148,23 +156,39 @@ document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
   });
 });
 
+// ---------------------------------------------Service card functionality
 const serviceCards = document.querySelectorAll('.service-card');
 
-  serviceCards.forEach(card => {
-    card.addEventListener('click', () => {
-      // Reset all cards to their initial state
-      serviceCards.forEach(c => {
-        c.classList.remove('clicked');
-        c.querySelector('.description').classList.add('hidden');
-      });
-
-      // Apply the clicked state to the current card
-      card.classList.add('clicked');
-      card.querySelector('.description').classList.remove('hidden');
-    });
+// Function to reset all cards
+const resetCards = () => {
+  serviceCards.forEach(c => {
+    c.classList.remove('clicked');
+    c.querySelector('.description').classList.add('hidden');
   });
+};
 
+// Add click event listener to each service card
+serviceCards.forEach(card => {
+  card.addEventListener('click', (event) => {
+    // Prevent the click event from propagating to the document
+    event.stopPropagation();
 
+    // Reset all cards to their initial state
+    resetCards();
+
+    // Apply the clicked state to the current card
+    card.classList.add('clicked');
+    card.querySelector('.description').classList.remove('hidden');
+  });
+});
+
+// Add click event listener to the document
+document.addEventListener('click', () => {
+  // Reset all cards when clicking outside of them
+  resetCards();
+});
+
+// -----------------------------------------------------Swiper setup 2
 const swiper = new Swiper('.swiper-container2', {
     slidesPerView: 5, // Adjust number of cards shown
     spaceBetween: 5,
@@ -180,6 +204,7 @@ const swiper = new Swiper('.swiper-container2', {
     },
 });
 
+// ---------------------------------------------------Form submission
 document.getElementById("form").onsubmit = function() {
     setTimeout(()=>{
         scrollToTop();

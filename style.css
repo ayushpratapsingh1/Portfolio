@@ -13,6 +13,7 @@
 .no-scroll {
   overflow: hidden;
 }
+/* Apply animation */
 @keyframes slideright {
     0% {
       transform: translateX(50px);
@@ -23,9 +24,7 @@
       opacity: 1;
     }
   }
-
-  /* Apply animation */
-  .animate-slide-right {
+.animate-slide-right {
     animation: slideright 1s ease-out;
   }
   @keyframes fade-in {
@@ -36,8 +35,7 @@
       opacity: 1;
     }
   }
-
-  .animate-fade-in {
+.animate-fade-in {
     animation: fade-in 2s ease-in-out;
   }
 
@@ -47,7 +45,9 @@
 .swiper-slide { /* Full width of the container */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* Swiper Navigation Buttons */
 .loader {
   animation: spin 2s linear infinite;
@@ -80,9 +80,4 @@ section {
   transform: scale(1.1);
   box-shadow: 0 0 25px rgba(128, 0, 128, 0.8); /* Purple glow on click */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Swiper Navigation Buttons */
-.swiper-button-next, .swiper-button-prev {
-  color: #9b5de5; /* Tailwind's purple-500 color */
 }
