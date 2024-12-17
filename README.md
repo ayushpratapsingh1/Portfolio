@@ -30,9 +30,10 @@ Follow these steps to set up the project locally:
    git clone https://github.com/ayushpratapsingh1/Portfolio.git
    cd Portfolio
 2. **Install Dependencies (If the project uses npm):**
+   
    ```bash
    npm install
-3. **Run the Project:**
+4. **Run the Project:**
    ```bash
    npm start
   - The website will be available at http://localhost:3000.
@@ -51,6 +52,7 @@ Follow these steps to set up the project locally:
 
 ## Fork the repository.
 - Create a branch:
+  
   ```bash
   git checkout -b feature-name
 - Commit your changes:
