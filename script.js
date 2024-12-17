@@ -76,18 +76,27 @@ new Swiper('.swiper-container', {
 
 // Tech Stack Swiper
 new Swiper('.swiper-container2', {
-    slidesPerView: 5, 
-    spaceBetween: 5,
+    slidesPerView: 3,
+    spaceBetween: 20,
     loop: true,
     autoplay: {
-        delay: 1000,
+        delay: 3000,
         disableOnInteraction: false,
     },
     breakpoints: {
-        640: { slidesPerView: 4 },
-        768: { slidesPerView: 7 },
-        1024: { slidesPerView: 10 },
-    },
+        640: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+        768: {
+            slidesPerView: 5,
+            spaceBetween: 40,
+        },
+        1024: {
+            slidesPerView: 7,
+            spaceBetween: 30,
+        },
+    }
 });
 
 
@@ -143,16 +152,6 @@ const tooltip = document.querySelector('.tooltip');
 
 button.addEventListener('mouseenter', () => tooltip.classList.replace('opacity-0', 'opacity-100'));
 button.addEventListener('mouseleave', () => tooltip.classList.replace('opacity-100', 'opacity-0'));
-
-
-//-------------------------------------------------------------- Scroll to Top Function
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
 
 //-------------------------------------------------------------- Smooth Scrolling for Navigation
 document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
@@ -215,14 +214,29 @@ document.querySelectorAll('.particle-container').forEach((container, index) => {
 });
 
 
-//-------------------------------------------------------------- Form Submission
-document.getElementById("form").onsubmit = function() {
-    setTimeout(() => {
-        scrollToTop();
-        document.getElementById("form").reset();
-    }, 1000);
-};
-
-
 //-------------------------------------------------------------- Animate on Scroll (AOS)
 document.addEventListener('DOMContentLoaded', () => AOS.init());
+
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    const homeSection = document.getElementById('home');
+
+    window.addEventListener('scroll', function() {
+        const homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
+        
+        if (window.pageYOffset > homeSectionBottom) {
+            scrollToTopBtn.classList.remove('opacity-0');
+            scrollToTopBtn.classList.add('opacity-100');
+        } else {
+            scrollToTopBtn.classList.remove('opacity-100');
+            scrollToTopBtn.classList.add('opacity-0');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});

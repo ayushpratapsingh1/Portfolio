@@ -167,40 +167,56 @@
         </section>
         <!-- About Modal -->
         <section>
-            <div id="aboutModal" class="fixed inset-0 hidden z-50 flex items-center justify-center" data-aos="fade-in" data-aos-duration="1000">
+            <div id="aboutModal" class="fixed inset-0 hidden z-50 flex items-center justify-center p-4">
                 <!-- Overlay -->
-                <div class="absolute inset-0 bg-white/10 backdrop-blur-lg bg-opacity-150" id="outsideClick"></div>
-        
+                <div class="absolute inset-0 bg-black/70 backdrop-blur-md" id="outsideClick"></div>
+    
                 <!-- Modal Content -->
-                <div class="relative bg-black/30 backdrop-blur-lg text-white rounded-lg w-11/12 max-w-4xl mx-auto my-10 p-8 flex flex-col 
-                md:flex-row shadow-[0_0_10px_4px_rgba(120,28,156,0.7)]">
+                <div class="relative bg-gradient-to-br from-[#5e2176b8] to-indigo-900 text-white 
+                rounded-2xl w-full max-w-4xl mx-auto p-6 sm:p-8 flex flex-col md:flex-row 
+                shadow-[0_0_25px_10px_rgba(139,92,246,0.3)] overflow-hidden">
                     
                     <!-- Close Button -->
-                    <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold animate-spin">&times;</button>
+                    <button id="closeModal" class="absolute top-4 right-4 text-gray-300 hover:text-white text-3xl font-bold transition-colors duration-300">
+                        &times;
+                    </button>
                     
                     <!-- Text Content -->
-                    <div class="flex-1 pr-6 mb-6 md:mb-0">
-                        <h2 class="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
-                        <p class="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
-                            Hello! I'm Ayush Pratap Singh, a dedicated and innovative software developer specializing in Data Science, 
-                            Machine Learning, and Web Development. My expertise spans building machine learning models, creating 
-                            interactive web designs, and leveraging DevOps practices for streamlined development.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
-                            Notable projects include a plant disease detection system, 
-                            a Forbes Billionaires Data Analysis, and a Helping Hand Website for complaint registration. With strong skills in Python, C++, and Java, and 
-                            certifications in ChatGPT Advanced Data Analysis and Prompt Engineering, I continuously strive to enhance my 
-                            technical acumen.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
-                            Outside of work, I enjoy exploring AI applications and collaborating on innovative projects.
-                            <br><b>Feel free to connect with me to share ideas or build something amazing together!</b>
-                        </p>
+                    <div class="flex-1 pr-0 md:pr-6 mb-6 md:mb-0 z-10">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">About Me</h2>
+                        <div class="space-y-3 sm:space-y-4 text-gray-200">
+                            <p class="leading-relaxed text-sm sm:text-base">
+                                Hello! I'm <span class="font-semibold text-purple-300">Ayush Pratap Singh</span>, a passionate software developer specializing in Data Science, Machine Learning, and Web Development. I excel in building robust models, interactive web designs, and scalable applications.
+                            </p>
+                            
+                            <p class="leading-relaxed text-sm sm:text-base">
+                                Notable projects include a plant disease detection system, a Forbes Billionaires Data Analysis, a custom shell, an HTTP server in Python, a pixel website built with Next.js and TypeScript, and a chatbot with a conversational flow.
+                            </p>
+                            
+                            <p class="leading-relaxed text-sm sm:text-base">
+                                Proficient in Python, C++, Java, React, Tailwind CSS, and more, I continuously explore new technologies and collaborate on creative projects.
+                            </p>
+                            
+                            <p class="font-bold text-purple-300">
+                                Let’s connect and build something amazing together!
+                            </p>
+                            
+                        </div>
                     </div>
-        
-                    <!-- Image -->
-                    <div class="justify-center translate-y-10 md:block hidden">
-                        <img src="./assets/images/octocat-1730282942820.png" alt="About Me" class="w-full max-w-xs object-contain rounded-lg animate-pulse duration-200">
+    
+                    <!-- Image (hidden on mobile) -->
+                    <div class="hidden md:flex md:w-1/3 justify-center items-center mt-6 md:mt-0">
+                        <div class="relative w-48 h-48 md:w-64 md:h-64">
+                            <div class="absolute inset-0 bg-purple-600 rounded-full animate-pulse opacity-75"></div>
+                            <img src="./assets/images/octocat-1730282942820.png" alt="About Me" class="relative z-10 w-full h-full object-cover rounded-full border-4 border-white/50">
+                        </div>
+                    </div>
+    
+                    <!-- Background Decoration -->
+                    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                        <div class="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+                        <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+                        <div class="absolute -bottom-8 left-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
                     </div>
                 </div>
             </div>
@@ -322,6 +338,187 @@
                             </div>                    
                         </div>
                     </div>
+                    <!--Pixel Dev-->
+                    <div class="swiper-slide">
+                        <div class="bg-black/90 rounded-lg shadow-xl p-6">
+                            <div class="flex flex-col md:flex-row gap-8">
+                                
+                                <!-- Image Container -->
+                                <div class="md:w-[300px] flex-shrink-0">
+                                    <img src="./assets/images/pixel-dev.png" alt="Pixel Dev"
+                                        class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300" />
+                                </div>
+                    
+                                <!-- Content Container -->
+                                <div class="flex-1 text-white">
+                                    <h3 class="text-2xl font-bold mb-4">Pixel Dev - Web Solutions</h3>
+                    
+                                    <!-- Technologies -->
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">
+                                            TypeScript
+                                        </span>
+                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">
+                                            Next.js
+                                        </span>
+                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">
+                                            Framer Motion
+                                        </span>
+                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">
+                                            React
+                                        </span>
+                                    </div>
+                    
+                                    <!-- Description -->
+                                    <div class="text-gray-300 space-y-4 mb-6">
+                                        <p class="text-sm">
+                                            Pixel Dev offers cutting-edge web solutions tailored to your business needs.
+                                            Our expertise in scalable architecture, dynamic design, and performance optimization
+                                            ensures a seamless user experience.
+                                        </p>
+                                        <p class="text-sm">
+                                            We integrate the latest technologies like Next.js, TypeScript, and Framer Motion
+                                            to build responsive, interactive websites that drive engagement and growth.
+                                        </p>
+                    
+                                        <!-- Key Features -->
+                                        <div class="mt-4">
+                                            <h4 class="text-white font-semibold mb-2">Key Features:</h4>
+                                            <ul class="list-disc ml-5 text-sm space-y-1">
+                                                <li>High-performance Next.js architecture</li>
+                                                <li>Interactive and responsive UI with Framer Motion</li>
+                                                <li>Scalable and maintainable codebase</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                    
+                                    <!-- Buttons -->
+                                    <div class="flex gap-4">
+                                        <a href="https://github.com/ayushpratapsingh" target="_blank"
+                                            class="bg-white text-[#781c9c] px-6 py-2 rounded-full 
+                                            font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">
+                                            GitHub
+                                        </a>
+                                        <a href="https://www.pixeldev.com" target="_blank"
+                                            class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition-all duration-300 text-sm">
+                                            Live Site
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Http Server -->
+                    <div class="swiper-slide">
+                        <div class="bg-black/90 rounded-lg shadow-xl p-6">
+                            <div class="flex flex-col md:flex-row gap-8">
+                                
+                                <!-- Image Container -->
+                                <div class="md:w-[300px] flex-shrink-0">
+                                    <img src="./assets/images/http.png" alt="Python HTTP Server"
+                                        class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300" />
+                                </div>
+                    
+                                <!-- Content Container -->
+                                <div class="flex-1 text-white">
+                                    <h3 class="text-2xl font-bold mb-4">Python HTTP Server</h3>
+                    
+                                    <!-- Technologies -->
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">
+                                            Python
+                                        </span>
+                                    </div>
+                    
+                                    <!-- Description -->
+                                    <div class="text-gray-300 space-y-4 mb-6">
+                                        <p class="text-sm">
+                                            A lightweight and fast Python HTTP server optimized for quick deployment and scalability.
+                                        </p>
+                                        <p class="text-sm">
+                                            Designed with performance and flexibility in mind, it ensures efficient request handling and a streamlined development workflow.
+                                        </p>
+                    
+                                        <!-- Key Features -->
+                                        <div class="mt-4">
+                                            <h4 class="text-white font-semibold mb-2">Key Features:</h4>
+                                            <ul class="list-disc ml-5 text-sm space-y-1">
+                                                <li>Scalable Architecture for Growing Traffic</li>
+                                                <li>Minimal Configuration for Quick Deployments</li>
+                                                <li>Made with the help of codecrafters</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                    
+                                    <!-- Buttons -->
+                                    <div class="flex gap-4">
+                                        <a href="https://github.com/ayushpratapsingh1/HTTP-Server" target="_blank"
+                                            class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] 
+                                            text-white px-6 py-2 rounded-full font-bold text-center
+                                             hover:scale-105 transition-all duration-300 text-sm">
+                                            View Code
+                                        </a>
+                                    </div>
+                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Custom Shell -->
+                    <div class="swiper-slide">
+                        <div class="bg-black/90 rounded-lg shadow-xl p-6">
+                            <div class="flex flex-col md:flex-row gap-8">
+                                
+                                <!-- Image Container -->
+                                <div class="md:w-[300px] flex-shrink-0">
+                                    <img src="./assets/images/shell.png" alt="Custom Shell"
+                                        class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300" />
+                                </div>
+                    
+                                <!-- Content Container -->
+                                <div class="flex-1 text-white">
+                                    <h3 class="text-2xl font-bold mb-4">Custom Shell Interface</h3>
+                    
+                                    <!-- Technologies -->
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">
+                                            C++
+                                        </span>
+                                    </div>
+                    
+                                    <!-- Description -->
+                                    <div class="text-gray-300 space-y-4 mb-6">
+                                        <p class="text-sm">
+                                            A lightweight and fast Python HTTP server optimized for quick deployment and scalability.
+                                        </p>
+                                        <p class="text-sm">
+                                            It provides a robust, scalable architecture with built-in WSGI compatibility, efficient request handling, and minimal configuration requirements.
+                                        </p>
+                                    
+                                        <!-- Key Features -->
+                                        <div class="mt-4">
+                                            <h4 class="text-white font-semibold mb-2">Key Features:</h4>
+                                            <ul class="list-disc ml-5 text-sm space-y-1">
+                                                <li>Scalable Architecture for Growing Traffic</li>
+                                                <li>Minimal Configuration for Quick Deployments</li>
+                                                <li>Made with the help of codecrafters</li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                    <!-- Buttons -->
+                                    <div class="flex gap-4">
+                                        <a href="https://github.com/ayushpratapsingh1/Custom-Shell" target="_blank"
+                                            class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold text-center hover:scale-105 transition-all duration-300 text-sm">
+                                            Source Code
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>                            
                     <!-- Electric Vehicle Analysis -->
                     <div class="swiper-slide">
                         <div class="bg-black/90 rounded-lg shadow-xl p-6">
@@ -419,156 +616,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Helping Hand Website -->
-                    <div class="swiper-slide">
-                        <div class="bg-black/90 rounded-lg shadow-xl p-6">
-                            <div class="flex flex-col md:flex-row gap-8">
-                                <!-- Image Container -->
-                                <div class="md:w-[300px] flex-shrink-0">
-                                    <img src="./assets/images/Heping.png" alt="Helping Hand Website" 
-                                        class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
-                                </div>
-                                
-                                <!-- Content Container -->
-                                <div class="flex-1 text-white">
-                                    <h3 class="text-2xl font-bold mb-4">Helping Hand Website</h3>
-                                    
-                                    <!-- Tools -->
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">HTML</span>
-                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">CSS</span>
-                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">JavaScript</span>
-                                    </div>
-                                    
-                                    <!-- Description -->
-                                    <div class="text-gray-300 space-y-4 mb-6">
-                                        <p class="text-sm">
-                                            A dynamic web platform designed to help users register complaints, both public and private. The website allows users to share their issues, get feedback, and track the progress of their complaints.
-                                        </p>
-                                        
-                                        <!-- Features -->
-                                        <div class="mt-4">
-                                            <h4 class="text-white font-semibold mb-2">Key Features:</h4>
-                                            <ul class="list-disc ml-5 text-sm space-y-1">
-                                                <li>Interactive user interface with smooth animations</li>
-                                                <li>Responsive design for seamless mobile and desktop views</li>
-                                                <li>Intuitive navigation for easy access to all sections</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Buttons -->
-                                    <div class="flex gap-4">
-                                        <a href="https://github.com/ayushpratapsingh1/Helping-Hand-Website" target ="_blank" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
-                                        <a href="https://ayushpratapsingh1.github.io/Helping-Hand-Website/" target ="_blank" class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold
-                                        hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Tic Tac Toe Game -->
-                    <div class="swiper-slide">
-                        <div class="bg-black/90 rounded-lg shadow-xl p-6">
-                            <div class="flex flex-col md:flex-row gap-8">
-                                <!-- Image Container -->
-                                <div class="md:w-[300px] flex-shrink-0">
-                                    <img src="./assets/images/Tic-Tac-Toe.png" alt="Tic Tac Toe Game" 
-                                        class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
-                                </div>
-                                
-                                <!-- Content Container -->
-                                <div class="flex-1 text-white">
-                                    <h3 class="text-2xl font-bold mb-4">Tic Tac Toe Game</h3>
-                                    
-                                    <!-- Tools -->
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">HTML</span>
-                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">CSS</span>
-                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">JavaScript</span>
-                                    </div>
-                                    
-                                    <!-- Description -->
-                                    <div class="text-gray-300 space-y-4 mb-6">
-                                        <p class="text-sm">
-                                            A classic Tic Tac Toe game built with HTML, CSS, and JavaScript. The game allows players to play against each other on the same device or against a simple AI.
-                                        </p>
-                                        <p class="text-sm">
-                                            The project demonstrates fundamental game development logic, handling user interactions, and real-time updates.
-                                        </p>
-                                        
-                                        <!-- Features -->
-                                        <div class="mt-4">
-                                            <h4 class="text-white font-semibold mb-2">Key Features:</h4>
-                                            <ul class="list-disc ml-5 text-sm space-y-1">
-                                                <li>Two-player game mode</li>
-                                                <li>Reset and restart functionality</li>
-                                                <li>Responsive layout for desktop and mobile</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Buttons -->
-                                    <div class="flex gap-4">
-                                        <a href="https://github.com/ayushpratapsingh1/Tic-Tac-Toe-Game" target ="_blank" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
-                                        <a href="https://ayushpratapsingh1.github.io/Tic-Tac-Toe-Game/" target ="_blank" class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold 
-                                        hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Stone Paper Scissors Game -->
-                    <div class="swiper-slide">
-                        <div class="bg-black/90 rounded-lg shadow-xl p-6">
-                            <div class="flex flex-col md:flex-row gap-8">
-                                <!-- Image Container -->
-                                <div class="md:w-[300px] flex-shrink-0">
-                                    <img src="./assets/images/Stone.png" alt="Stone Paper Scissors Game" 
-                                        class="w-full h-[250px] object-cover rounded-lg shadow-lg hover:scale-105 duration-300">
-                                </div>
-                                
-                                <!-- Content Container -->
-                                <div class="flex-1 text-white">
-                                    <h3 class="text-2xl font-bold mb-4">Stone Paper Scissors Game</h3>
-                                    
-                                    <!-- Tools -->
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">HTML</span>
-                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">CSS</span>
-                                        <span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/20 transition-colors">JavaScript</span>
-                                    </div>
-                                    
-                                    <!-- Description -->
-                                    <div class="text-gray-300 space-y-4 mb-6">
-                                        <p class="text-sm">
-                                            An interactive Stone Paper Scissors game built with HTML, CSS, and JavaScript. The game allows the user to play against a virtual opponent.
-                                        </p>
-                                        <p class="text-sm">
-                                            Includes a dynamic scoreboard and a fun visual design that changes based on the game outcome.
-                                        </p>
-                                        
-                                        <!-- Features -->
-                                        <div class="mt-4">
-                                            <h4 class="text-white font-semibold mb-2">Key Features:</h4>
-                                            <ul class="list-disc ml-5 text-sm space-y-1">
-                                                <li>Score tracking</li>
-                                                <li>Random opponent choices</li>
-                                                <li>Responsive design</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Buttons -->
-                                    <div class="flex gap-4">
-                                        <a href="https://github.com/ayushpratapsingh1/Stone-Paper-Scissor-Game" target ="_blank" class="bg-white text-[#781c9c] px-6 py-2 rounded-full font-bold hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm">GitHub</a>
-                                        <a href="https://ayushpratapsingh1.github.io/Stone-Paper-Scissor-Game/" target ="_blank" class="bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white px-6 py-2 rounded-full font-bold
-                                        hover:scale-105 transition-all duration-300 text-sm">Live Site</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <!-- Superstore Data Analysis -->
                     <div class="swiper-slide">
                         <div class="bg-black/90 rounded-lg shadow-xl p-6">
@@ -621,13 +668,12 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
                 <!-- Navigation Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next hidden md:block hover:scale-110 "></div>
+                <div class="swiper-button-prev hidden md:block hover:scale-110"></div>
                 <!-- Pagination -->
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination hidden md:block hover:scale-110"></div>
             </div>
         </section>   
         <!-- Experience Section -->
@@ -636,71 +682,74 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 relative">
                     My Experience
                 </h2>
-                <div class="relative w-full">
-                    <!-- Vertical Line -->
-                    <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 to-pink-500 transform -translate-x-1/2"></div>
         
+                <div class="relative w-full">
                     <!-- Experience Item 1 -->
-                    <div class="mb-12 md:mb-20 relative">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="flex-1 md:text-right md:pr-8 mb-4 md:mb-0">
-                                <h3 class="text-2xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300">Data Science Intern</h3>
-                                <p class="text-purple-400 font-semibold">Bharat Intern | Mar 2024 - Apr 2024</p>
-                            </div>
-                            <div class="w-12 h-12 rounded-full border-4 border-purple-600 bg-gray-900 flex items-center justify-center text-white font-bold z-10 mx-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                                </svg>
-                            </div>
-                            <div class="flex-1 md:pl-8">
-                                <p class="text-gray-300 text-sm leading-relaxed">
-                                    Built models for image classification and spam detection using Python, pandas, and scikit-learn. Learned advanced machine learning concepts.
-                                </p>
-                                <ul class="mt-4 text-gray-400 text-sm list-disc list-inside">
-                                    <li>Implemented image classification models with 90% accuracy</li>
-                                    <li>Developed spam detection algorithms using NLP techniques</li>
-                                    <li>Collaborated with a team of 5 data scientists on various projects</li>
-                                </ul>
-                            </div>
+                    <div class="mb-12 md:mb-20 relative flex flex-col md:flex-row items-center">
+                        
+                        <!-- Icon -->
+                        <div class="w-12 h-12 rounded-full border-4 border-purple-600 bg-gray-900 flex items-center justify-center text-white font-bold mx-auto md:mx-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                            </svg>
+                        </div>
+        
+                        <!-- Text Content -->
+                        <div class="mt-4 md:mt-0 md:ml-8 text-center md:text-left">
+                            <h3 class="text-2xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300">
+                                Data Science Intern
+                            </h3>
+                            <p class="text-purple-400 font-semibold mb-2">Bharat Intern | Mar 2024 - Apr 2024</p>
+        
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Built models for image classification and spam detection using Python, pandas, and scikit-learn. Learned advanced machine learning concepts.
+                            </p>
+                            <ul class="mt-4 text-gray-400 text-sm list-disc list-inside">
+                                <li>Implemented image classification models with 77% accuracy</li>
+                                <li>Developed spam detection algorithms using ML Algorithms</li>
+                            </ul>
                         </div>
                     </div>
         
                     <!-- Experience Item 2 -->
-                    <!-- <div class="mb-12 md:mb-20 relative">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="flex-1 md:text-right md:pr-8 mb-4 md:mb-0 order-1 md:order-1">
-                                <h3 class="text-2xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300">Frontend Developer</h3>
-                                <p class="text-purple-400 font-semibold">Bharat Intern | Mar 2024 - May 2024</p>
-                            </div>
-                            <div class="w-12 h-12 rounded-full border-4 border-purple-600 bg-gray-900 flex items-center justify-center text-white font-bold z-10 mx-4 order-2 md:order-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                                </svg>
-                            </div>
-                            <div class="flex-1 md:pl-8 order-3 md:order-3">
-                                <p class="text-gray-300 text-sm leading-relaxed">
-                                    Developed interactive websites with animations using HTML, CSS, and JavaScript. Enhanced user experience and improved website performance by 30%.
-                                </p>
-                                <ul class="mt-4 text-gray-400 text-sm list-disc list-inside">
-                                    <li>Created responsive designs for mobile and desktop platforms</li>
-                                    <li>Implemented modern UI/UX principles to enhance user engagement</li>
-                                    <li>Optimized website load times, resulting in a 30% performance boost</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
+                    <!-- <div class="mb-12 md:mb-20 relative flex flex-col md:flex-row items-center"> -->
+                        <!-- Icon -->
+                        <!-- <div class="w-12 h-12 rounded-full border-4 border-purple-600 bg-gray-900 flex items-center justify-center text-white font-bold mx-auto md:mx-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div> -->
+        
+                        <!-- Text Content -->
+                        <!-- <div class="mt-4 md:mt-0 md:ml-8 text-center md:text-left">
+                            <h3 class="text-2xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300">
+                                Frontend Developer
+                            </h3>
+                            <p class="text-purple-400 font-semibold mb-2">Bharat Intern | Mar 2024 - May 2024</p>
+        
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Developed interactive websites with animations using HTML, CSS, and JavaScript. Enhanced performance and user experience across platforms.
+                            </p>
+                            <ul class="mt-4 text-gray-400 text-sm list-disc list-inside">
+                                <li>Created responsive designs for all devices</li>
+                                <li>Optimized website load times for faster performance</li>
+                                <li>Applied modern UI/UX principles to boost engagement</li>
+                            </ul>
+                        </div> -->
+                    <!-- </div> -->
+        
                 </div>
             </div>
-        </section>
+        </section>  
         <!--Education Section-->
         <section id="education" class="max-w-screen-xl mt-8 mx-auto py-16 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
             <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 relative">
-                    Education
+                    My Education
                 </h2>
                 <div class="relative flex flex-col items-start w-full">
                     <!-- Vertical Line -->
-                    <div class="absolute top-0 left-4 md:left-1/2 w-1 bg-gradient-to-b from-purple-600 to-pink-500 h-full transform -translate-x-1/2"></div>
+                    <div class="absolute top-0 hidden md:block left-4 md:left-1/2 w-1 bg-gradient-to-b from-purple-600 to-pink-500 h-full transform -translate-x-1/2"></div>
         
                     <!-- Education 1 -->
                     <div class="mb-12 flex flex-col md:flex-row items-center md:items-start w-full group">
@@ -743,132 +792,179 @@
             </div>
         </section>
         <!-- My Tech Stack Section -->
-        <section id="tech" class="max-w-7xl mx-auto bg-black/40 mt-8 backdrop-blur-lg rounded-lg p-8" data-aos="slide-up" data-aos-duration="1000">
-            <h3 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8" data-aos="slide-up" data-aos-duration="1000">
+        <section id="tech" class="max-w-7xl mx-auto bg-black/40 mt-8 backdrop-blur-lg rounded-lg p-8 overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8">
                 My Tech Stack
             </h3>
-            <div class="swiper-container2 overflow-x-hidden" data-aos="slide-up" data-aos-duration="1000">
+            <div class="swiper-container2">
                 <div class="swiper-wrapper">
-                    <!-- C++ -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-10 h-10">
+                        <!-- React -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">React</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">C++</span>
-                    </div>
-                    <!-- CSS -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" class="w-10 h-10">
+
+                        <!-- Tailwind -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="./assets/icons/tailwind_css.png" alt="Tailwind" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">Tailwind</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">CSS3</span>
-                    </div>
-                    <!-- Canva -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://www.vectorlogo.zone/logos/canva/canva-icon.svg" alt="Figma" class="w-10 h-10">
+
+                        <!-- Python -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">Python</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Figma</span>
-                    </div>
-                    <!-- HTML
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" class="w-10 h-10">
+
+                        <!-- Puppeteer -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="./assets/icons/puppeteer-0.png" alt="Puppeteer" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">Puppeteer</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">HTML5</span>
-                    </div> -->
-                    <!-- Python -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="w-10 h-10">
+
+                        <!-- JavaScript -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">JavaScript</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Python</span>
-                    </div>
-                    <!-- Java
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" class="w-10 h-10">
+
+                        <!-- Java -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">Java</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Java</span>
-                    </div> -->
-                    <!-- React
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" class="w-10 h-10">
+
+                        <!-- C++ -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">C++</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">React</span>
-                    </div> -->
-                    <!-- Tailwind CSS -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="w-10 h-10">
+
+                        <!-- Git -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">Git</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Tailwind CSS</span>
-                    </div>
-                    <!-- TensorFlow -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" class="w-10 h-10">
+
+                        <!-- GitHub -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">GitHub</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">TensorFlow</span>
-                    </div>
-                    <!-- OpenCV -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" class="w-10 h-10">
+
+                        <!-- Vercel -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/180x180.png" alt="Vercel" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">Vercel</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">OpenCV</span>
-                    </div>
-                    <!-- Pandas -->
-                    <div class=" swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="Pandas" class="w-10 h-10">
+
+                        <!-- Netlify -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/netlify/netlify-original.svg" alt="Netlify" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">Netlify</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Pandas</span>
-                    </div>
-                    <!-- Scikit-Learn -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-Learn" class="w-10 h-10">
+
+                        <!-- Jupyter -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original.svg" alt="Jupyter" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">Jupyter</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Scikit-Learn</span>
-                    </div>
-                    <!-- Figma -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" class="w-10 h-10">
+
+                        <!-- Kaggle -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="./assets/icons/kaggle.png" alt="Kaggle" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">Kaggle</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Figma</span>
-                    </div>
-                    <!-- Seaborn -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn" class="w-10 h-10">
+
+                        <!-- R Studio -->
+                        <div class="swiper-slide">
+                            <div class="group relative w-24 h-24 mx-auto">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                    <img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/RStudio.png" alt="R Studio" class="w-16 h-16">
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-75 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-medium">R Studio</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Seaborn</span>
-                    </div>
-                    <!-- Git -->
-                    <div class="swiper-slide group flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 
-                        transition-all duration-300 transform group-hover:shadow-[0_0_15px_5px_rgba(128,0,128,0.6)]">
-                        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" class="w-10 h-10">
-                        </div>
-                        <span class="mt-2 text-gray-600 text-sm group-hover:text-white transition-colors duration-300">Git</span>
-                    </div>
                 </div>
             </div>
         </section>
@@ -886,7 +982,7 @@
                             Have a question or want to work together? Feel free to reach out!
                         </p>
                         <div class="flex flex-col space-y-4" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
-                            <a href="mailto:ayushpratapds@gmail.com" class="flex items-center text-white hover:text-purple-400 transition-colors duration-300">
+                            <a href="mailto:ayushpratapds@gmail.com" class="flex items-center text-white hover:text-purple-500 transition-colors duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
@@ -908,7 +1004,7 @@
                     </div>
                     <!-- Right Side: Form -->
                     <div class="w-full lg:w-1/2 bg-black/50 backdrop-blur-lg p-8 rounded-lg" data-aos="fade-left" data-aos-duration="1000">
-                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6" name="contactus" id="form">
+                        <form id="contactForm" class="space-y-6" name="contactus">
                             <input type="hidden" name="access_key" value="d8a51c82-84cb-4ab1-8b78-37954d8d7f4c">
                             <!-- Name Field -->
                             <div>
@@ -925,10 +1021,16 @@
                                 <label for="message" class="block text-sm font-medium text-gray-200 mb-2">Message</label>
                                 <textarea id="message" name="message" rows="4" class="w-full p-3 rounded-md border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-300 ease-in-out" placeholder="Write your message" required></textarea>
                             </div>
-                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                            <!-- Status Messages -->
+                            <div id="statusMessage" class="text-center hidden"></div>
                             <!-- Submit Button -->
                             <div>
-                                <button id="btn" type="submit" class="w-full py-3 px-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-md shadow-md hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-300 ease-in-out transform hover:scale-105">
+                                <button id="submitButton" type="submit" 
+                                class="w-full py-3 px-6 bg-gradient-to-r from-[#5e2176b8] to-[#c004ff]
+                                 text-white font-bold rounded-md shadow-md hover:from-purple-700 
+                                 hover:to-indigo-700 focus:outline-none focus:ring-2 
+                                 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800
+                                  transition duration-300 ease-in-out transform hover:scale-105">
                                     Send Message
                                 </button>
                             </div>
@@ -988,25 +1090,6 @@
                     <p class="text-white text-lg italic font-semibold text-center mb-6">
                         "Programs must be written for people to read, and only incidentally for machines to execute."
                     </p>
-        
-                    <!-- Back to Top Button -->
-                    <div class="flex justify-center mb-6">
-                        <button 
-                            onclick="scrollToTop()" 
-                            class="p-3 bg-purple-600 text-white rounded-full shadow-md hover:bg-purple-700 transition duration-300 group relative"
-                            aria-label="Back to top"
-                        >
-                            <!-- Tooltip -->
-                            <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2 bg-purple-700 text-white text-xs rounded-md py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Back to Top
-                            </span>
-                            <!-- Up Arrow Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-                            </svg>
-                        </button>
-                    </div>
-        
                     <!-- Attribution and Copyright -->
                     <div class="flex flex-col sm:flex-row justify-between items-center">
                         <p class="text-gray-400 text-sm mb-2 sm:mb-0">
@@ -1019,12 +1102,41 @@
                 </div>
             </div>
         </footer>
+        <button id="scrollToTopBtn" class="fixed bottom-5 right-5 bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white p-3 
+        rounded-full shadow-lg transition-opacity duration-300 opacity-0 invisible 
+         focus:outline-none hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
     <!-- AOS Library JS -->
+    <script>
+        // Scroll to Top functionality
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 100) {
+                scrollToTopBtn.classList.remove("opacity-0", "invisible");
+                scrollToTopBtn.classList.add("opacity-100", "visible");
+            } else {
+                scrollToTopBtn.classList.add("opacity-0", "invisible");
+                scrollToTopBtn.classList.remove("opacity-100", "visible");
+            }
+        });
+
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script> AOS.init(); </script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
+    <script src="contact.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
     </body>
 </html>
