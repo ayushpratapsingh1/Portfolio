@@ -1,9 +1,6 @@
-//--------------------------------------------------------------Typewriter effect
+//-------------------------------------------------------------- Typewriter Effect
 const words = ["I'm Pre-final Year Student", "I'm an Aspiring Software Engineer", "Dream Big Aim High"];
-let i = 0;
-let j = 0;
-let currentWord = "";
-let isDeleting = false;
+let i = 0, j = 0, currentWord = "", isDeleting = false;
 
 function type() {
   currentWord = words[i];
@@ -27,8 +24,7 @@ function type() {
 type();
 
 
-
-//---------------------------------------------------------------------- Modal about me pop-up
+//-------------------------------------------------------------- Modal: About Me Pop-up
 const aboutMeBtn = document.getElementById("aboutMeBtn");
 const aboutModal = document.getElementById("aboutModal");
 const closeModal = document.getElementById("closeModal");
@@ -40,17 +36,16 @@ aboutMeBtn.addEventListener("click", () => {
     mainContent.classList.add("blurred-bg", "no-pointer-events");
 });
 
-closeModal.addEventListener("click", closeModalFunction);
-outsideClick.addEventListener("click", closeModalFunction);
-
 function closeModalFunction() {
     aboutModal.classList.add("hidden");
     mainContent.classList.remove("blurred-bg", "no-pointer-events");
 }
 
+closeModal.addEventListener("click", closeModalFunction);
+outsideClick.addEventListener("click", closeModalFunction);
 
 
-// --------------------------------------------Scroll to "My Works" section on button click
+//-------------------------------------------------------------- Scroll to "My Works" Section
 document.getElementById("myWorksButton").addEventListener("click", () => {
     window.scrollTo({
         top: window.scrollY + window.innerHeight * 0.96, 
@@ -59,23 +54,44 @@ document.getElementById("myWorksButton").addEventListener("click", () => {
 });
 
 
-//-------------------------------------------------------- Swiper setup
+//-------------------------------------------------------------- Swiper Initialization
+// Project Swiper
 new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 20,
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
+// Tech Stack Swiper
+new Swiper('.swiper-container2', {
+    slidesPerView: 5, 
+    spaceBetween: 5,
     loop: true,
     autoplay: {
-        delay: 10000,
+        delay: 1000,
         disableOnInteraction: false,
+    },
+    breakpoints: {
+        640: { slidesPerView: 4 },
+        768: { slidesPerView: 7 },
+        1024: { slidesPerView: 10 },
     },
 });
 
 
-//-------------------------------------------------------- Loading screen fade-out
+//-------------------------------------------------------------- Loading Screen Fade-Out
 window.addEventListener("load", () => {
     const loadingScreen = document.getElementById("loading-screen");
     loadingScreen.style.opacity = 0;
@@ -86,27 +102,26 @@ window.addEventListener("load", () => {
 });
 
 
-//---------------------------------------------------- Navbar and mobile menu functionality
+//-------------------------------------------------------------- Navbar and Mobile Menu Functionality
 const navbarToggle = document.getElementById("navbar-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
 const closeMobileMenu = document.getElementById("close-mobile-menu");
 const mobileLinks = mobileMenu.querySelectorAll("a");
 
-// Open mobile menu on button click
+// Open mobile menu
 navbarToggle.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
     mobileMenu.classList.toggle("flex");
 });
 
-// Close mobile menu on close button click
+// Close mobile menu
 closeMobileMenu.addEventListener("click", () => {
     mobileMenu.classList.add("hidden");
     mobileMenu.classList.remove("flex");
 });
 
-// Close mobile menu if clicked outside (on the overlay)
+// Close on outside click
 window.addEventListener("click", (e) => {
-    // Close the menu only if clicked on the overlay, but not on the links or the toggle button
     if (mobileMenu.classList.contains("flex") && !mobileMenu.contains(e.target) && !navbarToggle.contains(e.target)) {
         mobileMenu.classList.add("hidden");
         mobileMenu.classList.remove("flex");
@@ -121,93 +136,93 @@ mobileLinks.forEach(link => {
     });
 });
 
-//--------------------------------------------Show the tooltip when hovering over the button
+
+//-------------------------------------------------------------- Tooltip for Buttons
 const button = document.querySelector('button');
 const tooltip = document.querySelector('.tooltip');
 
-button.addEventListener('mouseenter', () => {
-    tooltip.classList.remove('opacity-0'); // Make the tooltip visible
-    tooltip.classList.add('opacity-100');  // Add the opacity transition
-});
+button.addEventListener('mouseenter', () => tooltip.classList.replace('opacity-0', 'opacity-100'));
+button.addEventListener('mouseleave', () => tooltip.classList.replace('opacity-100', 'opacity-0'));
 
-button.addEventListener('mouseleave', () => {
-    tooltip.classList.remove('opacity-100'); // Hide the tooltip
-    tooltip.classList.add('opacity-0');  // Add the opacity transition
-});
 
-//----------------------------------------Scroll to the top of the page when the button is clicked
+//-------------------------------------------------------------- Scroll to Top Function
 function scrollToTop() {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'  // Smooth scrolling effect
+        behavior: 'smooth'
     });
 }
 
 
-//--------------------------------------------- Smooth Scrolling for navigation
+//-------------------------------------------------------------- Smooth Scrolling for Navigation
 document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
       e.preventDefault();
       const target = document.querySelector(e.target.getAttribute('href'));
       window.scrollTo({
-          top: target.offsetTop - 50, // Add margin-top for offset
+          top: target.offsetTop - 50,
           behavior: 'smooth'
       });
   });
 });
 
-// ---------------------------------------------Service card functionality
+
+//-------------------------------------------------------------- Service Card Functionality
 const serviceCards = document.querySelectorAll('.service-card');
 
-// Function to reset all cards
-const resetCards = () => {
-  serviceCards.forEach(c => {
-    c.classList.remove('clicked');
-    c.querySelector('.description').classList.add('hidden');
+// Reset all service cards
+function resetCards() {
+  serviceCards.forEach(card => {
+    card.classList.remove('clicked');
+    card.querySelector('.description').classList.add('hidden');
   });
-};
+}
 
-// Add click event listener to each service card
+// Toggle service card on click
 serviceCards.forEach(card => {
   card.addEventListener('click', (event) => {
-    // Prevent the click event from propagating to the document
     event.stopPropagation();
-
-    // Reset all cards to their initial state
     resetCards();
-
-    // Apply the clicked state to the current card
     card.classList.add('clicked');
     card.querySelector('.description').classList.remove('hidden');
   });
 });
 
-// Add click event listener to the document
-document.addEventListener('click', () => {
-  // Reset all cards when clicking outside of them
-  resetCards();
+// Close cards when clicking outside
+document.addEventListener('click', resetCards);
+
+
+//-------------------------------------------------------------- Particle Animations
+const particleConfig = {
+    particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 6 }
+    },
+    interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } }
+    },
+    retina_detect: true
+};
+
+// Initialize particles for all containers
+document.querySelectorAll('.particle-container').forEach((container, index) => {
+    particlesJS(`particles-${index + 1}`, particleConfig);
 });
 
-// -----------------------------------------------------Swiper setup 2
-const swiper = new Swiper('.swiper-container2', {
-    slidesPerView: 5, // Adjust number of cards shown
-    spaceBetween: 5,
-    loop: true,
-    autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        640: { slidesPerView: 4 },
-        768: { slidesPerView: 7 },
-        1024: { slidesPerView: 10 },
-    },
-});
 
-// ---------------------------------------------------Form submission
+//-------------------------------------------------------------- Form Submission
 document.getElementById("form").onsubmit = function() {
-    setTimeout(()=>{
+    setTimeout(() => {
         scrollToTop();
         document.getElementById("form").reset();
     }, 1000);
 };
+
+
+//-------------------------------------------------------------- Animate on Scroll (AOS)
+document.addEventListener('DOMContentLoaded', () => AOS.init());
