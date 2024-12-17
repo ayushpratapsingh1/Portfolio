@@ -39,6 +39,7 @@ Follow these steps to set up the project locally:
   - The website will be available at http://localhost:3000.
 
 4. **Build for Production:**
+   
    ```bash
    npm run build
   - The optimized files will be in the dist/ or build/ folder.
