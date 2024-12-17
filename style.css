@@ -64,12 +64,13 @@ section {
 }
 
 .nav-link {
-  transition: color 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .nav-link:hover
 {
-  color: #9b5de5; /* Tailwind's purple-500 color */
+  color: #9b5de5;
+  scale: 1.2; /* Tailwind's purple-500 color */
 }
 /* Hide scrollbar when mobile menu is open */
 .overflow-hidden {
