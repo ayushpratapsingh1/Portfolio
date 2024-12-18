@@ -1,89 +1,155 @@
-#wrapper-canvas canvas{
-    max-width:100%;
+/* ================================
+   General Styles
+================================ */
+
+/* Wrapper canvas styling */
+#wrapper-canvas canvas {
+  max-width: 100%;
 }
+
+/* Remove pointer events */
 .pointer-events-none {
-    pointer-events: none !important;
-}
-.blurred-bg {
-    filter: blur(5px);
+  pointer-events: none !important;
 }
 .no-pointer-events {
-    pointer-events: none;
+  pointer-events: none;
 }
+
+/* Blurred background effect */
+.blurred-bg {
+  filter: blur(5px);
+}
+
+/* Disable scrolling */
 .no-scroll {
   overflow: hidden;
 }
-/* Apply animation */
-@keyframes slideright {
-    0% {
-      transform: translateX(50px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-.animate-slide-right {
-    animation: slideright 1s ease-out;
-  }
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-.animate-fade-in {
-    animation: fade-in 2s ease-in-out;
-  }
 
-
-
-/* Swiper Slide */
-.swiper-slide { /* Full width of the container */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* Smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
 }
-/* Swiper Navigation Buttons */
-.loader {
-  animation: spin 2s linear infinite;
-}
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Centering content on click with margin adjustment */
-section {
-  transition: margin-top 0.3s ease-in-out;
-}
-
-.nav-link {
-  transition: 0.3s ease-in-out;
-}
-
-.nav-link:hover
-{
-  color: #9b5de5;
-  scale: 1.2; /* Tailwind's purple-500 color */
-}
-/* Hide scrollbar when mobile menu is open */
+/* Hide scrollbar for specific elements */
 .overflow-hidden {
   overflow: hidden;
 }
 
+/* Disable user text selection */
+body {
+  user-select: none;
+}
+
+/* ================================
+   Animations
+================================ */
+
+/* Slide-right animation */
+@keyframes slideright {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slide-right {
+  animation: slideright 1s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 2s ease-in-out;
+}
+
+/* Spin loader animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  animation: spin 2s linear infinite;
+}
+
+/* Blob animation */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+.animate-blob {
+  animation: blob 7s infinite;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* ================================
+   Navigation Links
+================================ */
+
+/* Navigation link hover effect */
+.nav-link {
+  transition: 0.3s ease-in-out;
+}
+.nav-link:hover {
+  color: #9b5de5; /* Tailwind's purple-500 */
+  scale: 1.2;
+}
+
+/* ================================
+   Swiper Components
+================================ */
+
+/* Swiper slide styling */
+.swiper-slide {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.swiper-container2 {
+  overflow: visible !important;
+}
+.swiper-wrapper {
+  align-items: center;
+}
+
+/* ================================
+   Service Cards
+================================ */
+
+/* Click effect on service card */
 .service-card.clicked {
   transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(128, 0, 128, 0.8); /* Purple glow on click */
+  box-shadow: 0 0 25px rgba(128, 0, 128, 0.8); /* Purple glow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
+/* Particle effect on hover */
 .particle-container {
   position: absolute;
   width: 100%;
@@ -97,10 +163,12 @@ section {
 .service-card:hover .particle-container {
   opacity: 1;
 }
+
+/* 3D flip effect */
 .service-card {
   perspective: 1000px;
   transform-style: preserve-3d;
-  pointer-events:auto;
+  pointer-events: auto;
 }
 .card-content {
   transition: transform 0.6s;
@@ -121,53 +189,42 @@ section {
   transform: rotateY(180deg);
 }
 
-.swiper-container2 {
-  overflow: visible !important;
-}
-.swiper-wrapper {
-  align-items: center;
+/* ================================
+   Social Menu
+================================ */
+
+/* Social menu hover effect */
+.social-menu {
+  transition: transform 0.3s ease-in-out;
 }
 
+/* Responsive adjustments for social menu */
+@media (max-width: 768px) {
+  .social-menu {
+    transform: translateX(calc(100% - 5px)); /* Show a small peek */
+  }
+  .social-menu:hover,
+  .social-menu.active {
+    transform: translateX(0);
+  }
+}
+
+/* Social link hover effect */
+.social-link {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ================================
+   Selection and Section Styles
+================================ */
+
+/* Custom text selection style */
 ::selection {
   background: none;
   color: inherit;
 }
 
-body {
-  user-select: none;
-}
-@keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
-}
-.animate-blob {
-  animation: blob 7s infinite;
-}
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-
-.social-menu {
-  transition: transform 0.3s ease-in-out;
-}
-
-@media (max-width: 768px) {
-  .social-menu {
-      transform: translateX(calc(100% - 5px)); /* Show small peek of menu */
-  }
-  
-  .social-menu:hover,
-  .social-menu.active {
-      transform: translateX(0);
-  }
-}
-
-.social-link {
-  transition: all 0.3s ease-in-out;
+/* Section margin adjustment on click */
+section {
+  transition: margin-top 0.3s ease-in-out;
 }
