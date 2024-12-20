@@ -110,18 +110,6 @@ body {
   animation-delay: 4s;
 }
 
-/* ================================
-   Navigation Links
-================================ */
-
-/* Navigation link hover effect */
-.nav-link {
-  transition: 0.3s ease-in-out;
-}
-.nav-link:hover {
-  color: #9b5de5; /* Tailwind's purple-500 */
-  scale: 1.2;
-}
 
 /* ================================
    Swiper Components
@@ -228,3 +216,31 @@ body {
 section {
   transition: margin-top 0.3s ease-in-out;
 }
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.5s ease-out forwards;
+}
+/* Add these styles for the auto-hidable header */
+header {
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+}
+

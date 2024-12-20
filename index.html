@@ -28,6 +28,7 @@
     <script src = "./script.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class = "bg-[#111] text-white font-['Nunito']" >
         <!-- Loading Screen -->
@@ -38,84 +39,138 @@
               <p class="text-white text-lg">Loading, please wait...</p>
             </div>
         </div>
+        <header class="fixed top-4 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 z-40">
+            <div class="rounded-full bg-black/10 backdrop-blur-md border border-white/10 ">
+                <div class="h-16 px-6 flex items-center justify-between relative z-40">
+                    <!-- Logo -->
+                    <a href="#home" class="relative w-12 h-12 flex items-center animate-fadeInDown" style="animation-delay: 0s;">
+                        <img 
+                            class="w-full h-full object-contain" 
+                            src="./assets/images/APS_transparent-.png" 
+                            alt="Logo"
+                        />
+                    </a>
+    
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden lg:flex items-center justify-center gap-2">
+                        <a href="#home" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                            <i data-lucide="home" class="w-5 h-5"></i>
+                            <span class="sr-only">Home</span>
+                            <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                Home
+                            </div>
+                        </a>
+                        <a href="#project" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                            <i data-lucide="folder" class="w-5 h-5"></i>
+                            <span class="sr-only">Projects</span>
+                            <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                Projects
+                            </div>
+                        </a>
+                        <a href="#experience" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                            <i data-lucide="briefcase" class="w-5 h-5"></i>
+                            <span class="sr-only">Experience</span>
+                            <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                Experience
+                            </div>
+                        </a>
+                        <a href="#education" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                            <span class="sr-only">Education</span>
+                            <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                Education
+                            </div>
+                        </a>
+                        <a href="#tech" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                            <i data-lucide="code-2" class="w-5 h-5"></i>
+                            <span class="sr-only">Tech Stack</span>
+                            <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                Tech Stack
+                            </div>
+                        </a>
+                        <a href="#contact" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span class="sr-only">Contact</span>
+                            <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                Contact
+                            </div>
+                        </a>
+                    </nav>
+    
+                    <!-- Right Corner - Phone -->
+                    <div class="flex items-center gap-2">
+                        <a href="tel:+918470922268" class="hidden lg:flex p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown" style="animation-delay: 0.7s;">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            <span class="sr-only">Call</span>
+                            <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                Call
+                            </div>
+                        </a>
+    
+                        <!-- Mobile Menu Button -->
+                        <button 
+                            id="navbar-toggle" 
+                            class="lg:hidden p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors animate-fadeInDown"
+                            style="animation-delay: 0.7s;"
+                            aria-label="Toggle menu"
+                        >
+                            <i data-lucide="menu" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-2 p-4 rounded-xl bg-black/90 backdrop-blur-md border border-white/10">
+                <nav class="flex flex-col gap-4">
+                    <a href="#home" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                        <i data-lucide="home" class="w-5 h-5"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#project" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                        <i data-lucide="folder" class="w-5 h-5"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#experience" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                        <span>Experience</span>
+                    </a>
+                    <a href="#education" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                        <span>Education</span>
+                    </a>
+                    <a href="#tech" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                        <span>Tech Stack</span>
+                    </a>
+                    <a href="#contact" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span>Contact</span>
+                    </a>
+                    <a href="tel:+918470922268" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        <span>Call</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <!-- <main id="main-content" class="mx-auto"> -->
         <!-- Home Section -->
         <section class = "flex flex-col justify-between h-screen " id="home">
-            <header class="fixed top-0 left-0 w-full bg-black/10 backdrop-blur-sm z-40">
-                <div class="max-w-screen-xl mx-auto px-4 h-16 flex items-center justify-between relative">
-                    <!-- Logo -->
-                    <img 
-                        class="w-16 absolute left-4 top-1/2 -translate-y-1/2" 
-                        src="./assets/images/APS_transparent-.png" 
-                        alt="Logo"
-                    />
-        
-                    <!-- Desktop Navigation -->
-                    <nav class="hidden lg:flex w-full justify-center items-center space-x-6">
-                        <a href="#home" class="nav-link text-white">Home</a>
-                        <a href="#project" class="nav-link text-white">Projects</a>
-                        <a href="#experience" class="nav-link text-white">Experience</a>
-                        <a href="#education" class="nav-link text-white">Education</a>
-                        <a href="#tech" class="nav-link text-white">My Tech Stack</a>
-                        <a href="#contact" class="nav-link text-white">Contact Me</a>
-                    </nav>
-        
-                    <!-- Mobile Menu Toggle -->
-                    <button 
-                        id="navbar-toggle" 
-                        class="lg:hidden absolute right-4 text-white"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-        
-                    <!-- Phone Icon -->
-                    <a 
-                        href="tel:+918470922268" 
-                        class="absolute right-16 text-white hidden lg:block"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                    </a>
-                </div>
-                
-            </header>
-            <div 
-                id="mobile-menu" 
-                class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden flex-col justify-center items-center space-y-8 text-center"
-            >
-                <!-- Close Button -->
-                <button 
-                    id="close-mobile-menu" 
-                    class="absolute top-6 right-6 text-white text-4xl animate-spin"
-                >
-                    &times;
-                </button>
-        
-                <!-- Mobile Navigation Links -->
-                <a href="#home" class="nav-link text-white text-2xl">Home</a>
-                <a href="#project" class="nav-link text-white text-2xl">Projects</a>
-                <a href="#experience" class="nav-link text-white text-2xl">Experience</a>
-                <a href="#education" class="nav-link text-white text-2xl">Education</a>
-                <a href="#tech" class="nav-link text-white text-2xl">My Tech Stack</a>
-                <a href="#contact" class="nav-link text-white text-2xl">Contact Me</a>
-                <a href="tel:+918470922268" class="text-white text-2xl mt-4">Call Me</a>
-            </div>
             
             <div class = "fixed inset-0 hidden md:block max-w-full bg-cover" id="wrapper-canvas">
             </div>
             <div class="flex relative top-[40%] md:top-52 pointer-events-none">
                 <div class="w-full max-w-screen-xl mx-auto flex md:flex-row items-center md:items-start">
                     <!-- Left Side: Text -->
-                    <div class="text-center md:text-left md:w-1/2 px-4 md:px-0">
+                    <div class="text-center md:text-left md:w-1/2 px-4 md:px-0"  data-aos="fade-up" data-aos-duration="1000">
                         <h1 class="text-[40px] md:text-[64px] font-['Spartan']" data-aos="slide-up" data-aos-duration="1000">Ayush Pratap Singh</h1>
                         <p class="font-['Merriweather'] text-[12px] md:text-[24px] italic mb-8 md:my-4 animate-pulse duration-1000" data-aos="slide-up" data-aos-duration="1000">- <span id = "typewriter"></span></p>
-                        <button id="aboutMeBtn" class="animate-slide-right py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] hover:scale-110 
+                        <button id="aboutMeBtn" class="animate-slide-right py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#9207c1] hover:scale-110 
                         duration-100 pointer-events-auto">
                         About Me
                         </button>&nbsp;
-                        <button id="aboutMeBtn" class="animate-slide-right py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] hover:scale-110 
+                        <button id="aboutMeBtn" class="animate-slide-right py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#9207c1] hover:scale-110 
                         duration-100 pointer-events-auto"><a href="https://drive.google.com/file/d/1G8VlYc2-4q1qIzKin6ssNGyKU6QNWBdg/view?usp=sharing" target="_blank">
                         View My CV</a>
                         </button>
@@ -127,8 +182,9 @@
                     </div>
                 </div>
             </div>
+            <!-- Social Menu -->
             <ul id="socialMenu" class="social-menu fixed right-4 top-1/3 -translate-y-2/2 bg-white/10 backdrop-blur-lg p-2 
-            rounded-lg shadow-md text-[#b0b2c3] space-y-6 scale-125 duration-100 z-30 cursor-pointer ">
+            rounded-lg shadow-md text-[#b0b2c3] space-y-6 scale-125 duration-100 z-30 cursor-pointer" >
                 <li>
                     <a href="https://www.linkedin.com/in/ayushpratapsingh1/" target="_blank" class="social-link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="hover:text-white block p-2 rounded-lg bg-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 transition-all duration-300 ease-in-out">
@@ -159,8 +215,8 @@
                     </a>
                 </li>
             </ul>
-            <button class = "hidden md:block self-center mb-6 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] relative hover:scale-110
-            duration-100 pointer-events-auto animate-bounce scroll-smooth" id="myWorksButton">My Skills</button>    
+            <button class = "hidden md:block self-center mb-6 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#9207c1] relative hover:scale-110
+            duration-100 animate-pulse" id="myWorksButton">My Skills</button>    
         </section>
         <!-- About Modal -->
         <section>
@@ -169,7 +225,7 @@
                 <div class="absolute inset-0 bg-black/70 backdrop-blur-md" id="outsideClick"></div>
     
                 <!-- Modal Content -->
-                <div class="relative bg-gradient-to-br from-[#5e2176b8] to-indigo-900 text-white 
+                <div class="relative bg-black text-white 
                 rounded-2xl w-full max-w-4xl mx-auto p-6 sm:p-8 flex flex-col md:flex-row 
                 shadow-[0_0_25px_10px_rgba(139,92,246,0.3)] overflow-hidden">
                     
@@ -207,13 +263,6 @@
                             <div class="absolute inset-0 bg-purple-600 rounded-full animate-pulse opacity-75"></div>
                             <img src="./assets/images/octocat-1730282942820.png" alt="About Me" class="relative z-10 w-full h-full object-cover rounded-full border-4 border-white/50">
                         </div>
-                    </div>
-    
-                    <!-- Background Decoration -->
-                    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                        <div class="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-                        <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-                        <div class="absolute -bottom-8 left-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
                     </div>
                 </div>
             </div>
@@ -275,7 +324,7 @@
             </div>
         </section>
         <!-- Projects -->
-        <section id="project" class="max-w-screen-xl mx-auto mt-8 py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="slide-up" data-aos-duration="1000">
+        <section id="project" class="max-w-screen-xl mx-auto mt-60 py-10 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8">
                 My Projects
             </h2>
@@ -674,7 +723,7 @@
             </div>
         </section>   
         <!-- Experience Section -->
-        <section id="experience" class="max-w-screen-xl mt-8 mx-auto py-16 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
+        <section id="experience" class="max-w-screen-xl mt-40  mx-auto py-16 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
             <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 relative">
                     My Experience
@@ -739,7 +788,7 @@
             </div>
         </section>  
         <!--Education Section-->
-        <section id="education" class="max-w-screen-xl mt-8 mx-auto py-16 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
+        <section id="education" class="max-w-screen-xl mt-40  mx-auto py-16 px-4 bg-black/40 backdrop-blur-lg rounded-lg relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
             <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 relative">
                     My Education
@@ -789,7 +838,7 @@
             </div>
         </section>
         <!-- My Tech Stack Section -->
-        <section id="tech" class="max-w-7xl mx-auto bg-black/40 mt-8 backdrop-blur-lg rounded-lg p-8 overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
+        <section id="tech" class="max-w-7xl mx-auto bg-black/40 mt-40  backdrop-blur-lg rounded-lg p-8 overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
             <h3 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8">
                 My Tech Stack
             </h3>
@@ -966,7 +1015,7 @@
             </div>
         </section>
         <!-- Contact Section -->
-        <section id="contact" class="py-16 flex justify-center items-center max-w-screen-xl mx-auto px-4 relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
+        <section id="contact" class="py-16 flex mt-40 justify-center items-center max-w-screen-xl mx-auto px-4 relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
             <div class="absolute inset-0"></div>
             <div class="w-full lg:w-5/6 bg-black/60 backdrop-blur-md rounded-2xl p-8 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center">
@@ -1023,10 +1072,10 @@
                             <!-- Submit Button -->
                             <div>
                                 <button id="submitButton" type="submit" 
-                                class="w-full py-3 px-6 bg-gradient-to-r from-[#5e2176b8] to-[#c004ff]
-                                 text-white font-bold rounded-md shadow-md hover:from-purple-700 
-                                 hover:to-indigo-700 focus:outline-none focus:ring-2 
-                                 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800
+                                class="w-full py-3 px-6 bg-gradient-to-r from-[#5e2176b8] to-[#9207c1]
+                                 text-white font-bold rounded-md shadow-md hover:from-purple-500 
+                                 hover:to-pink-600 focus:outline-none focus:ring-2 
+                                 focus:ring-purple-900 
                                   transition duration-300 ease-in-out transform hover:scale-105">
                                     Send Message
                                 </button>
@@ -1036,6 +1085,7 @@
                 </div>
             </div>
         </section>
+        <!-- </main> -->
         <!-- Footer Section -->
         <footer class="bg-black/50 backdrop-blur-md py-12 px-4">
             <div class="container mx-auto max-w-6xl">
@@ -1099,7 +1149,7 @@
                 </div>
             </div>
         </footer>
-        <button id="scrollToTopBtn" class="fixed bottom-5 right-5 bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white p-3 
+        <button id="scrollToTopBtn" class="fixed bottom-5 right-5 bg-gradient-to-r from-[#5e2176b8] to-[#9207c1] text-white p-3 
         rounded-full shadow-lg transition-opacity duration-300 opacity-0 invisible 
          focus:outline-none hover:scale-110">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1172,6 +1222,10 @@
         });
         </script>
     <script src="contact.js"></script>
+    <script>
+        // Make sure this runs after the Lucide library is loaded
+        lucide.createIcons();
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
