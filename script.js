@@ -18,7 +18,7 @@ function type() {
       isDeleting = true;
     }
   }
-  setTimeout(type, 100);
+  setTimeout(type, 80);
 }
 
 type();
@@ -149,6 +149,9 @@ const navbarToggle = document.getElementById('navbar-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 
         navbarToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
