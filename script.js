@@ -112,38 +112,6 @@ window.addEventListener("load", () => {
 
 
 //-------------------------------------------------------------- Navbar and Mobile Menu Functionality
-// const navbarToggle = document.getElementById("navbar-toggle");
-// const mobileMenu = document.getElementById("mobile-menu");
-// const closeMobileMenu = document.getElementById("close-mobile-menu");
-// const mobileLinks = mobileMenu.querySelectorAll("a");
-
-// // Open mobile menu
-// navbarToggle.addEventListener("click", () => {
-//     mobileMenu.classList.toggle("hidden");
-//     mobileMenu.classList.toggle("flex");
-// });
-
-// // Close mobile menu
-// closeMobileMenu.addEventListener("click", () => {
-//     mobileMenu.classList.add("hidden");
-//     mobileMenu.classList.remove("flex");
-// });
-
-// // Close on outside click
-// window.addEventListener("click", (e) => {
-//     if (mobileMenu.classList.contains("flex") && !mobileMenu.contains(e.target) && !navbarToggle.contains(e.target)) {
-//         mobileMenu.classList.add("hidden");
-//         mobileMenu.classList.remove("flex");
-//     }
-// });
-
-// // Close mobile menu when a link is clicked
-// mobileLinks.forEach(link => {
-//     link.addEventListener("click", () => {
-//         mobileMenu.classList.add("hidden");
-//         mobileMenu.classList.remove("flex");
-//     });
-// });
 
 const navbarToggle = document.getElementById('navbar-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
