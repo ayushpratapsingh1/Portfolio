@@ -122,6 +122,7 @@ button.addEventListener('mouseleave', () => tooltip.classList.replace('opacity-1
 
 //-------------------------------------------------------------- Smooth Scrolling for Navigation
 document.querySelectorAll('.nav-item, .mobile-nav-link').forEach(link => {
+  if(link.href.includes('#')) {
     link.addEventListener('click', (e) => {
       e.preventDefault(); // Prevent the default anchor click behavior
       const targetSelector = link.getAttribute('href');
@@ -135,7 +136,8 @@ document.querySelectorAll('.nav-item, .mobile-nav-link').forEach(link => {
         console.warn(`Target not found for selector: ${targetSelector}`);
       }
     });
-  });
+  }
+});
   
 
 
