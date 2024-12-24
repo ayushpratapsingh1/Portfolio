@@ -43,35 +43,6 @@ body {
 /* ================================
    Animations
 ================================ */
-
-/* Slide-right animation */
-@keyframes slideright {
-  0% {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.animate-slide-right {
-  animation: slideright 1s ease-out;
-}
-
-/* Fade-in animation */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.animate-fade-in {
-  animation: fade-in 2s ease-in-out;
-}
-
 /* Spin loader animation */
 @keyframes spin {
   0% {
