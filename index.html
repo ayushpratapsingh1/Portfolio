@@ -89,7 +89,7 @@
                                 Tech Stack
                             </div>
                         </a>
-                        <a href="./contact.html" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                        <a href="#contact" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
                             <i data-lucide="mail" class="w-5 h-5"></i>
                             <span class="sr-only">Contact</span>
                             <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
@@ -144,7 +144,7 @@
                         <i data-lucide="code-2" class="w-5 h-5"></i>
                         <span>Tech Stack</span>
                     </a>
-                    <a href="./contact.html" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                    <a href="#contact" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
                         <i data-lucide="mail" class="w-5 h-5"></i>
                         <span>Contact</span>
                     </a>
@@ -613,6 +613,72 @@
                                 </div>
                             </div>
                         </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" 
+        class="py-16 flex mt-40 justify-center items-center max-w-screen-xl mx-auto px-4 relative 
+        overflow-hidden mb-3 " data-aos="fade-up" data-aos-duration="1000">
+        <div class="w-full lg:w-5/6 bg-black/60 backdrop-blur-md rounded-2xl p-8 relative z-10
+        hover:shadow-[0_0_25px_10px_rgba(139,92,246,0.3)] transition duration-300">
+            <div class="flex flex-col lg:flex-row items-center">
+                    <!-- Left Side: Contact Me -->
+                    <div class="w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0 lg:pr-8">
+                        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6" data-aos="fade-right" data-aos-duration="1000">
+                            Let's Connect
+                        </h2>
+                        <p class="text-gray-300 mb-8 text-lg" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                            Have a question or want to work together? Feel free to reach out!
+                        </p>
+                        <div class="flex flex-col space-y-4" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
+                            <a href="mailto:ayushpratapds@gmail.com" class="flex items-center text-white hover:text-purple-500 transition-colors duration-300">
+                                <i data-lucide="mail" class="w-5 h-5"></i>&nbsp;
+                                ayushpratapds@gmail.com
+                            </a>
+                            <a href="https://linkedin.com/in/ayushpratapsingh1" target="_blank" rel="noopener noreferrer" class="flex items-center text-white hover:text-purple-400 transition-colors duration-300">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>&nbsp;
+                                LinkedIn Profile
+                            </a>
+                            <a href="https://github.com/ayushpratapsingh1" target="_blank" rel="noopener noreferrer" class="flex items-center text-white hover:text-purple-400 transition-colors duration-300">
+                                <i data-lucide="github" class="w-5 h-5"></i>&nbsp;
+                                GitHub Profile
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Right Side: Form -->
+                    <div class="w-full lg:w-1/2 bg-black/50 backdrop-blur-lg p-8 rounded-lg" data-aos="fade-left" data-aos-duration="1000">
+                        <form id="contactForm" class="space-y-6" name="contactus">
+                            <input type="hidden" name="access_key" value="d8a51c82-84cb-4ab1-8b78-37954d8d7f4c">
+                            <!-- Name Field -->
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-200 mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="w-full p-3 rounded-md border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-300 ease-in-out" placeholder="Enter your name" required>
+                            </div>
+                            <!-- Email Field -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-200 mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full p-3 rounded-md border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-300 ease-in-out" placeholder="Enter your email" required>
+                            </div>
+                            <!-- Message Field -->
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-200 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full p-3 rounded-md border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-300 ease-in-out" placeholder="Write your message" required></textarea>
+                            </div>
+                            <!-- Status Messages -->
+                            <div id="statusMessage" class="text-center hidden"></div>
+                            <!-- Submit Button -->
+                            <div>
+                                <button id="submitButton" type="submit" 
+                                class="w-full py-3 px-6 bg-gradient-to-r from-[#5e2176b8] to-[#9207c1]
+                                 text-white font-bold rounded-md shadow-md hover:from-purple-500 
+                                 hover:to-pink-600 focus:outline-none focus:ring-2 
+                                 focus:ring-purple-900 
+                                  transition duration-300 ease-in-out transform hover:scale-105">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
