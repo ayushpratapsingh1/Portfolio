@@ -2,11 +2,6 @@
    General Styles
 ================================ */
 
-/* Wrapper canvas styling */
-#wrapper-canvas canvas {
-  max-width: 100%;
-}
-
 /* Remove pointer events */
 .pointer-events-none {
   pointer-events: none !important;
@@ -80,8 +75,24 @@ body {
 .animation-delay-4000 {
   animation-delay: 4s;
 }
-
-
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+.slider {
+  animation: slide 60s linear infinite;
+}
+.slider:hover {
+  animation-play-state: paused;
+}
 /* ================================
    Swiper Components
 ================================ */
@@ -105,7 +116,7 @@ body {
 .service-card.clicked {
   transform: scale(1.1);
   box-shadow: 0 0 25px rgba(128, 0, 128, 0.8); /* Purple glow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;;
 }
 
 /* Particle effect on hover */

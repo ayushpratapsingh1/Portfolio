@@ -129,7 +129,7 @@ document.querySelectorAll('.nav-item, .mobile-nav-link').forEach(link => {
       const target = document.querySelector(targetSelector);
       if (target) {
         window.scrollTo({
-          top: target.offsetTop - 90,
+          top: target.offsetTop - 40,
           behavior: 'smooth'
         });
       } else {
@@ -164,29 +164,6 @@ serviceCards.forEach(card => {
 
 // Close cards when clicking outside
 document.addEventListener('click', resetCards);
-
-
-//-------------------------------------------------------------- Particle Animations
-const particleConfig = {
-    particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5 },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-        move: { enable: true, speed: 6 }
-    },
-    interactivity: {
-        events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } }
-    },
-    retina_detect: true
-};
-
-// Initialize particles for all containers
-document.querySelectorAll('.particle-container').forEach((container, index) => {
-    particlesJS(`particles-${index + 1}`, particleConfig);
-});
 
 
 //-------------------------------------------------------------- Animate on Scroll (AOS)
