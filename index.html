@@ -31,6 +31,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./dynamicproject.js"></script>
     <style></style>
 </head>
 <body class = "bg-black text-white font-['Nunito']" >
@@ -43,8 +44,8 @@
             </div>
         </div>
         <div id="tsparticles"></div>
-        <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 z-40">
-            <div class="rounded-b-lg bg-black/10 backdrop-blur-sm ">
+        <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 z-40 ">
+            <div class="rounded-b-lg bg-black/10 backdrop-blur-sm">
                 <div class="h-16 px-6 flex items-center justify-between relative z-40">
                     <!-- Logo -->
                     <a href="#home" class="relative w-12 h-12 flex items-center animate-fadeInDown" style="animation-delay: 0s;">
@@ -57,22 +58,30 @@
     
                     <!-- Desktop Navigation -->
                     <nav class="hidden lg:flex items-center justify-center gap-6">
-                        <a href="#home" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
-                            <i data-lucide="home" class="w-5 h-5"></i>
+                        <a href="#home" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full 
+                        transition-colors group animate-fadeInDown">
+                            <i data-lucide="skull" class="w-5 h-5"></i>
                             <span class="sr-only">Home</span>
                             <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
                                 Home
                             </div>
                         </a>
-                        <a href="./projects.html" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                        <a href="#skills" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
                             <i data-lucide="folder" class="w-5 h-5"></i>
+                            <span class="sr-only">Skills</span>
+                            <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                Skills
+                            </div>
+                        </a>
+                        <a href="#projects" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                            <i data-lucide="briefcase" class="w-5 h-5"></i>
                             <span class="sr-only">Projects</span>
                             <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
                                 Projects
                             </div>
                         </a>
                         <a href="#experience" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
-                            <i data-lucide="briefcase" class="w-5 h-5"></i>
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
                             <span class="sr-only">Experience</span>
                             <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
                                 Experience
@@ -128,15 +137,19 @@
             <div id="mobile-menu" class="hidden lg:hidden mt-2 p-4 rounded-xl bg-black/90 backdrop-blur-md border border-white/10">
                 <nav class="flex flex-col gap-4">
                     <a href="#home" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
-                        <i data-lucide="home" class="w-5 h-5"></i>
+                        <i data-lucide="skull" class="w-5 h-5"></i>
                         <span>Home</span>
                     </a>
-                    <a href="./projects.html" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                    <a href="#skills" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
                         <i data-lucide="folder" class="w-5 h-5"></i>
+                        <span>Skills</span>
+                    </a>
+                    <a href="#projects" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
                         <span>Projects</span>
                     </a>
                     <a href="#experience" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
-                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
                         <span>Experience</span>
                     </a>
                     <a href="#education" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
@@ -160,18 +173,20 @@
         </header>
         <!-- Home Section -->
         <section class = "flex flex-col justify-between h-screen" id="home">
-            <div class="flex relative top-[40%] md:top-52 pointer-events-none">
+            <div class="flex relative justify-center items-center h-full pointer-events-none">
                 <div class="w-full max-w-screen-xl mx-auto flex md:flex-row items-center md:items-start">
                     <!-- Left Side: Text -->
                     <div class="text-center md:text-left md:w-1/2 px-4 md:px-0"  data-aos="fade-up" data-aos-duration="1000">
                         <h1 class="text-[40px] md:text-[64px] font-['Spartan']" data-aos="slide-up" data-aos-duration="1000">Ayush Pratap Singh</h1>
-                        <p class="font-['Merriweather'] text-[12px] md:text-[24px] italic mb-8 md:my-4 animate-pulse duration-1000" data-aos="slide-up" data-aos-duration="1000">- <span id = "typewriter"></span></p>
+                        <p class="font-['Merriweather'] text-[12px] md:text-[24px] italic mb-8 md:my-4 animate-pulse duration-1000" 
+                        data-aos="slide-up" data-aos-duration="1000">-> <span id = "typewriter"></span></p>
                         <button id="aboutMeBtn" class="animate-slide-right py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#9207c1] hover:scale-110 
-                        duration-100 pointer-events-auto">
+                        duration-400 pointer-events-auto hover:shadow-[0_0_25px_10px_rgba(139,92,246,0.3)]">
                         About Me
-                        </button>&nbsp;
-                        <button id="aboutMeBtn" class="animate-slide-right py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#9207c1] hover:scale-110 
-                        duration-100 pointer-events-auto"><a href="https://drive.google.com/file/d/1G8VlYc2-4q1qIzKin6ssNGyKU6QNWBg/view?usp=sharing" target="_blank">
+                        </button>&nbsp;&nbsp;&nbsp;
+                        <button id="aboutMeBtn" class="animate-slide-right py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8]
+                         to-[#9207c1] hover:scale-110 hover:shadow-[0_0_25px_10px_rgba(139,92,246,0.3)]
+                        duration-400 pointer-events-auto"><a href="https://drive.google.com/file/d/1G8VlYc2-4q1qIzKin6ssNGyKU6QNWBdg/view" target="_blank">
                         View My CV</a>
                         </button>
                     </div>
@@ -214,9 +229,7 @@
                         </svg>
                     </a>
                 </li>
-            </ul>
-            <button class = "hidden md:block self-center mb-6 py-2 px-5 rounded font-extrabold bg-gradient-to-r from-[#5e2176b8] to-[#9207c1] relative hover:scale-110
-            duration-100 animate-pulse" id="myWorksButton">My Skills</button>    
+            </ul>   
         </section>
         <!-- About Modal -->
         <section>
@@ -269,7 +282,7 @@
             </div>
         </section>
         <!-- Services -->
-        <section id="services" class="bg-black/50 mt-20 rounded-lg py-16 mx-auto px-4" data-aos="fade-up" data-aos-duration="1000">
+        <section id="skills" class="bg-black/50 mt-20 rounded-lg py-28 mx-auto px-4" data-aos="fade-up" data-aos-duration="1000">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-4xl font-extrabold mb-6">My Skills</h2>
                 <p class="text-lg font-light mb-12">
@@ -324,8 +337,55 @@
                 </div>
             </div>
         </section> 
+        <!-- Projects -->
+        <section id="projects" class="max-w-full py-16 md:py-28 px-2 md:px-4 relative" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-center text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12">
+                My Projects
+            </h2>
+            
+            <!-- Projects Carousel -->
+            <div class="project-carousel relative">
+                <div class="project-track flex gap-4 md:gap-6">
+                    <!-- Project cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Project Modal -->
+            <div id="projectModal" class="fixed inset-0 bg-black/10 backdrop-blur-md z-50 hidden items-center justify-center p-2 md:p-4 ">
+                <div class="bg-black/40 w-full backdrop-blur-md max-w-6xl rounded-xl md:rounded-2xl relative flex overflow-hidden
+                shadow-[0_0_25px_10px_rgba(139,92,246,0.3)]">
+                    <!-- Close Button -->
+                    <button id="closeModalPro" class="absolute top-2 right-2 md:top-4 md:right-4 text-white/60 hover:text-white z-10 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" 
+                            stroke="purple" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+    
+                    <!-- Modal Content -->
+                    <div class="flex flex-col md:flex-row w-full max-h-[90vh] md:max-h-[80vh] overflow-y-auto">
+                        <!-- Image Section -->
+                        <div class="w-full md:float-left md:mr-6 mb-4 md:mb-0">
+                            <img id="modalImage" class="w-full h-48 md:h-full object-contain" src="" alt="Project Image">
+                        </div>
+    
+                        <!-- Content Section -->
+                        <div class="p-4 md:p-8 text-white">
+                            <h3 id="modalTitle" class="text-2xl md:text-3xl font-bold mb-3 md:mb-4"></h3>
+                            <div id="modalTechnologies" class="flex flex-wrap gap-2 mb-4 md:mb-6"></div>
+                            <div id="modalDescription" class="text-gray-300 space-y-3 md:space-y-4 mb-4 md:mb-6"></div>
+                            <div id="modalFeatures" class="mb-4 md:mb-6"></div>
+                            <div id="modalLinks" class="flex flex-wrap gap-3 md:gap-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Experience Section -->
-        <section id="experience" class="max-w-screen-xl mt-40  mx-auto py-16 px-4 bg-black/30 
+        <section id="experience" class="max-w-screen-xl mt-40  mx-auto py-28 px-4 bg-black/30 
          rounded-lg relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
             <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 relative">
@@ -391,7 +451,7 @@
             </div>
         </section>  
         <!--Education Section-->
-        <section id="education" class="max-w-screen-xl mt-40  mx-auto py-16 px-4 bg-black/40 
+        <section id="education" class="max-w-screen-xl mt-40  mx-auto py-28 px-4 bg-black/40 
         rounded-lg relative overflow-hidden mb-3" data-aos="fade-up" data-aos-duration="1000">
             <div class="flex flex-col items-center w-full max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 relative">
@@ -442,7 +502,7 @@
             </div>
         </section>
         <!-- My Tech Stack Section -->
-        <section id="tech" class="max-w-7xl mx-auto bg-black/40 mt-40 rounded-lg p-8 overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
+        <section id="tech" class="max-w-7xl py-28 mx-auto bg-black/40 mt-40 rounded-lg p-8 overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
             <h3 class="text-center text-3xl md:text-4xl font-bold text-white pb-4 mb-8">
                 My Tech Stack
             </h3>
@@ -619,7 +679,7 @@
             </div>
         </section>
         <section id="contact" 
-        class="py-16 flex mt-40 justify-center items-center max-w-screen-xl mx-auto px-4 relative 
+        class="py-28 flex mt-40 justify-center items-center max-w-screen-xl mx-auto px-4 relative 
         overflow-hidden mb-3 " data-aos="fade-up" data-aos-duration="1000">
         <div class="w-full lg:w-5/6 bg-black/60 rounded-2xl p-8 relative z-10">
             <div class="flex flex-col lg:flex-row items-center">

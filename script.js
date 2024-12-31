@@ -45,15 +45,6 @@ closeModal.addEventListener("click", closeModalFunction);
 outsideClick.addEventListener("click", closeModalFunction);
 
 
-//-------------------------------------------------------------- Scroll to "My Works" Section
-document.getElementById("myWorksButton").addEventListener("click", () => {
-    window.scrollTo({
-        top: window.scrollY + window.innerHeight * 0.96, 
-        behavior: 'smooth'
-    });
-});
-
-
 //-------------------------------------------------------------- Swiper Initialization
 
 // Tech Stack Swiper

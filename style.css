@@ -226,3 +226,121 @@ header {
   }
 }
 
+/* Project Carousel Styles */
+.project-carousel {
+    overflow-x: hidden;
+    padding: 10px 0 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.project-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 40s linear infinite;
+}
+
+.project-track:hover {
+    animation-play-state: paused;
+}
+
+.project-card {
+    min-width: 280px;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .project-card {
+        min-width: 400px;
+    }
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px 10px rgba(139, 92, 246, 0.3);
+}
+
+.project-card img {
+    height: 180px;
+}
+
+@media (min-width: 768px) {
+    .project-card img {
+        height: 180px;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 4));
+    }
+}
+
+/* Touch device optimizations */
+@media (max-width: 768px) {
+    .project-track {
+        animation: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .project-card {
+        scroll-snap-align: start;
+    }
+}
+
+/* Custom scrollbar for desktop */
+@media (min-width: 768px) {
+    .project-track::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .project-track::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+    }
+
+    .project-track::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+    }
+}
+
+/* Modal Animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-animation {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px 10px rgba(139, 92, 246, 0.3);
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(calc(-300px * 4));
+  }
+}
