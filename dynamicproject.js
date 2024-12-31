@@ -148,7 +148,36 @@ const projects = [
             { text: "GitHub", url: "https://github.com/ayushpratapsingh1/Superstore-Data-Analysis-Models", type: "github" },
             { text: "Live Site", url: "./Prediction.html", type: "live" }
         ]
-    }
+    },
+    {
+        id: 9,
+        title: "Portfolio Template",
+        image: "./assets/images/porttemp.png",
+        technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
+        description: [
+            "A customizable and modern portfolio template designed to showcase personal projects, skills, and experiences professionally.",
+            "Built with Next.js, Tailwind CSS, and TypeScript, this template features a responsive design, dynamic content, and optimized performance."
+        ],
+        features: [
+            "Responsive and mobile-friendly design",
+            "Dynamic content management for projects, skills, and experiences",
+            "Modern UI/UX built with Tailwind CSS",
+            "SEO-optimized structure for better search engine rankings",
+            "Performance-focused with fast loading times"
+        ],
+        links: [
+            { 
+                text: "View Project", 
+                url: "https://github.com/ayushpratapsingh1/Portfolio-Template", 
+                type: "github" 
+            },
+            { 
+                text: "Live Demo", 
+                url: "https://newapsport.vercel.app", 
+                type: "demo" 
+            }
+        ]
+    }    
 ];
 
 // Initialize the carousel
