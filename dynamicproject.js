@@ -239,7 +239,7 @@ function openModal(project) {
     // Technologies
     const techContainer = document.getElementById('modalTechnologies');
     techContainer.innerHTML = project.technologies.map(tech => 
-        `<span class="bg-white/10 px-3 py-1 rounded-md text-xs font-medium">${tech}</span>`
+        `<span class="bg-white/10 px-4 py-1 rounded-md text-xs font-medium">${tech}</span>`
     ).join('');
     
     // Description
@@ -252,7 +252,7 @@ function openModal(project) {
     const featuresContainer = document.getElementById('modalFeatures');
     featuresContainer.innerHTML = `
         <h4 class="text-white font-semibold mb-2">Key Features:</h4>
-        <ul class="list-disc ml-5 text-sm space-y-1">
+        <ul class="list-disc text-sm space-y-1">
             ${project.features.map(feature => `<li>${feature}</li>`).join('')}
         </ul>
     `;

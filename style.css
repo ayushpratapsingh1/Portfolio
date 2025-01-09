@@ -1,7 +1,6 @@
 /* ================================
    General Styles
 ================================ */
-
 /* Remove pointer events */
 .pointer-events-none {
   pointer-events: none !important;
@@ -9,7 +8,9 @@
 .no-pointer-events {
   pointer-events: none;
 }
-
+ul {
+  margin-left: 1rem; /* Adds space to the left of the list */
+}
 /* Blurred background effect */
 .blurred-bg {
   filter: blur(5px);
