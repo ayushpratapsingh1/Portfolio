@@ -44,35 +44,6 @@ function closeModalFunction() {
 closeModal.addEventListener("click", closeModalFunction);
 outsideClick.addEventListener("click", closeModalFunction);
 
-
-//-------------------------------------------------------------- Swiper Initialization
-
-// Tech Stack Swiper
-new Swiper('.swiper-container2', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-        },
-        768: {
-            slidesPerView: 5,
-            spaceBetween: 40,
-        },
-        1024: {
-            slidesPerView: 7,
-            spaceBetween: 30,
-        },
-    }
-});
-
-
 //-------------------------------------------------------------- Loading Screen Fade-Out
 window.addEventListener("load", () => {
     const loadingScreen = document.getElementById("loading-screen");

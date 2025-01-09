@@ -1,84 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <meta name="description" content="Ayush Pratap Singh's portfolio showcasing software development, data science, machine learning projects, and AI applications. Explore my work in programming, web development, and innovative solutions.">
-    <meta name="keywords" content="software developer, data science, machine learning, AI, web development, portfolio, Python, C++, React, TensorFlow, GitHub, AI applications, interactive websites, data analysis">
-    <meta name="author" content="Ayush Pratap Singh">
-    <meta name="language" content="English">
-    <meta property="og:title" content="Ayush Pratap Singh | Software Developer & Data Scientist">
-    <meta property="og:description" content="Visit Ayush Pratap Singh's portfolio to explore software development, data science, machine learning, and AI projects. See my skills and innovative solutions in action.">
-    <meta property="og:image" content="https://www.yourwebsite.com/path-to-your-image.jpg">
-    <meta property="og:url" content="https://www.ayushpratapsingh.com">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ayush Pratap Singh | Software Developer & Data Scientist">
-    <meta name="twitter:description" content="Explore the portfolio of Ayush Pratap Singh, a software developer specializing in data science, machine learning, and web development.">
-    <meta name="twitter:image" content="https://www.yourwebsite.com/path-to-your-image.jpg">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.ayushpratapsingh.netlify.app">
-    <link rel="icon" href="./assets/images/octocat-1730282942820.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="https://www.yourwebsite.com/apple-touch-icon.png">
-    <link rel="stylesheet" href="output.css">
-    <link rel="stylesheet" href="font.css">
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1"></script>
-    <script src = "./matter.js" defer></script>
-    <script src = "./particle.js" defer></script>
-    <script src = "./dynamicproject.js"></script>
-    <link rel = "stylesheet" href = "style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        ::selection {
-        background: none;
-        color: inherit;
-        }
-        /* Section margin adjustment on click */
-        section {
-        transition: margin-top 0.3s ease-in-out;
-        }
-        @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        }
-        .animate-fadeInDown {
-        animation: fadeInDown 0.5s ease-out forwards;
-        }
-        header {
-        transition: transform 0.3s ease-in-out;
-        }
-        @media (max-width: 768px) {
-        header {
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-        }
-        .social-menu {
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ayush Pratap Singh | Software Developer, Data Scientist, and ML Expert</title>
+        <meta name="description" content="Ayush Pratap Singh's portfolio showcasing software development, data science, machine learning projects, and AI applications. Explore my work in programming, web development, and innovative solutions.">
+        <meta name="keywords" content="software developer, data science, machine learning, AI, web development, portfolio, Python, C++, React, TensorFlow, GitHub, AI applications, interactive websites, data analysis">
+        <meta name="author" content="Ayush Pratap Singh">
+        <meta name="language" content="English">
+        <meta property="og:title" content="Ayush Pratap Singh | Software Developer & Data Scientist">
+        <meta property="og:description" content="Visit Ayush Pratap Singh's portfolio to explore software development, data science, machine learning, and AI projects. See my skills and innovative solutions in action.">
+        <meta property="og:image" content="https://www.ayushdev.tech/assets/images/logo2.png">
+        <meta property="og:url" content="https://www.ayushdev.tech">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Ayush Pratap Singh | Software Developer & Data Scientist">
+        <meta name="twitter:description" content="Explore the portfolio of Ayush Pratap Singh, a software developer specializing in data science, machine learning, and web development.">
+        <meta name="twitter:image" content="https://www.ayushdev.tech/assets/images/logo2.png">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://www.ayushdev.tech">
+        <link rel="icon" href="./assets/images/logo2.png" type="image/x-icon">
+        <link rel="stylesheet" href="output.css">
+        <link rel="stylesheet" href="font.css">
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1"></script>
+        <!-- <script src = "./matter.js" defer></script> -->
+        <script src = "./particle.js" defer></script>
+        <script src = "./dynamicproject.js"></script>
+        <link rel = "stylesheet" href = "style.css">
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <style>
+            ::selection {
+            background: none;
+            color: inherit;
+            }
+            /* Section margin adjustment on click */
+            section {
+            transition: margin-top 0.3s ease-in-out;
+            }
+            @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            }
+            .animate-fadeInDown {
+            animation: fadeInDown 0.5s ease-out forwards;
+            }
+            header {
             transition: transform 0.3s ease-in-out;
             }
-            /* Responsive adjustments for social menu */
             @media (max-width: 768px) {
+            header {
+                position: fixed;
+                width: 100%;
+                z-index: 1000;
+            }
+            }
             .social-menu {
-                transform: translateX(calc(100% - 5px)); /* Show a small peek */
+                transition: transform 0.3s ease-in-out;
+                }
+                /* Responsive adjustments for social menu */
+                @media (max-width: 768px) {
+                .social-menu {
+                    transform: translateX(calc(100% - 5px)); /* Show a small peek */
+                }
+                .social-menu:hover,
+                .social-menu.active {
+                    transform: translateX(0);
+                }
+                }
+                /* Social link hover effect */
+                .social-link {
+                transition: all 0.3s ease-in-out;
+                }
+        </style>
+        <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              "name": "Ayush Pratap Singh",
+              "url": "https://www.ayushdev.tech",
+              "sameAs": [
+                "https://www.linkedin.com/in/ayushpratapsingh1/",
+                "https://github.com/ayushpratapsingh1"
+              ],
+              "jobTitle": "Software Developer & Data Scientist",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelancer"
+              }
             }
-            .social-menu:hover,
-            .social-menu.active {
-                transform: translateX(0);
-            }
-            }
-            /* Social link hover effect */
-            .social-link {
-            transition: all 0.3s ease-in-out;
-            }
-    </style>
+        </script>
 </head>
 <body class = "bg-black text-white font-['Nunito']" >
         <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 z-40">
