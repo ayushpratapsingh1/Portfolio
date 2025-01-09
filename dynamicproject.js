@@ -4,7 +4,7 @@ const projects = [
         id: 1,
         title: "Crypto Watcher",
         image: "./assets/images/crypto.png",
-        technologies: ["HTML", "CSS", "JavaScript", "API Integration"],
+        technologies: ["HTML", "CSS", "Python", "Flask", "BeautifulSoup"],
         description: [
             "Crypto Watcher is a web application designed to track real-time cryptocurrency prices and market trends. Users can view the latest data on various coins, including Bitcoin, Ethereum, and others, with dynamic updates and easy-to-read charts.",
         ],
@@ -53,8 +53,8 @@ const projects = [
             "Scalable and maintainable codebase"
         ],
         links: [
-            { text: "GitHub", url: "https://github.com/ayushpratapsingh", type: "github" },
-            { text: "Live Site", url: "https://www.pixeldev.com", type: "live" }
+            { text: "GitHub", url: "https://github.com/ayushpratapsingh1/Pixel-Dev", type: "github" },
+            { text: "Live Site", url: "https://pixelwebdev.vercel.app/", type: "live" }
         ]
     },
     {
@@ -179,63 +179,53 @@ const projects = [
         ]
     }    
 ];
-
-// Initialize the carousel
-function initializeCarousel() {
-    const track = document.querySelector('.project-track');
+function createProjectCards() {
+    const grid = document.getElementById('projectGrid');
     
-    // Create project cards and add them to the track
     projects.forEach(project => {
-        const card = createProjectCard(project);
-        track.appendChild(card);
+        const card = document.createElement('div');
+        card.className = `
+            group relative bg-black/40 backdrop-blur-md rounded-xl overflow-hidden transform
+            transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_10px_rgba(139,92,246,0.2)]
+        `;
+        card.innerHTML = `
+            <div class="relative overflow-hidden">
+                <img src="${project.image}" 
+                     alt="${project.title}" 
+                     class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 
+                            group-hover:opacity-100 transition-opacity duration-500">
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            ${project.technologies.map(tech => `
+                                <span class="bg-white/10 px-2 py-1 rounded-md text-xs font-medium text-white">${tech}</span>
+                            `).join('')}
+                        </div>
+                        <p class="text-white/90 text-sm line-clamp-3">
+                            ${project.description[0]}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-2">${project.title}</h3>
+                <div class="flex gap-3">
+                    ${project.links.map(link => `
+                        <a href="${link.url}" 
+                           target="_blank" 
+                           class="${link.type === 'github' ? 'bg-white text-[#781c9c]' : 'bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white'} 
+                                  px-4 py-1 rounded-full text-sm font-bold transition-all duration-300 hover:scale-110">
+                            ${link.text}
+                        </a>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+        card.addEventListener('click', () => openModal(project));
+        grid.appendChild(card);
     });
 }
 
-
-// Create a project card
-function createProjectCard(project) {
-    const card = document.createElement('div');
-    card.className = 'project-card';
-    card.innerHTML = `
-        <div class="aspect-square">
-            <img src="${project.image}" alt="${project.title}" 
-                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
-        </div>
-        <div class="p-4">
-            <h3 class="text-xl font-bold text-white">${project.title}</h3>
-        </div>
-    `;
-    
-    card.addEventListener('click', () => openModal(project));
-    return card;
-}
-
-// Touch controls
-let touchStartX = 0;
-let scrollLeft = 0;
-let isDragging = false;
-
-function initializeTouchControls() {
-    const track = document.querySelector('.project-track');
-    
-    track.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        touchStartX = e.touches[0].pageX - track.offsetLeft;
-        scrollLeft = track.scrollLeft;
-    });
-
-    track.addEventListener('touchend', () => {
-        isDragging = false;
-    });
-
-    track.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.touches[0].pageX - track.offsetLeft;
-        const walk = (x - touchStartX) * 2;
-        track.scrollLeft = scrollLeft - walk;
-    });
-}
 
 // Modal functions
 function openModal(project) {
@@ -270,50 +260,31 @@ function openModal(project) {
     // Links
     const linksContainer = document.getElementById('modalLinks');
     linksContainer.innerHTML = project.links.map(link => `
-        <a href="${link.url}" target="_blank" 
+        <a href="${link.url}" 
+           target="_blank" 
            class="${link.type === 'github' ? 'bg-white text-[#781c9c]' : 'bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white'} 
-           px-6 py-2 rounded-full font-bold transition-all duration-300 text-sm hover:scale-110">
+           px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-110">
             ${link.text}
         </a>
     `).join('');
     
     modal.classList.remove('hidden');
-    modal.classList.add('flex', 'modal-animation');
 }
 
-function closeModalPro() {
+function closeModal() {
     const modal = document.getElementById('projectModal');
     document.body.style.overflow = '';
-    modal.classList.remove('modal-animation');
     modal.classList.add('hidden');
-    modal.classList.remove('flex');
 }
 
-// Initialize everything
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    initializeCarousel();
-    initializeTouchControls();
+    createProjectCards();
     
-    // Close modal button
-    document.getElementById('closeModalPro').addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeModalPro();
-    });
-    
-    // Close modal when clicking outside
-    document.getElementById('projectModal').addEventListener('click', (e) => {
-        if (e.target === e.currentTarget) {
-            closeModalPro();
-        }
-    });
-
-    // Handle escape key
+    // Close modal when pressing Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            closeModalPro();
+            closeModal();
         }
     });
 });
-
-const outsideClickPro = document.getElementById("outsideClickPro");
-outsideClickPro.addEventListener("click", closeModalPro);
