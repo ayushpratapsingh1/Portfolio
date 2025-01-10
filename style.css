@@ -94,71 +94,97 @@ body {
 .slider:hover {
   animation-play-state: paused;
 }
-/* ================================
-   Swiper Components
-================================ */
-
-/* Swiper slide styling */
-.swiper-slide {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.swiper-container2 {
-  overflow: visible !important;
-}
-.swiper-wrapper {
-  align-items: center;
-}
 
 /* ================================
    Service Cards
 ================================ */
 
 /* Click effect on service card */
-.service-card.clicked {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(128, 0, 128, 0.8); /* Purple glow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;;
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #2a2a72, #020b10);
+  border-radius: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Particle effect on hover */
-.particle-container {
+.service-card::before {
+  content: '';
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #ff6a6a, #ffd36a, #6affb8, #6aaaff, #ff6a6a);
+  animation: rotate-border 3s linear infinite;
+  z-index: 1;
+  opacity: 0;
+  border-radius: 50%;
+  transform: scale(0.7);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.service-card .card-content {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(to bottom right, #581187, #9e00d7);
+  border-radius: inherit;
+  overflow: hidden;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) rotate(3deg) scale(1.05);
+}
+
+.service-card:hover .card-content {
+  transform: translateY(-5px);
+  opacity: 0.9;
+}
+
+/* Border Animation */
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Card Front and Back */
+.card-front,
+.card-back {
+  position: absolute;
   top: 0;
   left: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+  transition: opacity 0.4s ease;
 }
-.service-card:hover .particle-container {
+
+.card-back {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.service-card:hover .card-back {
+  transform: scale(1);
   opacity: 1;
 }
 
-/* 3D flip effect */
-.service-card {
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  pointer-events: auto;
+.service-card:hover .card-front {
+  opacity: 0;
 }
-.card-content {
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-.card-front, .card-back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.card-back {
-  transform: rotateY(180deg);
-}
-.service-card:hover .card-content {
-  transform: rotateY(180deg);
-}
+
 
 /* ================================
    Social Menu
