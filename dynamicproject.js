@@ -3,6 +3,7 @@ const projects = [
     {
         id: 1,
         title: "Crypto Watcher",
+        category: "web",
         image: "./assets/images/crypto.png",
         technologies: ["HTML", "CSS", "Python", "Flask", "BeautifulSoup"],
         description: [
@@ -22,6 +23,7 @@ const projects = [
     {
         id: 2,
         title: "Uber Ride Data Analysis",
+        category: "data",
         image: "./assets/images/Uber.png",
         technologies: ["Python", "Pandas", "Matplotlib", "Data Analysis"],
         description: [
@@ -41,6 +43,7 @@ const projects = [
     {
         id: 3,
         title: "Pixel Dev - Web Solutions",
+        category: "web",
         image: "./assets/images/pixel-dev.png",
         technologies: ["TypeScript", "Next.js", "Framer Motion", "React"],
         description: [
@@ -60,6 +63,7 @@ const projects = [
     {
         id: 4,
         title: "Python HTTP Server",
+        category: "web",
         image: "./assets/images/http.png",
         technologies: ["Python"],
         description: [
@@ -78,6 +82,7 @@ const projects = [
     {
         id: 5,
         title: "Custom Shell Interface",
+        category: "web",
         image: "./assets/images/shell.png",
         technologies: ["C++"],
         description: [
@@ -96,6 +101,7 @@ const projects = [
     {
         id: 6,
         title: "Electric Vehicle Analysis",
+        category: "data",
         image: "./assets/images/Tableau.png",
         technologies: ["Tableau Prep", "Tableau Desktop"],
         description: [
@@ -114,6 +120,7 @@ const projects = [
     {
         id: 7,
         title: "Forbes Billionaires Analysis",
+        category: "data",
         image: "./assets/images/Forbes.png",
         technologies: ["MS Excel"],
         description: [
@@ -133,6 +140,7 @@ const projects = [
     {
         id: 8,
         title: "Superstore Data Analysis",
+        category: "ml",
         image: "./assets/images/Super.png",
         technologies: ["R", "SVM", "Naive Bayes", "Regression", "K-Means Clustering"],
         description: [
@@ -152,6 +160,7 @@ const projects = [
     {
         id: 9,
         title: "Portfolio Template",
+        category: "web",
         image: "./assets/images/porttemp.png",
         technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
         description: [
@@ -179,53 +188,75 @@ const projects = [
         ]
     }    
 ];
-function createProjectCards() {
+
+let currentCategory = 'all';
+
+function filterProjects(category) {
     const grid = document.getElementById('projectGrid');
+    if (!grid) return; // Safety check
     
-    projects.forEach(project => {
-        const card = document.createElement('div');
-        card.className = `
-            group relative bg-black/40 backdrop-blur-md rounded-xl overflow-hidden transform
-            transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_10px_rgba(139,92,246,0.2)]
-        `;
-        card.innerHTML = `
-            <div class="relative overflow-hidden">
-                <img src="${project.image}" 
-                     alt="${project.title}" 
-                     class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 
-                            group-hover:opacity-100 transition-opacity duration-500">
-                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            ${project.technologies.map(tech => `
-                                <span class="bg-white/10 px-2 py-1 rounded-md text-xs font-medium text-white">${tech}</span>
-                            `).join('')}
-                        </div>
-                        <p class="text-white/90 text-sm line-clamp-3">
-                            ${project.description[0]}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-white mb-2">${project.title}</h3>
-                <div class="flex gap-3">
-                    ${project.links.map(link => `
-                        <a href="${link.url}" 
-                           target="_blank" 
-                           class="${link.type === 'github' ? 'bg-white text-[#781c9c]' : 'bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white'} 
-                                  px-4 py-1 rounded-full text-sm font-bold transition-all duration-300 hover:scale-110">
-                            ${link.text}
-                        </a>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-        card.addEventListener('click', () => openModal(project));
+    // Update active tab
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        if (btn.dataset.category === category) {
+            btn.classList.add('active', 'bg-gradient-to-r', 'from-[#5e2176b8]', 'to-[#9207c1]');
+            btn.classList.remove('bg-white/10');
+        } else {
+            btn.classList.remove('active', 'bg-gradient-to-r', 'from-[#5e2176b8]', 'to-[#9207c1]');
+            btn.classList.add('bg-white/10');
+        }
+    });
+
+    // Clear and filter projects
+    grid.innerHTML = '';
+    const filteredProjects = projects.filter(project => project.category === category);
+
+    // Add projects to grid
+    filteredProjects.forEach(project => {
+        const card = createProjectCard(project);
         grid.appendChild(card);
     });
 }
 
+function createProjectCard(project) {
+    const card = document.createElement('div');
+    card.className = `group relative bg-black/40 backdrop-blur-md rounded-xl overflow-hidden transform
+        transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_10px_rgba(139,92,246,0.2)]`;
+    
+    card.innerHTML = `
+        <div class="relative overflow-hidden">
+            <img src="${project.image}" 
+                 alt="${project.title}" 
+                 class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 
+                        group-hover:opacity-100 transition-opacity duration-500">
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 
+                            group-hover:translate-y-0 transition-transform duration-500">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        ${project.technologies.map(tech => 
+                            `<span class="bg-white/10 px-2 py-1 rounded-md text-xs font-medium text-white">
+                                ${tech}
+                            </span>`).join('')}
+                    </div>
+                    <p class="text-white/90 text-sm line-clamp-3">${project.description[0]}</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">${project.title}</h3>
+            <div class="flex gap-3">
+                ${project.links.map(link => 
+                    `<a href="${link.url}" 
+                        target="_blank" 
+                        class="${link.type === 'github' ? 'bg-white text-[#781c9c]' : 'bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white'} 
+                        px-4 py-1 rounded-full text-sm font-bold transition-all duration-300 hover:scale-110">
+                        ${link.text}
+                    </a>`).join('')}
+            </div>
+        </div>`;
+    
+    card.addEventListener('click', () => openModal(project));
+    return card;
+}
 
 // Modal functions
 function openModal(project) {
@@ -279,7 +310,19 @@ function closeModal() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    createProjectCards();
+    console.log('DOM loaded, initializing projects...'); // Debug log
+    
+    // Set up tab button listeners
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            console.log('Filter clicked:', category); // Debug log
+            filterProjects(category);
+        });
+    });
+
+    // Initial load with web projects
+    filterProjects('web');
     
     // Close modal when pressing Escape
     document.addEventListener('keydown', (e) => {
