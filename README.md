@@ -21,47 +21,50 @@ This portfolio website highlights my expertise in software development, data sci
 
 ---
 
-## Setup Instructions
+## Technologies Used
 
-Follow these steps to set up the project locally:
+- **Frontend**: HTML, CSS, JavaScript
+- **Libraries**: AOS (Animate on Scroll), Swiper.js
+- **Backend**: None (Static site)
+- **Tools**: Git, GitHub, VS Code
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/ayushpratapsingh1/Portfolio.git
-   cd Portfolio
-2. **Install Dependencies (If the project uses npm):**
-   
-   ```bash
-   npm install
-4. **Run the Project:**
-   ```bash
-   npm start
-  - The website will be available at http://localhost:3000.
+---
 
-4. **Build for Production:**
-   
-   ```bash
-   npm run build
-  - The optimized files will be in the dist/ or build/ folder.
+## Installation
 
-## Prerequisites
-- Node.js and npm (for building and running the project)
-- A modern browser (e.g., Chrome, Firefox)
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/ayushpratapsingh1/portfolio-website.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd portfolio-website
+    ```
+3. Open `index.html` in your browser to view the website.
+
+---
+
+## Usage
+
+- Navigate through different sections to explore skills, projects, and experiences.
+- Use the contact form to get in touch.
+
+---
 
 ## Contributing
-- Contributions are welcome! Here's how you can help:
 
-## Fork the repository.
-- Create a branch:
-  
-  ```bash
-  git checkout -b feature-name
-- Commit your changes:
-  ```bash
-  git commit -m 'Add feature'
-- Push the branch:
-  ```bash
-  git push origin feature-name
-- Submit a pull request.
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-**Feel free to use and customize this portfolio website for your own needs!**
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Contact
+
+- **Website**: [ayushpratapsingh.com](https://www.ayushdev.tech)
+- **LinkedIn**: [Ayush Pratap Singh](https://www.linkedin.com/in/ayushpratapsingh1/)
+- **GitHub**: [ayushpratapsingh1](https://github.com/ayushpratapsingh1)
