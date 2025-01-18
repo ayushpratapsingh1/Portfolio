@@ -56,7 +56,7 @@ const projects = [
         ],
         links: [
             { text: "GitHub", url: "https://github.com/ayushpratapsingh1/Pixel-Dev", type: "github" },
-            { text: "Live Site", url: "https://pixelwebdev.vercel.app/", type: "live" }
+            { text: "Live Demo", url: "https://pixelwebdev.vercel.app/", type: "live" }
         ]
     },
     {
@@ -75,7 +75,7 @@ const projects = [
             "Made with the help of codecrafters"
         ],
         links: [
-            { text: "View Code", url: "https://github.com/ayushpratapsingh1/HTTP-Server", type: "live" }
+            { text: "Source Code", url: "https://github.com/ayushpratapsingh1/HTTP-Server", type: "live" }
         ]
     },
     {
@@ -175,7 +175,7 @@ const projects = [
         ],
         links: [
             { 
-                text: "View Project", 
+                text: "Github", 
                 url: "https://github.com/ayushpratapsingh1/Portfolio-Template", 
                 type: "github" 
             },
@@ -202,8 +202,8 @@ const projects = [
             "Implementation guidelines and best practices"
         ],
         links: [
-            { text: "View Docs", url: "https://github.com/ayushpratapsingh1/ai-study-app", type: "github" },
-            { text: "Live Site", url: "https://fikra-space.vercel.app/", type: "live" }
+            { text: "Github", url: "https://github.com/ayushpratapsingh1/ai-study-app", type: "github" },
+            { text: "Live Demo", url: "https://fikra-space.vercel.app/", type: "live" }
         ]
     }       
 ];
