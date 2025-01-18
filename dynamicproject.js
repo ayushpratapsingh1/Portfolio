@@ -3,7 +3,7 @@ const projects = [
     {
         id: 1,
         title: "Crypto Watcher",
-        category: "web",
+        category: "data",
         image: "./assets/images/crypto.png",
         technologies: ["HTML", "CSS", "Python", "Flask", "BeautifulSoup"],
         description: [
@@ -63,7 +63,7 @@ const projects = [
     {
         id: 4,
         title: "Python HTTP Server",
-        category: "web",
+        category: "others",
         image: "./assets/images/http.png",
         technologies: ["Python"],
         description: [
@@ -82,7 +82,7 @@ const projects = [
     {
         id: 5,
         title: "Custom Shell Interface",
-        category: "web",
+        category: "others",
         image: "./assets/images/shell.png",
         technologies: ["C++"],
         description: [
@@ -186,73 +186,113 @@ const projects = [
                 type: "demo" 
             }
         ]
-    }    
+    },
+    {
+        id: 10,
+        title: "AI Study Tool",
+        category: "web",
+        image: "./assets/images/aistudy.png",
+        technologies: ["React JS", "Tailwind CSS","OpenAI API","Python","Flask"],
+        description: [
+            "A collection of custom CLI tools and shell scripts for automation and system management.",
+            "Includes utilities for file management, system monitoring, and task automation."
+        ],
+        features: [
+            "Custom shell commands and utilities",
+            "System monitoring scripts",
+            "File management automation"
+        ],
+        links: [
+            { text: "GitHub", url: "https://github.com/ayushpratapsingh1/ai-study-app", type: "github" },
+            { text: "Live Site", url: "https://fikra-space.vercel.app//", type: "live" }
+        ]
+    }
 ];
 
 let currentCategory = 'all';
 
 function filterProjects(category) {
     const grid = document.getElementById('projectGrid');
-    if (!grid) return; // Safety check
+    if (!grid) return;
     
-    // Update active tab
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        if (btn.dataset.category === category) {
-            btn.classList.add('active', 'bg-gradient-to-r', 'from-[#5e2176b8]', 'to-[#9207c1]');
-            btn.classList.remove('bg-white/10');
-        } else {
-            btn.classList.remove('active', 'bg-gradient-to-r', 'from-[#5e2176b8]', 'to-[#9207c1]');
-            btn.classList.add('bg-white/10');
-        }
-    });
+    // Add transition class
+    grid.classList.add('opacity-0');
+    
+    setTimeout(() => {
+        // Update active tab with smooth transition
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            if (btn.dataset.category === category) {
+                btn.classList.add('active', 'bg-gradient-to-r', 'from-[#5e2176b8]', 'to-[#9207c1]');
+                btn.classList.remove('bg-white/10');
+            } else {
+                btn.classList.remove('active', 'bg-gradient-to-r', 'from-[#5e2176b8]', 'to-[#9207c1]');
+                btn.classList.add('bg-white/10');
+            }
+        });
 
-    // Clear and filter projects
-    grid.innerHTML = '';
-    const filteredProjects = projects.filter(project => project.category === category);
-
-    // Add projects to grid
-    filteredProjects.forEach(project => {
-        const card = createProjectCard(project);
-        grid.appendChild(card);
-    });
+        // Filter and add projects
+        grid.innerHTML = '';
+        const filteredProjects = projects.filter(project => project.category === category);
+        filteredProjects.forEach(project => {
+            grid.appendChild(createProjectCard(project));
+        });
+        
+        // Remove transition class
+        grid.classList.remove('opacity-0');
+    }, 150);
 }
 
 function createProjectCard(project) {
     const card = document.createElement('div');
     card.className = `group relative bg-black/40 backdrop-blur-md rounded-xl overflow-hidden transform
-        transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_10px_rgba(139,92,246,0.2)]`;
+        transition-all duration-300 hover:scale-102 hover:shadow-[0_0_15px_5px_rgba(139,92,246,0.15)]
+        cursor-pointer`;
     
     card.innerHTML = `
         <div class="relative overflow-hidden">
             <img src="${project.image}" 
                  alt="${project.title}" 
-                 class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 
-                        group-hover:opacity-100 transition-opacity duration-500">
-                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 
-                            group-hover:translate-y-0 transition-transform duration-500">
-                    <div class="flex flex-wrap gap-2 mb-3">
+                 loading="lazy"
+                 class="project-image w-full h-48 md:h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                 onerror="this.onerror=null; this.src='./assets/images/placeholder.png';">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 
+                        group-hover:opacity-100 transition-all duration-300">
+                <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 transform translate-y-2 
+                            group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="flex flex-wrap gap-1 md:gap-2 mb-2 md:mb-3">
                         ${project.technologies.map(tech => 
-                            `<span class="bg-white/10 px-2 py-1 rounded-md text-xs font-medium text-white">
+                            `<span class="bg-white/10 px-2 py-1 rounded-md text-[10px] md:text-xs font-medium text-white">
                                 ${tech}
                             </span>`).join('')}
                     </div>
-                    <p class="text-white/90 text-sm line-clamp-3">${project.description[0]}</p>
+                    <p class="text-white/90 text-xs md:text-sm line-clamp-2 md:line-clamp-3">
+                        ${project.description[0]}
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2">${project.title}</h3>
-            <div class="flex gap-3">
+        <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold text-white mb-2">${project.title}</h3>
+            <div class="flex flex-wrap gap-2 md:gap-3">
                 ${project.links.map(link => 
                     `<a href="${link.url}" 
                         target="_blank" 
                         class="${link.type === 'github' ? 'bg-white text-[#781c9c]' : 'bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white'} 
-                        px-4 py-1 rounded-full text-sm font-bold transition-all duration-300 hover:scale-110">
+                        px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-bold transition-all duration-300 hover:scale-105 active:scale-95"
+                        onclick="event.stopPropagation();">
                         ${link.text}
                     </a>`).join('')}
             </div>
         </div>`;
+    
+    // Prevent image drag
+    const img = card.querySelector('img');
+    img.draggable = false;
+    
+    // Optimize image loading
+    if ('loading' in HTMLImageElement.prototype) {
+        img.loading = 'lazy';
+    }
     
     card.addEventListener('click', () => openModal(project));
     return card;

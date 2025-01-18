@@ -90,6 +90,61 @@
             .tab-btn:active {
                 transform: scale(0.98);
             }
+
+            /* Mobile Optimizations */
+            @media (max-width: 768px) {
+                .tab-btn {
+                    font-size: 0.875rem;
+                    padding: 0.5rem 1rem;
+                }
+                
+                #projects {
+                    padding-top: 6rem;
+                }
+                
+                .project-grid {
+                    gap: 1rem;
+                    padding: 0 0.5rem;
+                }
+            }
+
+            /* Image Optimizations */
+            .project-image {
+                image-rendering: -webkit-optimize-contrast;
+                backface-visibility: hidden;
+                transform: translateZ(0);
+                -webkit-transform: translateZ(0);
+            }
+
+            /* Smooth Button Animations */
+            .tab-btn {
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                transform: translateY(0);
+                will-change: transform;
+            }
+
+            .tab-btn:active {
+                transform: translateY(2px);
+            }
+
+            .tab-btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to right, #5e2176, #9207c1);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                z-index: -1;
+            }
+
+            .tab-btn:hover::before {
+                opacity: 1;
+            }
         </style>
     
         <!-- Structured Data -->
@@ -243,28 +298,30 @@
                     My Projects
                 </h2>    
                 <!-- Tab Buttons -->
-                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 px-2">
                     <button 
-                        class="tab-btn active px-6 py-2 rounded-full font-bold transition-all duration-300 hover:shadow-lg"
-                        data-category="web"
-                        onclick="filterProjects('web')">
-                        Web Development
+                        class="tab-btn active px-4 md:px-6 py-2 rounded-full font-bold transition-all duration-300"
+                        data-category="web">
+                        Web Dev
                     </button>
                     <button 
-                        class="tab-btn px-6 py-2 rounded-full font-bold transition-all duration-300 hover:shadow-lg"
-                        data-category="data"
-                        onclick="filterProjects('data')">
+                        class="tab-btn px-4 md:px-6 py-2 rounded-full font-bold transition-all duration-300"
+                        data-category="data">
                         Data Science
                     </button>
                     <button 
-                        class="tab-btn px-6 py-2 rounded-full font-bold transition-all duration-300 hover:shadow-lg"
-                        data-category="ml"
-                        onclick="filterProjects('ml')">
-                        Machine Learning
+                        class="tab-btn px-4 md:px-6 py-2 rounded-full font-bold transition-all duration-300"
+                        data-category="ml">
+                        ML
+                    </button>
+                    <button 
+                        class="tab-btn px-4 md:px-6 py-2 rounded-full font-bold transition-all duration-300"
+                        data-category="others">
+                        Others
                     </button>
                 </div>
                 <!-- Project Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto" id="projectGrid">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto px-4 md:px-6" id="projectGrid">
                 </div>
                 <!-- Project Modal -->
                 <div id="projectModal" class="fixed inset-0 bg-black/10 backdrop-blur-md z-50 hidden">
