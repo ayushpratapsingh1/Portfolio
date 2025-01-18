@@ -203,7 +203,7 @@ const projects = [
         ],
         links: [
             { text: "Github", url: "https://github.com/ayushpratapsingh1/ai-study-app", type: "github" },
-            { text: "Live Demo", url: "https://aps-study-app.vercel.app/", type: "live" }
+            { text: "Live Demo", url: "https://ai-study-tool.vercel.app/", type: "live" }
         ]
     }       
 ];
