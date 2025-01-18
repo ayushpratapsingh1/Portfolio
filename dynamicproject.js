@@ -212,15 +212,15 @@ let currentCategory = 'all';
 
 function filterProjects(category) {
     const grid = document.getElementById('projectGrid');
-    if (!grid) return; // Safety check
+    if (!grid) return;
     
-    // Update active tab
+    // Update active tab with smoother transition
     document.querySelectorAll('.tab-btn').forEach(btn => {
         if (btn.dataset.category === category) {
-            btn.classList.add('active', 'bg-gradient-to-r', 'from-[#5e2176b8]', 'to-[#9207c1]');
+            btn.classList.add('active');
             btn.classList.remove('bg-white/10');
         } else {
-            btn.classList.remove('active', 'bg-gradient-to-r', 'from-[#5e2176b8]', 'to-[#9207c1]');
+            btn.classList.remove('active');
             btn.classList.add('bg-white/10');
         }
     });
