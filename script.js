@@ -101,7 +101,7 @@ document.querySelectorAll('.nav-item, .mobile-nav-link').forEach(link => {
       const target = document.querySelector(targetSelector);
       if (target) {
         window.scrollTo({
-          top: target.offsetTop - 70,
+          top: target.offsetTop - 40,
           behavior: 'smooth'
         });
       } else {
