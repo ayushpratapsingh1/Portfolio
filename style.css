@@ -253,6 +253,42 @@ header {
   }
 }
 
+/* Navbar Styles */
+.nav-scroll {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 42rem; /* 672px - matches the original max-w-2xl */
+    padding: 0 1rem;
+    z-index: 50;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-scroll.hidden-nav {
+    transform: translateX(-50%) translateY(-100%);
+}
+
+.nav-scroll.visible-nav {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-scroll {
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+}
+
+/* Add backdrop blur for better readability */
+.nav-scroll .navbar-content {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 0 0 1rem 1rem;
+}
+
 /* Project Carousel Styles */
 .project-carousel {
     overflow-x: hidden;
@@ -370,4 +406,21 @@ header {
   100% {
       transform: translateX(calc(-300px * 4));
   }
+}
+
+@keyframes gradient-x {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 15s ease infinite;
 }

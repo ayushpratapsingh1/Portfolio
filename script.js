@@ -1,5 +1,11 @@
 //-------------------------------------------------------------- Typewriter Effect
-const words = ["I'm Pre-final Year Student", "I'm an Aspiring Software Engineer", "Dream Big Aim High"];
+const words = [
+  "I Build Web Applications",
+  "I Love Solving Problems",
+  "I Create with Python & React",
+  "I Design Digital Experiences",
+  "I Learn Something New Every Day"
+];
 let i = 0, j = 0, currentWord = "", isDeleting = false;
 
 function type() {
@@ -51,7 +57,11 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         loadingScreen.style.display = "none";
     }, 300);
-    scrollToTop();
+    // Remove scrollToTop call and replace with direct scroll
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 
@@ -106,22 +116,30 @@ document.querySelectorAll('.nav-item, .mobile-nav-link').forEach(link => {
 //-------------------------------------------------------------- Service Card Functionality
 const serviceCards = document.querySelectorAll('.service-card');
 
-// Reset all service cards
+// Reset all service cards - Add null check and error handling
 function resetCards() {
-  serviceCards.forEach(card => {
-    card.classList.remove('clicked');
-    card.querySelector('.description').classList.add('hidden');
-  });
+    if (!serviceCards.length) return; // Guard clause if no cards exist
+    
+    serviceCards.forEach(card => {
+        const description = card.querySelector('.description');
+        if (description) { // Only modify if description element exists
+            card.classList.remove('clicked');
+            description.classList.add('hidden');
+        }
+    });
 }
 
-// Toggle service card on click
+// Toggle service card on click - Add error handling
 serviceCards.forEach(card => {
-  card.addEventListener('click', (event) => {
-    event.stopPropagation();
-    resetCards();
-    card.classList.add('clicked');
-    card.querySelector('.description').classList.remove('hidden');
-  });
+    const description = card.querySelector('.description');
+    if (description) { // Only add listener if description exists
+        card.addEventListener('click', (event) => {
+            event.stopPropagation();
+            resetCards();
+            card.classList.add('clicked');
+            description.classList.remove('hidden');
+        });
+    }
 });
 
 // Close cards when clicking outside
@@ -155,5 +173,57 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add this code to handle the auto-hidable header
+// Add navbar scroll functionality
+let lastScrollPosition = 0;
+const navbar = document.querySelector('header');
+navbar.classList.add('nav-scroll');
+
+// Enhanced navbar scroll functionality
+function handleScroll() {
+    const currentScrollPosition = window.pageYOffset;
+    const scrollDelta = currentScrollPosition - lastScrollPosition;
+    
+    // Always show navbar at the top of the page
+    if (currentScrollPosition < 50) {
+        navbar.classList.remove('hidden-nav');
+        navbar.classList.add('visible-nav');
+        lastScrollPosition = currentScrollPosition;
+        return;
+    }
+
+    // Add threshold and delay for smoother transitions
+    if (Math.abs(scrollDelta) < 10) {
+        return;
+    }
+
+    // Handle scroll direction
+    if (scrollDelta > 0 && currentScrollPosition > 100) {
+        // Scrolling down
+        navbar.classList.add('hidden-nav');
+        navbar.classList.remove('visible-nav');
+    } else {
+        // Scrolling up
+        navbar.classList.remove('hidden-nav');
+        navbar.classList.add('visible-nav');
+    }
+
+    lastScrollPosition = currentScrollPosition;
+}
+
+// Improved scroll event listener with better throttling
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+            handleScroll();
+            scrollTimeout = null;
+        }, 10);
+    }
+});
+
+// Reset navbar position on window resize
+window.addEventListener('resize', () => {
+    navbar.classList.remove('hidden-nav');
+    navbar.classList.add('visible-nav');
+});
 
