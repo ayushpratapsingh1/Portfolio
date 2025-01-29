@@ -14,9 +14,10 @@ function type() {
   
   if (isDeleting) {
     typewriterElement.textContent = currentWord.substring(0, j--);
+    j--;
     if (j === 0) {
       isDeleting = false;
-      i = (i + 1) % words.length; // Loop through the words
+      i = (i + 2) % words.length;
     }
   } else {
     typewriterElement.textContent = currentWord.substring(0, ++j);
@@ -24,7 +25,7 @@ function type() {
       isDeleting = true;
     }
   }
-  setTimeout(type, 80);
+  setTimeout(type, 150);
 }
 
 type();
