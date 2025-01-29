@@ -203,9 +203,51 @@ const projects = [
         ],
         links: [
             { text: "Github", url: "https://github.com/ayushpratapsingh1/ai-study-app", type: "github" },
-            { text: "Live Demo", url: "https://fikra-space.vercel.app/", type: "live" }
+            { text: "Live Demo", url: "https://ai-study-tool.vercel.app/", type: "live" }
         ]
-    }       
+    },
+    {
+        id: 11,
+        title: "Digital Library Platform",
+        category: "web",
+        image: "./assets/images/book.png",
+        technologies: ["MongoDB","ExpressJS", "ReactJS", "NodeJS", "Docker", "AWS"],
+        description: [
+            "The Digital Library Platform is an advanced web application that enables users to share and discover books with PDF uploads and cover images. It features a dynamic frontend built with React and styled using Tailwind CSS, ensuring an interactive and smooth user experience. The backend is powered by Node.js and MongoDB, providing robust data management capabilities. Docker is used for containerized deployment, making the application scalable and easy to maintain.",
+            "This project is designed to create a seamless digital library experience, offering an organized and efficient way to manage book collections."
+        ],
+        features: [
+            "User-friendly interface for book uploads and management",
+            "Secure and scalable backend architecture",
+            "API documentation for seamless integration"
+        ],
+        links: [
+            { text: "Github", url: "https://github.com/ayushpratapsingh1/bookstore", type: "github" },
+            { text: "Live Demo", url: "https://apsbookstore.vercel.app/", type: "live" }
+        ]
+    },
+    {
+        id: 12,
+        title: "Cloud Authentication System",
+        category: "others",
+        image: "./assets/images/login.png",
+        technologies: ["Docker", "AWS", "Terraform", "GitHub Actions", "React", "Node.js"],
+        description: [
+            "Engineered a cloud-native authentication system showcasing advanced DevOps practices. Implemented containerization using Docker with multi-stage builds, orchestrated through Docker Compose for development and production environments. The infrastructure is provisioned using Terraform on AWS, featuring EC2 instances, VPC networking, and automated secret management.",
+            "Established a robust CI/CD pipeline using GitHub Actions, incorporating automated testing, security scanning, and deployment workflows. Infrastructure security is enforced through AWS IAM roles, security groups, and network ACLs."
+        ],
+        features: [
+            "Containerized microservices architecture",
+            "Automated infrastructure deployment",
+            "Secure credential management with AWS Secrets Manager",
+            "Zero-downtime deployments",
+            "Comprehensive monitoring and logging"
+        ],
+        links: [
+            { text: "Github", url: "https://github.com/ayushpratapsingh1/EC2-Deployment-with-Docker-for-MERN-Project", type: "github" },
+            { text: "Live Demo", url: "https://loginaps.duckdns.org/", type: "live" }
+        ]
+    }     
 ];
 
 let currentCategory = 'all';
@@ -229,11 +271,11 @@ function filterProjects(category) {
     grid.innerHTML = '';
     const filteredProjects = projects.filter(project => project.category === category);
 
-    // Add projects to grid
-    filteredProjects.forEach(project => {
+    filteredProjects.reverse().forEach(project => {
         const card = createProjectCard(project);
         grid.appendChild(card);
     });
+    
 }
 
 function createProjectCard(project) {
