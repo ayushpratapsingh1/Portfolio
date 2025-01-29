@@ -247,7 +247,46 @@ const projects = [
             { text: "Github", url: "https://github.com/ayushpratapsingh1/EC2-Deployment-with-Docker-for-MERN-Project", type: "github" },
             { text: "Live Demo", url: "https://loginaps.duckdns.org/", type: "live" }
         ]
-    }     
+    },
+    {
+        "id": 13,
+        "title": "SMS Spam Classifier",
+        "category": "ml",
+        "image": "./assets/images/sms.png", 
+        "technologies": ["Jupyter Notebook", "Python"],
+        "description": [
+            "The SMS Spam Classifier is a machine learning-based web application that classifies SMS messages as either spam or ham (non-spam). It features an intuitive interface built with Jupyter Notebook and Python, providing a seamless user experience. The backend is powered by machine learning models, integrating advanced text processing techniques to offer accurate spam prediction. The tool also includes a robust set of system design documents, providing in-depth insights into the tool's architecture and technical specifications.",
+            "This project was developed to identify spam messages using various machine learning algorithms, with Multinomial Naive Bayes demonstrating the best performance."
+        ],
+        "features": [
+            "User-friendly interface",
+            "Technical specifications and API documentation",
+            "Implementation guidelines and best practices"
+        ],
+        "links": [
+            { "text": "Github", "url": "https://github.com/ayushpratapsingh1/SMS-Classifier", "type": "github" },
+            { "text": "Live Demo", "url": "https://sms-classifier-aps.streamlit.app/", "type": "live" }
+        ]
+    },
+    {
+        id: 14,
+        title: "Potato Disease Classifier",
+        category: "ml",
+        image: "./assets/images/plant.png",
+        technologies: ["Jupyter Notebook", "Python"],
+        description: [
+            "The Potato Disease Classifier is a comprehensive web application designed to help users identify various plant diseases through image recognition. It features an intuitive interface built with Jupyter Notebook and Python, providing a seamless user experience. The backend is powered by machine learning models, integrating advanced image processing techniques to offer accurate disease identification and recommendations. The tool also includes a robust set of system design documents, providing in-depth insights into the tool's architecture and technical specifications.",
+            "This project was developed in collaboration with individuals from different categories, bringing together diverse skill sets to create an innovative plant disease identification tool."
+        ],
+        features: [
+            "Potato-disease identification",
+            "User-friendly interface",
+            "Implementation guidelines and best practices"
+        ],
+        links: [
+            { text: "Github", url: "https://github.com/ayushpratapsingh1/Plant-Disease-Classifier", type: "github" }
+        ]
+    }         
 ];
 
 let currentCategory = 'all';
