@@ -14,10 +14,9 @@ function type() {
   
   if (isDeleting) {
     typewriterElement.textContent = currentWord.substring(0, j--);
-    j--;
     if (j === 0) {
       isDeleting = false;
-      i = (i + 2) % words.length;
+      i = (i + 1) % words.length; // Loop through the words
     }
   } else {
     typewriterElement.textContent = currentWord.substring(0, ++j);
@@ -25,7 +24,7 @@ function type() {
       isDeleting = true;
     }
   }
-  setTimeout(type, 150);
+  setTimeout(type, 80);
 }
 
 type();
@@ -102,7 +101,7 @@ document.querySelectorAll('.nav-item, .mobile-nav-link').forEach(link => {
       const target = document.querySelector(targetSelector);
       if (target) {
         window.scrollTo({
-          top: target.offsetTop - 40,
+          top: target.offsetTop - 70,
           behavior: 'smooth'
         });
       } else {
