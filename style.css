@@ -425,4 +425,81 @@ header {
   animation: gradient-x 15s ease infinite;
 }
 
+/* Skills Section Styles */
+.skill-progress {
+    height: 100%;
+    transform: translateX(-100%);
+    animation: fillProgress 1.5s ease-out forwards;
+}
+
+.tech-tag {
+    @apply px-2 py-1 text-xs font-medium rounded-full bg-purple-500/10 text-purple-300 
+    transition-all duration-300 hover:scale-110 hover:bg-purple-500/20;
+}
+
+.skill-card {
+    @apply p-4 rounded-lg bg-black/20 transition-all duration-300 hover:bg-purple-500/5
+    flex flex-col items-center text-center;
+}
+
+.skill-icon {
+    @apply w-12 h-12 rounded-lg flex items-center justify-center mb-3 transition-transform duration-300;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.radial-progress {
+    @apply relative w-20 h-20 rounded-full flex items-center justify-center 
+    border-4 border-gray-700 transition-all duration-300;
+}
+
+.radial-progress::before {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    background: conic-gradient(
+        from 0deg,
+        theme('colors.purple.500') calc(var(--progress) * 1%),
+        transparent calc(var(--progress) * 1%)
+    );
+    mask: radial-gradient(transparent 55%, white 56%);
+    -webkit-mask: radial-gradient(transparent 55%, white 56%);
+}
+
+.skill-container:hover .skill-progress {
+    animation: pulse 2s infinite;
+}
+
+@keyframes fillProgress {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Add hover effect for skill cards */
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-card {
+        @apply p-3;
+    }
+    
+    .radial-progress {
+        @apply w-16 h-16;
+    }
+    
+    .skill-icon {
+        @apply w-10 h-10;
+    }
+}
+
 
