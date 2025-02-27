@@ -1,34 +1,107 @@
-//-------------------------------------------------------------- Typewriter Effect
-const words = [
-  "I Build Web Applications",
-  "I Love Solving Problems",
-  "I Create with Python & React",
-  "I Design Digital Experiences",
-  "I Learn Something New Every Day"
-];
-let i = 0, j = 0, currentWord = "", isDeleting = false;
-
-function type() {
-  currentWord = words[i];
-  const typewriterElement = document.getElementById("typewriter");
+// Simple but elegant typewriter effect
+const phrases = [
+    "I Build Web Applications",
+    "I Love Solving Problems",
+    "I Create with Python & React", 
+    "I Design Digital Experiences",
+    "I Learn Something New Every Day"
+  ];
   
-  if (isDeleting) {
-    typewriterElement.textContent = currentWord.substring(0, j--);
-    if (j === 0) {
-      isDeleting = false;
-      i = (i + 1) % words.length; // Loop through the words
+  class SimpleTypewriter {
+    constructor(element, phrases, options = {}) {
+      // DOM element
+      this.element = document.getElementById(element);
+      this.phrases = phrases;
+      
+      // Configuration with reasonable defaults
+      this.options = {
+        typeSpeed: 80,
+        deleteSpeed: 40,
+        pauseBeforeDelete: 1500,
+        pauseBeforeType: 500,
+        cursorChar: '|',
+        ...options
+      };
+      
+      // State variables
+      this.phraseIndex = 0;
+      this.charIndex = 0;
+      this.isDeleting = false;
+      this.isPaused = false;
+      
+      // Add cursor element
+      this.addCursor();
+      
+      // Start typing
+      this.type();
     }
-  } else {
-    typewriterElement.textContent = currentWord.substring(0, ++j);
-    if (j === currentWord.length) {
-      isDeleting = true;
+    
+    addCursor() {
+      this.cursorElement = document.createElement('span');
+      this.cursorElement.textContent = this.options.cursorChar;
+      this.cursorElement.className = 'typewriter-cursor';
+      this.element.parentNode.insertBefore(this.cursorElement, this.element.nextSibling);
+    }
+    
+    type() {
+      // Get current phrase
+      const currentPhrase = this.phrases[this.phraseIndex];
+      
+      // Determine if complete
+      const isComplete = this.isDeleting 
+        ? this.charIndex === 0 
+        : this.charIndex === currentPhrase.length;
+      
+      // Handle completing type/delete cycles
+      if (isComplete) {
+        // If done deleting, move to next phrase
+        if (this.isDeleting) {
+          this.isDeleting = false;
+          this.phraseIndex = (this.phraseIndex + 1) % this.phrases.length;
+          this.isPaused = true;
+          
+          setTimeout(() => {
+            this.isPaused = false;
+            this.type();
+          }, this.options.pauseBeforeType);
+          return;
+        }
+        
+        // If done typing, pause then start deleting
+        this.isPaused = true;
+        setTimeout(() => {
+          this.isPaused = false;
+          this.isDeleting = true;
+          this.type();
+        }, this.options.pauseBeforeDelete);
+        return;
+      }
+      
+      // Skip if paused
+      if (this.isPaused) return;
+      
+      // Update character index
+      this.charIndex = this.isDeleting ? this.charIndex - 1 : this.charIndex + 1;
+      
+      // Update DOM text
+      this.element.textContent = currentPhrase.substring(0, this.charIndex);
+      
+      // Schedule next update
+      setTimeout(
+        () => this.type(), 
+        this.isDeleting ? this.options.deleteSpeed : this.options.typeSpeed
+      );
     }
   }
-  setTimeout(type, 80);
-}
-
-type();
-
+  
+  // Initialize on document load
+  document.addEventListener('DOMContentLoaded', () => {
+    const typewriter = new SimpleTypewriter('typewriter', phrases, {
+      cursorChar: '_',
+      typeSpeed: 70,
+      deleteSpeed: 40
+    });
+  });
 
 //-------------------------------------------------------------- Modal: About Me Pop-up
 const aboutMeBtn = document.getElementById("aboutMeBtn");
