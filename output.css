@@ -1201,6 +1201,21 @@ video {
   scroll-padding-bottom: 4rem;
 }
 
+.scroll-py-20 {
+  scroll-padding-top: 5rem;
+  scroll-padding-bottom: 5rem;
+}
+
+.scroll-py-10 {
+  scroll-padding-top: 2.5rem;
+  scroll-padding-bottom: 2.5rem;
+}
+
+.scroll-py-12 {
+  scroll-padding-top: 3rem;
+  scroll-padding-bottom: 3rem;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
