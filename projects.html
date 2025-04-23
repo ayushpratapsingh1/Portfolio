@@ -117,8 +117,8 @@
         </script>
 </head>   
 <body class = "bg-black text-white font-['Nunito']" >
-        <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 z-40">
-            <div class="rounded-b-lg bg-black/10 backdrop-blur-md ">
+        <header class="fixed top-2 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 z-40">
+            <div class="rounded-lg bg-black/10 backdrop-blur-md border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
                 <div class="h-16 px-6 flex items-center justify-between relative z-40">
                     <!-- Logo -->
                     <a href="./index.html" class="relative w-12 h-12 flex items-center animate-fadeInDown" style="animation-delay: 0s;">
@@ -200,8 +200,10 @@
             </div>
         </header>
         <div id="tsparticles"></div>
-        <ul id="socialMenu" class="social-menu fixed right-4 top-1/3 -translate-y-2/2 bg-black/10 backdrop-blur-sm p-2 
-            rounded-lg shadow-md text-[#b0b2c3] space-y-6 scale-125 duration-100 z-30 cursor-pointer" >
+        <ul id="socialMenu"
+            class="social-menu fixed right-4 top-1/3 -translate-y-1.5 bg-black/20 backdrop-blur-md p-3
+            rounded-lg shadow-lg text-[#b0b2c3] space-y-6 scale-125 z-30 cursor-pointer
+            border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300">
                 <li>
                     <a href="https://www.linkedin.com/in/ayushpratapsingh1/" target="_blank" class="social-link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="hover:text-white block p-2 rounded-lg bg-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 transition-all duration-300 ease-in-out">
@@ -242,132 +244,243 @@
                 <li>
                     <a href="https://www.hackerrank.com/ayushpratap1" target="_blank" class="social-link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-                        class="hover:text-white block p-2 rounded-full bg-transparent hover:bg-gradient-to-r hover:from-green-400 hover:to-green-600 transition-all duration-300 ease-in-out" width="32" height="30">
-                            <path fill="currentColor" d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2.5l1.5 1.5h-3L12 4.5zm1.5 3h-3v9h3v-9zm6 3v3h-3v-3h3zm-12 0v3h-3v-3h3z"/>
+                        class="hover:text-white block p-2 rounded-lg bg-transparent hover:bg-gradient-to-r hover:from-green-400 hover:to-green-600 transition-all duration-300 ease-in-out" width="32" height="32">
+                        <path fill="currentColor" d="M0 0v24h24V0zm9.95 8.002h1.805c.061 0 .111.05.111.111v7.767c0 .061-.05.111-.11.111H9.95a.111.111 0 0 1-.111-.11v-2.87H7.894v2.87c0 .06-.05.11-.11.11H5.976a.11.11 0 0 1-.11-.11V8.112c0-.06.05-.11.11-.11h1.806c.061 0 .11.05.11.11v2.869H9.84v-2.87c0-.06.05-.11.11-.11zm2.999 0h5.778c.061 0 .111.05.111.11v7.767a.11.11 0 0 1-.11.112h-5.78a.11.11 0 0 1-.11-.11v-7.77c0-.06.05-.11.11-.11z"/>
                         </svg>
                     </a>
                 </li>
-            </ul>
-        <section id="projects" class="max-w-full py-16 md:py-28 px-2 md:px-4">
-                <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 
-                bg-clip-text text-transparent mb-10 justify-center text-center">
-                    My Development Journey
-                </h2>    
-                <!-- Tab Buttons -->
-                <div class="flex flex-wrap justify-center gap-4 mb-8">
+        </ul>  
+        <section id="projects" class="py-16 md:py-28 px-4 overflow-hidden relative">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-40 left-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 right-10 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto relative z-10">
+                <!-- Section Header -->
+                <div class="text-center mb-8 relative">
+                    <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 
+                        bg-clip-text text-transparent mb-3">
+                        My Development Journey
+                    </h2>
+                    <p class="text-gray-400 mt-4 max-w-xl mx-auto">Explore my projects across various technologies and domains</p>
+                </div>
+                
+                <!-- Tab Navigation -->
+                <div class="flex flex-wrap justify-center gap-5 mb-8">
                     <button 
-                        class="tab-btn active px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-500 text-white"
+                        class="tab-btn active px-6 py-3 rounded-xl font-bold transition-all 
+                        duration-300 hover:scale-105 
+                        flex items-center gap-2.5 
+                        text-white"
+                        data-category="dev"
+                        onclick="filterProjects('dev')">
+                        <i data-lucide="cloud" class="w-5 h-5"></i>
+                        <span>DevOps</span>
+                    </button>
+                    <button 
+                        class="tab-btn active px-6 py-3 rounded-xl font-bold transition-all 
+                        duration-300 hover:scale-105 
+                        flex items-center gap-2.5 
+                        text-white"
                         data-category="web"
                         onclick="filterProjects('web')">
                         <i data-lucide="globe" class="w-5 h-5"></i>
-                        Web Development
+                        <span>Web Development</span>
                     </button>
                     <button 
-                        class="tab-btn px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2 bg-gradient-to-r from-green-600 to-teal-500 text-white"
+                        class="tab-btn px-6 py-3 rounded-xl font-bold transition-all duration-300 
+                        hover:scale-105 flex 
+                        items-center gap-2.5 bg-black/30 backdrop-blur-sm text-white"
                         data-category="data"
                         onclick="filterProjects('data')">
                         <i data-lucide="database" class="w-5 h-5"></i>
-                        Data Science
+                        <span>Data Science</span>
                     </button>
-                    <!-- <button 
-                        class="tab-btn px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2 bg-gradient-to-r from-red-600 to-pink-500 text-white"
-                        data-category="ml"
-                        onclick="filterProjects('ml')">
-                        <i data-lucide="brain" class="w-5 h-5"></i>
-                        Machine Learning
-                    </button> -->
                     <button 
-                        class="tab-btn px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-orange-500 text-white"
+                        class="tab-btn px-6 py-3 rounded-xl font-bold transition-all duration-300 
+                        hover:scale-105 flex 
+                        items-center gap-2.5 bg-black/30 backdrop-blur-sm text-white"
                         data-category="others"
                         onclick="filterProjects('others')">
                         <i data-lucide="layers" class="w-5 h-5"></i>
-                        Others
+                        <span>Others</span>
                     </button>
                 </div>
-                <!-- Project Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto" id="projectGrid">
+                
+                <!-- Project Grid with Animation Wrapper -->
+                <div class="relative">
+                    <!-- Loading Spinner (optional) -->
+                    <div id="projectLoader" class="absolute inset-0 flex items-center justify-center hidden">
+                        <div class="w-10 h-10 border-4 border-purple-500/30 border-t-purple-500 rounded-full animate-spin"></div>
+                    </div>
+                    
+                    <!-- Projects Container -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="projectGrid">
+                        <!-- Content will be loaded dynamically -->
+                    </div>
+                    
+                    <!-- Empty State Message -->
+                    <div id="emptyState" class="hidden text-center py-20">
+                        <div class="inline-flex justify-center items-center w-20 h-20 rounded-full bg-purple-500/10 mb-6">
+                            <i data-lucide="folder-search" class="w-10 h-10 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">No projects found</h3>
+                        <p class="text-gray-400 max-w-md mx-auto">No projects match the selected category. Try selecting a different category.</p>
+                    </div>
                 </div>
-                <!-- Project Modal -->
-                <div id="projectModal" class="fixed inset-0 bg-black/10 backdrop-blur-md z-50 hidden">
-                    <div class="fixed inset-0 bg-transparent" onclick="closeModal()"></div>
-                    <div class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl p-4">
-                        <div class="bg-black/70 backdrop-blur-lg rounded-xl relative overflow-hidden shadow-[0_0_25px_10px_rgba(139,92,246,0.3)] max-h-[90vh] md:max-h-full">
-                            <!-- Close Button -->
-                            <button onclick="closeModal()" 
-                                class="absolute top-4 right-4 bg-white text-gray-700 hover:text-black z-10 p-2 w-8 h-8 flex justify-center items-center rounded-full shadow-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" 
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                                </svg>
-                            </button>
-                            <!-- Modal Content -->
-                            <div class="flex flex-col md:flex-row max-h-[90vh] overflow-y-auto">
-                                <!-- Image Section -->
-                                <div class="w-full md:w-1/2 justify-center items-center hidden md:flex p-4">
-                                    <img id="modalImage" 
-                                         class="w-auto max-h-64 object-cover rounded-lg shadow-lg border border-none transition-transform duration-700"
-                                         src="/placeholder.svg" 
-                                         alt="Project Image">
-                                </div>
-                                <!-- Content Section -->
-                                <div class="w-full md:w-1/2 p-4 md:p-8 text-white">
-                                    <h3 id="modalTitle" class="text-xl md:text-3xl font-bold mb-4"></h3>
-                                    <div id="modalTechnologies" class="flex flex-wrap gap-2 mb-4"></div>
-                                    <div id="modalDescription" class="text-gray-300 space-y-4 mb-4 text-sm md:text-base"></div>
-                                    <div id="modalFeatures" class="mb-4 text-sm md:text-base"></div>
-                                    <div id="modalLinks" class="flex flex-wrap gap-4"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>               
-        </section>
-        <footer class="bg-black/10 backdrop-blur-sm py-12 px-4 border-t-2 border-purple-500/20">
-                <div class="container mx-auto max-w-6xl">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- About Section -->
-                        <div class="text-center md:text-left">
-                            <h3 class="text-white text-xl font-bold mb-4">What I Like</h3>
-                            <p class="text-gray-300 text-sm">
-                                Curious mind, creative code. I thrive on learning, building, and innovating to create meaningful impact.
-                            </p>
-                        </div>
-                        <div class="text-center md:text-right">
-                            <h3 class="text-white text-2xl font-semibold mb-4">Let’s Connect</h3>
-                            <div class="flex justify-center md:justify-end space-x-8">
-                                <a href="https://linkedin.com/in/ayushpratapsingh1" target="_blank" class="text-gray-300 hover:text-purple-500 transition duration-300">
-                                    <i data-lucide="linkedin" class="w-6 h-6"></i>
-                                </a>
-                                <a href="https://github.com/ayushpratapsingh1" target="_blank" class="text-gray-300 hover:text-purple-500 transition duration-300">
-                                    <i data-lucide="github" class="w-6 h-6"></i>
-                                </a>
-                                <a href="mailto:ayushpratapds@gmail.com" class="text-gray-300 hover:text-purple-500 transition duration-300">
-                                    <i data-lucide="mail" class="w-6 h-6"></i>
-                                </a>
-                                <a href="https://www.instagram.com/ayushpratapsingh51" class="text-gray-300 hover:text-purple-500 transition duration-300">
-                                    <i data-lucide="instagram" class="w-6 h-6"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            </div>
             
-                    <div class="mt-8 pt-8 border-t border-gray-700">
-                        <!-- Computer Science Quote -->
-                        <p class="text-white text-lg italic font-semibold text-center mb-6">
-                            "Code is poetry, and projects are the verses that tell our story."
-                        </p>
-                        <!-- Attribution and Copyright -->
-                        <div class="flex flex-col sm:flex-row justify-between items-center">
-                            <p class="text-gray-400 text-sm mb-2 sm:mb-0">
-                                © 2024 Ayush Pratap Singh. All rights reserved.
-                            </p>
-                            <p class="text-gray-400 text-sm">
-                                Inspired by <span class="text-purple-400 font-bold">Procodrrr</span>
-                            </p>
+            <!-- Enhanced Project Modal -->
+            <div id="projectModal" class="fixed inset-0 bg-black/50 backdrop-blur-md z-50 hidden opacity-0 transition-all duration-300">
+                <div class="fixed inset-0 bg-transparent" onclick="closeModal()"></div>
+                <div id="modalContent" class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl p-4 transition-all duration-500 transform scale-95 opacity-0">
+                    <div class="bg-gradient-to-br from-black/80 to-purple-900/20 backdrop-blur-xl rounded-xl relative overflow-hidden shadow-[0_0_35px_10px_rgba(139,92,246,0.3)] max-h-[90vh] border border-purple-500/20">
+                        <!-- Status Badge -->
+                        <div class="absolute top-4 left-4 z-10">
+                            <span id="modalStatus" class="hidden bg-green-500/80 backdrop-blur-md text-white text-xs py-1 px-3 rounded-full font-medium shadow-lg flex items-center">
+                                <span class="w-2 h-2 bg-white rounded-full mr-1.5 animate-pulse"></span>
+                                Live
+                            </span>
+                        </div>
+                        
+                        <!-- Close Button -->
+                        <button onclick="closeModal()" 
+                            class="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white hover:bg-white hover:text-black z-10 p-2 w-10 h-10 flex justify-center items-center rounded-full shadow-md transition-all duration-300 border border-white/20">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" 
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        
+                        <!-- Modal Content -->
+                        <div class="flex flex-col md:flex-row max-h-[90vh] overflow-y-auto">
+                            <!-- Image Section -->
+                            <div class="w-full md:w-1/2 flex items-center justify-center p-6 md:p-8">
+                                <div class="overflow-hidden rounded-xl shadow-2xl border border-purple-500/30 bg-black/20 w-full h-64 md:h-80 relative group">
+                                    <img id="modalImage" 
+                                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        src="/placeholder.svg" 
+                                        alt="Project Image">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Content Section -->
+                            <div class="w-full md:w-1/2 p-6 md:p-8 text-white">
+                                <h3 id="modalTitle" class="text-xl md:text-2xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"></h3>
+                                
+                                <div id="modalTechnologies" class="flex flex-wrap gap-2 mb-6"></div>
+                                
+                                <div class="mb-6">
+                                    <h4 class="text-lg font-semibold text-purple-300 mb-2 flex items-center gap-2">
+                                        <i data-lucide="file-text" class="w-5 h-5"></i>
+                                        Description
+                                    </h4>
+                                    <div id="modalDescription" class="text-gray-300 text-justify space-y-4 text-[10px] md:text-[14px]"></div>
+                                </div>
+                                
+                                <div class="mb-8">
+                                    <div id="modalFeatures" class="text-[10px] md:text-[14px]"></div>
+                                </div>
+                                
+                                <div id="modalLinks" class="flex flex-wrap gap-4"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <footer class="bg-gradient-to-b from-black/30 to-purple-900/10 backdrop-blur-md py-16 px-4 border-t border-purple-500/30 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500/50 via-pink-500/50 to-purple-500/50"></div>
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-40 left-10 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 right-20 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto max-w-6xl relative z-10">
+                <!-- Main Footer Content -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- About Section with Updated Design -->
+                    <div class="text-center md:text-left transform transition-all duration-500 hover:translate-y-[-5px]">
+                        <h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+                            <span class="h-5 w-1 bg-gradient-to-b from-purple-400 to-pink-600 rounded-full hidden md:block"></span>
+                            About Me
+                        </h3>
+                        <div class="bg-white/5 backdrop-blur-sm p-5 rounded-xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Curious mind, creative code. I thrive on learning, building, and innovating to create meaningful impact through elegant solutions and cutting-edge technologies.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Connect Section with Enhanced Links -->
+                    <div class="text-center md:text-right transform transition-all duration-500 hover:translate-y-[-5px]">
+                        <h3 class="text-white text-xl font-bold mb-4 flex items-center justify-center md:justify-end gap-2">
+                            Let's Connect
+                            <span class="h-5 w-1 bg-gradient-to-b from-purple-400 to-pink-600 rounded-full hidden md:block"></span>
+                        </h3>
+                        <div class="bg-white/5 backdrop-blur-sm p-5 rounded-xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
+                            <div class="flex justify-center md:justify-end space-x-6">
+                                <a href="https://linkedin.com/in/ayushpratapsingh1" target="_blank" aria-label="LinkedIn Profile" 
+                                    class="group relative p-3 bg-white/10 hover:bg-gradient-to-r hover:from-blue-500/80 hover:to-blue-700/80 
+                                    text-gray-300 hover:text-white rounded-lg transition-all duration-300 hover:scale-110">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                    <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs font-medium bg-black/80 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 group-hover:-bottom-8 pointer-events-none transition-all duration-300">LinkedIn</span>
+                                </a>
+                                <a href="https://github.com/ayushpratapsingh1" target="_blank" aria-label="GitHub Profile"
+                                    class="group relative p-3 bg-white/10 hover:bg-gradient-to-r hover:from-gray-700/80 hover:to-gray-900/80 
+                                    text-gray-300 hover:text-white rounded-lg transition-all duration-300 hover:scale-110">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                    <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs font-medium bg-black/80 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 group-hover:-bottom-8 pointer-events-none transition-all duration-300">GitHub</span>
+                                </a>
+                                <a href="mailto:ayushpratapds@gmail.com" aria-label="Email"
+                                    class="group relative p-3 bg-white/10 hover:bg-gradient-to-r hover:from-red-500/80 hover:to-pink-600/80 
+                                    text-gray-300 hover:text-white rounded-lg transition-all duration-300 hover:scale-110">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                    <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs font-medium bg-black/80 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 group-hover:-bottom-8 pointer-events-none transition-all duration-300">Email</span>
+                                </a>
+                                <a href="https://www.instagram.com/ayushpratapsingh51" target="_blank" aria-label="Instagram"
+                                    class="group relative p-3 bg-white/10 hover:bg-gradient-to-r hover:from-pink-500/80 hover:to-purple-600/80 
+                                    text-gray-300 hover:text-white rounded-lg transition-all duration-300 hover:scale-110">
+                                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                                    <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs font-medium bg-black/80 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 group-hover:-bottom-8 pointer-events-none transition-all duration-300">Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lower Footer Section with Quote and Copyright -->
+                <div class="mt-10 pt-8 border-t border-purple-500/20">
+                    <!-- Enhanced Quote Section -->
+                    <div class="relative mb-8">
+                        <div class="absolute left-0 top-1/2 -translate-y-1/2 h-[1px] w-full bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
+                        <p class="text-white text-lg italic font-semibold text-center relative bg-black/50 backdrop-blur-sm px-4 mx-auto w-max">
+                            <span class="text-3xl text-purple-400">"</span>
+                            Code is poetry, and projects are the verses that tell our story.
+                            <span class="text-3xl text-purple-400">"</span>
+                        </p>
+                    </div>
+                    
+                    <!-- Enhanced Copyright Section -->
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-3">
+                        <p class="text-gray-400 text-sm mb-2 sm:mb-0 flex items-center">
+                            <i data-lucide="copyright" class="w-3.5 h-3.5 mr-1.5 text-purple-400"></i>
+                            2025 Ayush Pratap Singh. All rights reserved.
+                        </p>
+                        <div class="flex items-center gap-3 text-gray-400 text-sm">
+                            <span>Built with</span>
+                            <i data-lucide="heart" class="w-3.5 h-3.5 text-pink-500"></i>
+                            <span>and inspired by</span>
+                            <span class="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent font-bold">Procodrrr</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
         <button id="scrollToTopBtn" class="fixed bottom-5 right-5 bg-gradient-to-r from-[#5e2176b8] to-[#9207c1] text-white p-3 
             rounded-full shadow-lg transition-opacity duration-300 opacity-0 invisible 

@@ -42,7 +42,7 @@ const projects = [
     {
         id: 3,
         title: "Pixel Dev - Web Solutions",
-        category: "web",
+        category: "wel",
         image: "./assets/images/pixel-dev.png",
         technologies: ["TypeScript", "Next.js", "Framer Motion", "React"],
         description: [
@@ -209,7 +209,7 @@ const projects = [
     {
         id: 11,
         title: "Digital Library Platform",
-        category: "web",
+        category: ["web","dev"],
         image: "./assets/images/book.png",
         technologies: ["MongoDB","ExpressJS", "ReactJS", "NodeJS", "Docker", "AWS"],
         description: [
@@ -229,7 +229,7 @@ const projects = [
     {
         id: 12,
         title: "Cloud Authentication System",
-        category: "others",
+        category: ["others","dev"],
         image: "./assets/images/login.png",
         technologies: ["Docker", "AWS", "Terraform", "GitHub Actions", "React", "Node.js"],
         description: [
@@ -291,49 +291,156 @@ const projects = [
 
 let currentCategory = 'all';
 
+// Enhanced filter projects function
 function filterProjects(category) {
     const grid = document.getElementById('projectGrid');
+    const emptyState = document.getElementById('emptyState');
+    const loader = document.getElementById('projectLoader');
+    
     if (!grid) return;
     
-    // Update active tab with smoother transition
+    // Show loader if available
+    if (loader) loader.classList.remove('hidden');
+    
+    // Update tab buttons with enhanced transitions
     document.querySelectorAll('.tab-btn').forEach(btn => {
         if (btn.dataset.category === category) {
             btn.classList.add('active');
             btn.classList.remove('bg-white/10');
+            
+            // Set gradient based on category
+            if (category === 'web') {
+                btn.className = btn.className.replace(/from-\w+-\d+\s+to-\w+-\d+/g, 'from-purple-600 to-blue-500');
+            } else if (category === 'data') {
+                btn.className = btn.className.replace(/from-\w+-\d+\s+to-\w+-\d+/g, 'from-green-600 to-teal-500');
+            } else if (category === 'others') {
+                btn.className = btn.className.replace(/from-\w+-\d+\s+to-\w+-\d+/g, 'from-yellow-600 to-orange-500');
+            } else if (category === 'dev') {
+                btn.className = btn.className.replace(/from-\w+-\d+\s+to-\w+-\d+/g, 'from-red-600 to-pink-500');
+            }
         } else {
             btn.classList.remove('active');
             btn.classList.add('bg-white/10');
+            // Remove gradients from inactive tabs
+            btn.className = btn.className.replace(/from-\w+-\d+\s+to-\w+-\d+/g, '');
         }
     });
 
-    // Clear and filter projects
-    grid.innerHTML = '';
-    const filteredProjects = projects.filter(project => project.category === category);
-
-    filteredProjects.reverse().forEach(project => {
-        const card = createProjectCard(project);
-        grid.appendChild(card);
+    // Enhanced animation for existing cards
+    const existingCards = grid.querySelectorAll('.project-card');
+    existingCards.forEach(card => {
+        card.classList.add('opacity-0');
+        card.style.transform = 'translateY(20px)';
     });
     
+    // Delayed grid update for smoother transitions
+    setTimeout(() => {
+        // Clear grid
+        grid.innerHTML = '';
+        
+        // Filter projects
+        const filteredProjects = projects.filter(project => project.category.includes(category));
+        currentCategory = category;
+        
+        // Show empty state if no projects match
+        if (filteredProjects.length === 0) {
+            if (emptyState) emptyState.classList.remove('hidden');
+            if (loader) loader.classList.add('hidden');
+            return;
+        }
+        
+        if (emptyState) emptyState.classList.add('hidden');
+        
+        // Add new cards with enhanced staggered animation
+        filteredProjects.reverse().forEach((project, index) => {
+            const card = createProjectCard(project);
+            card.classList.add('project-card');
+            card.style.transitionDelay = `${index * 100}ms`;
+            grid.appendChild(card);
+            
+            // Trigger reflow for smooth animation
+            void card.offsetWidth;
+            
+            // Animate in
+            setTimeout(() => {
+                card.classList.remove('opacity-0');
+                card.style.transform = 'translateY(0)';
+            }, 50);
+        });
+        
+        // Hide loader
+        if (loader) loader.classList.add('hidden');
+    }, 300);
 }
 
+// Enhanced project card creation with status indicators
 function createProjectCard(project) {
     const card = document.createElement('div');
-    card.className = `group relative bg-black/40 backdrop-blur-md rounded-xl overflow-hidden transform
-        transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_10px_rgba(139,92,246,0.2)]`;
+    card.className = `project-card group relative bg-gradient-to-br from-black/60 to-purple-900/20 backdrop-blur-md 
+        rounded-xl overflow-hidden transform transition-all duration-500 hover:translate-y-[-8px] border border-purple-500/20 
+        hover:border-purple-500/40 hover:shadow-[0_10px_35px_-10px_rgba(139,92,246,0.4)] opacity-0`;
+    card.style.transform = 'translateY(20px)';
+    
+    // Determine project status
+    let statusBadge = '';
+    if (project.status) {
+        // If project has explicit status
+        let statusColor, statusText, hasAnimation;
+        
+        if (project.status === 'live') {
+            statusColor = 'bg-green-500/80';
+            statusText = 'Live';
+            hasAnimation = true;
+        } else if (project.status === 'in-progress') {
+            statusColor = 'bg-yellow-500/80';
+            statusText = 'In Progress';
+        } else if (project.status === 'completed') {
+            statusColor = 'bg-blue-500/80';
+            statusText = 'Completed';
+        } else if (project.status === 'archived') {
+            statusColor = 'bg-gray-500/80';
+            statusText = 'Archived';
+        }
+        
+        statusBadge = `
+            <div class="absolute top-3 right-3 z-10">
+                <span class="${statusColor} backdrop-blur-md text-white text-xs py-1 px-3 rounded-full font-medium shadow-lg flex items-center">
+                    ${hasAnimation ? '<span class="w-2 h-2 bg-white rounded-full mr-1.5 animate-pulse"></span>' : ''}
+                    ${statusText}
+                </span>
+            </div>
+        `;
+    } else {
+        // Infer status from project.links
+        const hasLiveLink = project.links.some(link => link.type === 'live' || link.type === 'demo');
+        if (hasLiveLink) {
+            statusBadge = `
+                <div class="absolute top-3 right-3 z-10">
+                    <span class="bg-green-500/80 backdrop-blur-md text-white text-xs py-1 px-3 rounded-full font-medium shadow-lg flex items-center">
+                        <span class="w-2 h-2 bg-white rounded-full mr-1.5 animate-pulse"></span>
+                        Live
+                    </span>
+                </div>
+            `;
+        }
+    }
     
     card.innerHTML = `
-        <div class="relative overflow-hidden">
+        <div class="relative overflow-hidden group">
             <img src="${project.image}" 
-                 alt="${project.title}" 
-                 class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
+                alt="${project.title}"
+                loading="lazy"
+                class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer">
+            
+            ${statusBadge}
+            
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 
-                        group-hover:opacity-100 transition-opacity duration-500">
+                        group-hover:opacity-100 transition-opacity duration-500 cursor-pointer">
                 <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 
-                            group-hover:translate-y-0 transition-transform duration-500">
+                            group-hover:translate-y-0 transition-transform duration-500 open-overlay">
                     <div class="flex flex-wrap gap-2 mb-3">
                         ${project.technologies.map(tech => 
-                            `<span class="bg-white/10 px-2 py-1 rounded-md text-xs font-medium text-white">
+                            `<span class="bg-black/20 px-2 py-1 rounded-full text-xs font-medium text-white">
                                 ${tech}
                             </span>`).join('')}
                     </div>
@@ -341,93 +448,216 @@ function createProjectCard(project) {
                 </div>
             </div>
         </div>
+
         <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2">${project.title}</h3>
+            <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300 mb-4">${project.title}</h3>
             <div class="flex gap-3">
                 ${project.links.map(link => 
                     `<a href="${link.url}" 
                         target="_blank" 
                         class="${link.type === 'github' ? 'bg-white text-[#781c9c]' : 'bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white'} 
-                        px-4 py-1 rounded-full text-sm font-bold transition-all duration-300 hover:scale-110">
+                        px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-300 hover:scale-110 flex items-center gap-1.5">
+                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            ${link.type === 'github' 
+                                ? '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>'
+                                : '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>'}
+                        </svg>
                         ${link.text}
                     </a>`).join('')}
             </div>
         </div>`;
     
-    card.addEventListener('click', () => openModal(project));
+    // Attach event for modal opening
+    const overlay = card.querySelector('.open-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', () => openModal(project));
+    }
+    
+    // Make the card image area also clickable for modal
+    const imageArea = card.querySelector('img');
+    if (imageArea) {
+        imageArea.addEventListener('click', (e) => {
+            // Don't trigger if clicking a direct link
+            if (!e.target.closest('a')) {
+                openModal(project);
+            }
+        });
+    }
+
     return card;
 }
 
-// Modal functions
+// Enhanced modal functions with animations
 function openModal(project) {
     const modal = document.getElementById('projectModal');
+    const modalContent = document.getElementById('modalContent');
+    const modalStatus = document.getElementById('modalStatus');
+    
+    if (!modal) return;
+    
     document.body.style.overflow = 'hidden';
     
-    // Populate modal content
-    document.getElementById('modalImage').src = project.image;
-    document.getElementById('modalTitle').textContent = project.title;
+    // Set modal image
+    const modalImage = document.getElementById('modalImage');
+    if (modalImage) {
+        modalImage.src = project.image;
+        modalImage.alt = project.title;
+    }
     
-    // Technologies
+    // Set modal title
+    const modalTitle = document.getElementById('modalTitle');
+    if (modalTitle) {
+        modalTitle.textContent = project.title;
+        modalTitle.className = "text-xl md:text-2xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent";
+    }
+    
+    // Set technologies with improved styling
     const techContainer = document.getElementById('modalTechnologies');
-    techContainer.innerHTML = project.technologies.map(tech => 
-        `<span class="bg-white/10 px-4 py-1 rounded-md text-xs font-medium">${tech}</span>`
-    ).join('');
+    if (techContainer) {
+        techContainer.innerHTML = project.technologies.map(tech => 
+            `<span class="bg-purple-500/20 border border-purple-500/30 px-2.5 py-1 rounded-full text-xs font-medium text-purple-300">${tech}</span>`
+        ).join('');
+    }
     
-    // Description
+    // Set description with proper formatting
     const descContainer = document.getElementById('modalDescription');
-    descContainer.innerHTML = project.description.map(text => 
-        `<p class="text-sm">${text}</p>`
-    ).join('');
+    if (descContainer) {
+        if (Array.isArray(project.description)) {
+            descContainer.innerHTML = project.description.map(text => 
+                `<p class="text-gray-300">${text}</p>`
+            ).join('');
+        } else {
+            descContainer.innerHTML = `<p class="text-gray-300">${project.description}</p>`;
+        }
+    }
     
-    // Features
+    // Set features with better formatting
     const featuresContainer = document.getElementById('modalFeatures');
-    featuresContainer.innerHTML = `
-        <h4 class="text-white font-semibold mb-2">Key Features:</h4>
-        <ul class="list-disc text-sm space-y-1">
-            ${project.features.map(feature => `<li>${feature}</li>`).join('')}
-        </ul>
-    `;
+    if (featuresContainer && project.features) {
+        featuresContainer.innerHTML = `
+            <h4 class="text-lg font-semibold text-purple-300 mb-2 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                Key Features
+            </h4>
+            <ul class="list-disc list-inside text-gray-300 space-y-1 pl-2">
+                ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+            </ul>
+        `;
+    }
     
-    // Links
+    // Set links with enhanced styling
     const linksContainer = document.getElementById('modalLinks');
-    linksContainer.innerHTML = project.links.map(link => `
-        <a href="${link.url}" 
-           target="_blank" 
-           class="${link.type === 'github' ? 'bg-white text-[#781c9c]' : 'bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white'} 
-           px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-110">
-            ${link.text}
-        </a>
-    `).join('');
+    if (linksContainer) {
+        linksContainer.innerHTML = project.links.map(link => {
+            const isGithub = link.type === 'github';
+            return `
+                <a href="${link.url}" 
+                   target="_blank" 
+                   class="${isGithub 
+                    ? 'flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 border border-white/10' 
+                    : 'flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-all duration-300'}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                        ${isGithub 
+                            ? '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>'
+                            : '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>'}
+                    </svg>
+                    <span>${link.text}</span>
+                </a>
+            `;
+        }).join('');
+    }
     
+    // Set status badge in modal if available
+    if (modalStatus) {
+        // Determine status - either from explicit property or infer from links
+        let statusInfo = { show: false };
+        
+        if (project.status) {
+            statusInfo.show = true;
+            
+            if (project.status === 'live') {
+                statusInfo.color = 'bg-green-500/80';
+                statusInfo.text = 'Live';
+                statusInfo.animate = true;
+            } else if (project.status === 'in-progress') {
+                statusInfo.color = 'bg-yellow-500/80';
+                statusInfo.text = 'In Progress';
+            } else if (project.status === 'completed') {
+                statusInfo.color = 'bg-blue-500/80';
+                statusInfo.text = 'Completed';
+            } else if (project.status === 'archived') {
+                statusInfo.color = 'bg-gray-500/80';
+                statusInfo.text = 'Archived';
+            }
+        } else {
+            // Infer status from project.links
+            const hasLiveLink = project.links.some(link => link.type === 'live' || link.type === 'demo');
+            if (hasLiveLink) {
+                statusInfo = {
+                    show: true,
+                    color: 'bg-green-500/80',
+                    text: 'Live',
+                    animate: true
+                };
+            }
+        }
+        
+        if (statusInfo.show) {
+            modalStatus.className = `${statusInfo.color} backdrop-blur-md text-white text-xs py-1 px-3 rounded-full font-medium shadow-lg flex items-center`;
+            modalStatus.innerHTML = `
+                ${statusInfo.animate ? '<span class="w-2 h-2 bg-white rounded-full mr-1.5 animate-pulse"></span>' : ''}
+                ${statusInfo.text}
+            `;
+            modalStatus.classList.remove('hidden');
+        } else {
+            modalStatus.classList.add('hidden');
+        }
+    }
+    
+    // Show modal with enhanced animation
     modal.classList.remove('hidden');
+    if (modalContent) {
+        setTimeout(() => {
+            modal.classList.add('opacity-100');
+            modalContent.classList.remove('scale-95', 'opacity-0');
+            modalContent.classList.add('scale-100', 'opacity-100');
+        }, 10);
+    }
 }
 
 function closeModal() {
     const modal = document.getElementById('projectModal');
-    document.body.style.overflow = '';
-    modal.classList.add('hidden');
+    const modalContent = document.getElementById('modalContent');
+    
+    if (!modal) return;
+    
+    // Add exit animation
+    if (modalContent) {
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        modal.classList.remove('opacity-100');
+    }
+    
+    // Delay hiding to allow for animation
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }, 300);
 }
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, initializing projects...'); // Debug log
+    console.log('DOM loaded, initializing projects...');
     
-    // Set up tab button listeners
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const category = btn.dataset.category;
-            console.log('Filter clicked:', category); // Debug log
-            filterProjects(category);
-        });
-    });
-
-    // Initial load with web projects
-    filterProjects('web');
-    
-    // Close modal when pressing Escape
+    // Set up close modal on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeModal();
         }
     });
+    
+    // Initial load with web projects
+    filterProjects('web');
 });

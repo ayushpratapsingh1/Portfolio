@@ -97,7 +97,7 @@ const phrases = [
   // Initialize on document load
   document.addEventListener('DOMContentLoaded', () => {
     const typewriter = new SimpleTypewriter('typewriter', phrases, {
-      cursorChar: '_',
+      cursorChar: '|',
       typeSpeed: 70,
       deleteSpeed: 40
     });
@@ -246,42 +246,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add navbar scroll functionality
-let lastScrollPosition = 0;
-const navbar = document.querySelector('header');
-navbar.classList.add('nav-scroll');
+// // Add navbar scroll functionality
+// let lastScrollPosition = 0;
+// const navbar = document.querySelector('header');
+// navbar.classList.add('nav-scroll');
 
-// Enhanced navbar scroll functionality
-function handleScroll() {
-    const currentScrollPosition = window.pageYOffset;
-    const scrollDelta = currentScrollPosition - lastScrollPosition;
+// // Enhanced navbar scroll functionality
+// function handleScroll() {
+//     const currentScrollPosition = window.pageYOffset;
+//     const scrollDelta = currentScrollPosition - lastScrollPosition;
     
-    // Always show navbar at the top of the page
-    if (currentScrollPosition < 50) {
-        navbar.classList.remove('hidden-nav');
-        navbar.classList.add('visible-nav');
-        lastScrollPosition = currentScrollPosition;
-        return;
-    }
+//     // Always show navbar at the top of the page
+//     if (currentScrollPosition < 50) {
+//         navbar.classList.remove('hidden-nav');
+//         navbar.classList.add('visible-nav');
+//         lastScrollPosition = currentScrollPosition;
+//         return;
+//     }
 
-    // Add threshold and delay for smoother transitions
-    if (Math.abs(scrollDelta) < 10) {
-        return;
-    }
+//     // Add threshold and delay for smoother transitions
+//     if (Math.abs(scrollDelta) < 10) {
+//         return;
+//     }
 
-    // Handle scroll direction
-    if (scrollDelta > 0 && currentScrollPosition > 100) {
-        // Scrolling down
-        navbar.classList.add('hidden-nav');
-        navbar.classList.remove('visible-nav');
-    } else {
-        // Scrolling up
-        navbar.classList.remove('hidden-nav');
-        navbar.classList.add('visible-nav');
-    }
+//     // Handle scroll direction
+//     if (scrollDelta > 0 && currentScrollPosition > 100) {
+//         // Scrolling down
+//         navbar.classList.add('hidden-nav');
+//         navbar.classList.remove('visible-nav');
+//     } else {
+//         // Scrolling up
+//         navbar.classList.remove('hidden-nav');
+//         navbar.classList.add('visible-nav');
+//     }
 
-    lastScrollPosition = currentScrollPosition;
-}
+//     lastScrollPosition = currentScrollPosition;
+// }
 
 // Improved scroll event listener with better throttling
 let scrollTimeout;
@@ -295,8 +295,8 @@ window.addEventListener('scroll', () => {
 });
 
 // Reset navbar position on window resize
-window.addEventListener('resize', () => {
-    navbar.classList.remove('hidden-nav');
-    navbar.classList.add('visible-nav');
-});
+// window.addEventListener('resize', () => {
+//     navbar.classList.remove('hidden-nav');
+//     navbar.classList.add('visible-nav');
+// });
 
