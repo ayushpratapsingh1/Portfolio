@@ -282,23 +282,51 @@ header {
     }
 }
 
-/* Custom scrollbar for desktop */
-@media (min-width: 768px) {
-    .project-track::-webkit-scrollbar {
-        height: 6px;
-    }
+/* Add this to your existing style section */
 
-    .project-track::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 3px;
-    }
-
-    .project-track::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 3px;
-    }
+/* Purple Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
+::-webkit-scrollbar-track {
+  background: rgba(20, 20, 20, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #5e2176, #9207c1);
+  border-radius: 10px;
+  border: 2px solid rgba(30, 30, 30, 0.5);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7928ca, #b80aff);
+  box-shadow: 0 0 10px rgba(146, 7, 193, 0.5);
+}
+
+/* Firefox Scrollbar Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9207c1 rgba(20, 20, 20, 0.1);
+}
+
+/* Modal-specific scrollbar for better contrast */
+#modalContent {
+  scrollbar-width: thin;
+  scrollbar-color: #9207c1 rgba(255, 255, 255, 0.05);
+}
+
+#modalContent::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#modalContent::-webkit-scrollbar-thumb {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
 /* Modal Animation */
 @keyframes modalFadeIn {
     from {

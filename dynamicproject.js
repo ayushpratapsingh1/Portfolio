@@ -659,5 +659,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Initial load with web projects
-    filterProjects('web');
+    filterProjects('dev');
 });
