@@ -444,7 +444,6 @@ function createProjectCard(project) {
                                 ${tech}
                             </span>`).join('')}
                     </div>
-                    <p class="text-white/90 text-sm line-clamp-3">${project.description[0]}</p>
                 </div>
             </div>
         </div>
@@ -455,7 +454,7 @@ function createProjectCard(project) {
                 ${project.links.map(link => 
                     `<a href="${link.url}" 
                         target="_blank" 
-                        class="${link.type === 'github' ? 'bg-white text-[#781c9c]' : 'bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white'} 
+                        class="${link.type === 'github' ? 'bg-black text-[#781c9c]' : 'bg-gradient-to-r from-[#5e2176b8] to-[#c004ff] text-white'} 
                         px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-300 hover:scale-110 flex items-center gap-1.5">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             ${link.type === 'github' 

@@ -1196,21 +1196,6 @@ video {
   resize: both;
 }
 
-.scroll-py-16 {
-  scroll-padding-top: 4rem;
-  scroll-padding-bottom: 4rem;
-}
-
-.scroll-py-20 {
-  scroll-padding-top: 5rem;
-  scroll-padding-bottom: 5rem;
-}
-
-.scroll-py-10 {
-  scroll-padding-top: 2.5rem;
-  scroll-padding-bottom: 2.5rem;
-}
-
 .scroll-py-12 {
   scroll-padding-top: 3rem;
   scroll-padding-bottom: 3rem;
