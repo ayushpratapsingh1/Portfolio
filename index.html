@@ -123,13 +123,13 @@
     
                     <!-- Right Corner - Phone -->
                     <div class="flex items-center gap-2">
-                        <a href="tel:+918475744268" class="hidden lg:flex p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown" style="animation-delay: 0.7s;">
-                            <i data-lucide="phone" class="w-5 h-5"></i>
-                            <span class="sr-only">Call</span>
+                        <button id="soundToggle" class="lg:flex p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown" style="animation-delay: 0.7s;">
+                            <i data-lucide="volume-2" class="w-5 h-5"></i>
+                            <span class="sr-only">Toggle Sound</span>
                             <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                                Call
+                                Toggle Sound
                             </div>
-                        </a>
+                        </button>
     
                         <!-- Mobile Menu Button -->
                         <button 
@@ -166,10 +166,6 @@
                     <a href="#contact" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
                         <i data-lucide="mail" class="w-5 h-5"></i>
                         <span>Contact</span>
-                    </a>
-                    <a href="tel:+918475662268" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
-                        <i data-lucide="phone" class="w-5 h-5"></i>
-                        <span>Call</span>
                     </a>
                 </nav>
             </div>
@@ -1366,6 +1362,49 @@
             </script>
         <script src="contact.js"></script>
         <script>lucide.createIcons();</script>
+        <!-- Background Audio -->
+        <audio id="backgroundAudio" loop preload="auto">
+            <source src="./assets/sound.mp3" type="audio/mpeg">
+            <!-- <source src="./assets/music/background-music.ogg" type="audio/ogg"> -->
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Audio Control Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const backgroundMusic = document.getElementById('backgroundAudio');
+                const toggleMusic = document.getElementById('soundToggle');
+                
+                // Set initial volume
+                backgroundMusic.volume = 0.3;
+                
+                // Try to autoplay on page load (may be blocked by browser)
+                backgroundMusic.play().catch(err => {
+                    console.log("Autoplay prevented. User interaction needed.");
+                });
+                
+                // Toggle button click handler
+                toggleMusic.addEventListener('click', () => {
+                    if (backgroundMusic.paused) {
+                        backgroundMusic.play();
+                        toggleMusic.innerHTML = '<i data-lucide="volume-2"></i>';
+                    } else {
+                        backgroundMusic.pause();
+                        toggleMusic.innerHTML = '<i data-lucide="volume-x"></i>';
+                    }
+                    lucide.createIcons(); // Update Lucide icons
+                });
+                
+                // Handle page visibility changes
+                // document.addEventListener('visibilitychange', () => {
+                //     if (document.hidden) {
+                //         backgroundMusic.pause();
+                //     } else if (!backgroundMusic.paused) {
+                //         backgroundMusic.play();
+                //     }
+                // });
+            });
+        </script>
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
         <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script> -->
