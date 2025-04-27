@@ -559,26 +559,37 @@
             button.addEventListener('mouseenter', () => tooltip.classList.replace('opacity-0', 'opacity-100'));
             button.addEventListener('mouseleave', () => tooltip.classList.replace('opacity-100', 'opacity-0'));
         </script>
-        <audio id="backgroundAudio" loop preload="auto">
+        <audio id="backgroundAudio" autoplay loop playsinline preload="auto">
             <source src="./assets/sound.mp3" type="audio/mpeg">
             <!-- <source src="./assets/music/background-music.ogg" type="audio/ogg"> -->
             Your browser does not support the audio element.
         </audio>
 
-        <!-- Audio Control Script -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const backgroundMusic = document.getElementById('backgroundAudio');
                 const toggleMusic = document.getElementById('soundToggle');
-                
+            
                 // Set initial volume
                 backgroundMusic.volume = 0.3;
-                
+            
                 // Try to autoplay on page load (may be blocked by browser)
-                backgroundMusic.play().catch(err => {
-                    console.log("Autoplay prevented. User interaction needed.");
-                });
-                
+                const tryAutoplay = () => {
+                    backgroundMusic.play().then(() => {
+                        console.log('Audio started automatically.');
+                    }).catch((err) => {
+                        console.log('Autoplay prevented. Waiting for user interaction...');
+                        // Listen for first user interaction to start audio
+                        const startOnInteraction = () => {
+                            backgroundMusic.play();
+                            document.removeEventListener('click', startOnInteraction);
+                        };
+                        document.addEventListener('click', startOnInteraction);
+                    });
+                };
+            
+                tryAutoplay();
+            
                 // Toggle button click handler
                 toggleMusic.addEventListener('click', () => {
                     if (backgroundMusic.paused) {
@@ -590,17 +601,8 @@
                     }
                     lucide.createIcons(); // Update Lucide icons
                 });
-                
-                // Handle page visibility changes
-                // document.addEventListener('visibilitychange', () => {
-                //     if (document.hidden) {
-                //         backgroundMusic.pause();
-                //     } else if (!backgroundMusic.paused) {
-                //         backgroundMusic.play();
-                //     }
-                // });
             });
-        </script>
+            </script>
         <script src="./dynamicproject.js"></script>
 </body>
 </html>
