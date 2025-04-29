@@ -505,3 +505,9 @@ header {
   animation-delay: 300ms;
 }
 
+@media (max-width: 768px) {
+  /* On mobile the social menu is initially hidden and appears on button click */
+  body.menu-active #socialMenu {
+    transform: translateX(0);
+  }
+}
