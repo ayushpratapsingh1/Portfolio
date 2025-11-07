@@ -11,7 +11,6 @@ const CONFIG = {
     typewriter: {
         phrases: [
             "DevOps & FinOps Engineer",
-            "Cloud Cost Optimization Expert",
             "AWS Infrastructure Automation", 
             "Building with Docker & Terraform",
             "Automating FinOps Workflows"
