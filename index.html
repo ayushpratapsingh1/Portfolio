@@ -1320,7 +1320,7 @@
                         <div class="flex items-center">
                             <span class="text-gray-500 mr-2">•</span>
                             <p class="text-gray-400 text-sm">
-                                Crafted with <span class="text-pink-500">❤</span> and <span class="text-purple-400 font-bold">Innovation</span>
+                                Crafted with Innovation</span>
                             </p>
                         </div>
                     </div>
@@ -1401,52 +1401,6 @@
         </script>
         <script src="contact.js"></script>
         <script>lucide.createIcons();</script>
-        <!-- Background Audio -->
-        <audio id="backgroundAudio" autoplay loop playsinline preload="auto">
-            <source src="./assets/sound.mp3" type="audio/mpeg">
-            <!-- <source src="./assets/music/background-music.ogg" type="audio/ogg"> -->
-            Your browser does not support the audio element.
-        </audio>
-
-        <!-- Audio Control Script -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const backgroundMusic = document.getElementById('backgroundAudio');
-                const toggleMusic = document.getElementById('soundToggle');
-            
-                // Set initial volume
-                backgroundMusic.volume = 0.1;
-            
-                // Try to autoplay on page load (may be blocked by browser)
-                const tryAutoplay = () => {
-                    backgroundMusic.play().then(() => {
-                        console.log('Audio started automatically.');
-                    }).catch((err) => {
-                        console.log('Autoplay prevented. Waiting for user interaction...');
-                        // Listen for first user interaction to start audio
-                        const startOnInteraction = () => {
-                            backgroundMusic.play();
-                            document.removeEventListener('click', startOnInteraction);
-                        };
-                        document.addEventListener('click', startOnInteraction);
-                    });
-                };
-            
-                tryAutoplay();
-            
-                // Toggle button click handler
-                toggleMusic.addEventListener('click', () => {
-                    if (backgroundMusic.paused) {
-                        backgroundMusic.play();
-                        toggleMusic.innerHTML = '<i data-lucide="volume-2"></i>';
-                    } else {
-                        backgroundMusic.pause();
-                        toggleMusic.innerHTML = '<i data-lucide="volume-x"></i>';
-                    }
-                    lucide.createIcons(); // Update Lucide icons
-                });
-            });
-        </script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 // Social menu mobile toggle

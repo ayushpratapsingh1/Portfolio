@@ -20,10 +20,6 @@ const CONFIG = {
         deleteSpeed: 40,
         pauseBeforeDelete: 1500,
         pauseBeforeType: 500
-    },
-    audio: {
-        volume: 0.1,
-        autoplay: true
     }
 };
 
@@ -243,67 +239,6 @@ class NavigationManager {
     }
 }
 
-// =============================================================================
-// AUDIO MANAGER
-// =============================================================================
-
-class AudioManager {
-    constructor() {
-        this.audio = document.getElementById('backgroundAudio');
-        this.toggleBtn = document.getElementById('soundToggle');
-        
-        if (this.audio) {
-            this.audio.volume = CONFIG.audio.volume;
-            this.bindEvents();
-            this.tryAutoplay();
-        }
-    }
-    
-    bindEvents() {
-        if (this.toggleBtn) {
-            this.toggleBtn.addEventListener('click', () => this.toggle());
-        }
-    }
-    
-    tryAutoplay() {
-        if (CONFIG.audio.autoplay) {
-            this.audio.play().then(() => {
-                console.log('Audio started automatically');
-            }).catch(() => {
-                console.log('Autoplay prevented - waiting for user interaction');
-                this.waitForUserInteraction();
-            });
-        }
-    }
-    
-    waitForUserInteraction() {
-        const startOnClick = () => {
-            this.audio.play();
-            document.removeEventListener('click', startOnClick);
-        };
-        document.addEventListener('click', startOnClick);
-    }
-    
-    toggle() {
-        if (this.audio.paused) {
-            this.audio.play();
-            this.updateToggleIcon('volume-2');
-        } else {
-            this.audio.pause();
-            this.updateToggleIcon('volume-x');
-        }
-    }
-    
-    updateToggleIcon(iconName) {
-        if (this.toggleBtn) {
-            this.toggleBtn.innerHTML = `<i data-lucide="${iconName}"></i>`;
-            // Reinitialize lucide icons if available
-            if (typeof lucide !== 'undefined' && lucide.createIcons) {
-                lucide.createIcons();
-            }
-        }
-    }
-}
 
 // =============================================================================
 // LOADING SCREEN MANAGER
@@ -408,7 +343,6 @@ class PortfolioApp {
             this.components.typewriter = new TypewriterEffect('typewriter', CONFIG.typewriter.phrases);
             this.components.modal = new ModalManager();
             this.components.navigation = new NavigationManager();
-            this.components.audio = new AudioManager();
             this.components.loading = new LoadingManager();
             this.components.socialMenu = new SocialMenuManager();
             
