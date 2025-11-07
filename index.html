@@ -3,30 +3,29 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ayush Pratap Singh - Portfolio | DevOps Engineer</title>
-        <meta name="description" content="Official portfolio of Ayush Pratap Singh. Discover my expertise in software development, data science, machine learning, and AI. Explore projects, skills, and accomplishments.">
-        <meta name="keywords" content="Ayush Pratap Singh, Ayush portfolio, Ayush Pratap Singh developer, software developer, data scientist, machine learning, web development, AI, portfolio, Python, React, GitHub">
+        <title>Ayush Pratap Singh - DevOps & FinOps Engineer</title>
+        <meta name="description" content="Official portfolio of Ayush Pratap Singh. Discover my expertise in DevOps, FinOps, Kubernetes, Terraform, multi-cloud deployments, and cost optimization. Specializing in cloud infrastructure automation and financial operations.">
+        <meta name="keywords" content="Ayush Pratap Singh, DevOps Engineer, FinOps, Kubernetes, Terraform, AWS, Azure, GCP, Docker, CI/CD, Jenkins, GitHub Actions, Linux, Cloud Architecture, Infrastructure as Code, Cost Optimization, Cloud Financial Management">
         <meta name="author" content="Ayush Pratap Singh">
         <meta name="language" content="English">
         <meta name="robots" content="index, follow">
         <link rel="canonical" href="https://www.ayushdev.tech">
-        <meta property="og:title" content="Ayush Pratap Singh - Devops Engineer">
-        <meta property="og:description" content="Explore Ayush Pratap Singh's portfolio. Dive into my software development, machine learning, and data science projects.">
+        <meta property="og:title" content="Ayush Pratap Singh - DevOps & FinOps Engineer">
+        <meta property="og:description" content="Explore Ayush Pratap Singh's portfolio. Specializing in DevOps automation, FinOps cost optimization, Kubernetes orchestration, and multi-cloud infrastructure management.">
         <meta property="og:image" content="https://www.ayushdev.tech/assets/images/logo2.png">
         <meta property="og:url" content="https://www.ayushdev.tech">
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Ayush Pratap Singh | Software Developer & Data Scientist">
-        <meta name="twitter:description" content="Explore the portfolio of Ayush Pratap Singh, a software developer specializing in data science, machine learning, and web development.">
+        <meta name="twitter:title" content="Ayush Pratap Singh | DevOps & FinOps Engineer">
+        <meta name="twitter:description" content="DevOps & FinOps specialist focusing on Kubernetes, Terraform, multi-cloud deployments, and cost optimization strategies for enterprise infrastructure.">
         <meta name="twitter:image" content="https://www.ayushdev.tech/assets/images/logo2.png">
         <meta name="robots" content="index, follow">
         <link rel="icon" href="./assets/images/logo2.png" type="image/x-icon">
         <link rel="stylesheet" href="output.css">
         <link rel="stylesheet" href="font.css">
-        <link rel="stylesheet" href="style.css">
-        <!-- <script src="./matter.js" defer></script> -->
-        <!-- <script src="./particle.js" defer></script> -->
-        <script src="./script.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
+        <script src="./main.js" defer></script>
+        <!-- Particles.js for background effects -->
         <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1"></script>
         <script src="https://unpkg.com/lucide@latest"></script>    
         <script type="application/ld+json">
@@ -39,24 +38,28 @@
                 "https://www.linkedin.com/in/ayushpratapsingh1/",
                 "https://github.com/ayushpratapsingh1"
               ],
-              "jobTitle": "Devops Engineer",
+              "jobTitle": "DevOps & FinOps Engineer",
               "worksFor": {
                 "@type": "Organization",
-                "name": "Devops Engineer"
+                "name": "Cloud Infrastructure & FinOps Specialist"
               },
               "alumniOf": {
                 "@type": "CollegeOrUniversity",
                 "name": "Lovely Professional University"
               },
               "knowsAbout": [
-                "Software Development",
-                "Data Science",
-                "Machine Learning",
-                "Artificial Intelligence",
-                "Web Development"
-                ,"Devops"
+                "DevOps Engineering",
+                "FinOps & Cost Optimization",
+                "Kubernetes Orchestration",
+                "Terraform Infrastructure as Code",
+                "Multi-Cloud Architecture",
+                "Linux System Administration",
+                "CI/CD Pipeline Automation",
+                "Docker Containerization",
+                "AWS, Azure, GCP",
+                "Jenkins & GitHub Actions"
               ],
-              "description": "Official portfolio of Ayush Pratap Singh. Showcasing expertise in software development, data science, machine learning, and AI projects."
+              "description": "Official portfolio of Ayush Pratap Singh. Showcasing expertise in DevOps automation, FinOps cost optimization, cloud infrastructure management, and enterprise-scale deployments."
             }
             </script>            
 </head>
@@ -122,16 +125,19 @@
                         </a>
                     </nav>
     
-                    <!-- Right Corner - Phone -->
+                    <!-- Right Corner - LinkedIn & Mobile Menu -->
                     <div class="flex items-center gap-2">
-                        <button id="soundToggle" class="lg:flex p-2 text-white/80 hover:text-white bg-gradient-to-r from-[#361444b8] to-[#740699] rounded-full transition-colors group animate-fadeInDown" style="animation-delay: 0.7s;">
-                            <i data-lucide="volume-2" class="w-5 h-5"></i>
-                            <span class="sr-only">Toggle Sound</span>
+                        <!-- LinkedIn Button -->
+                        <a href="https://www.linkedin.com/in/ayushpratapsingh1/" target="_blank" 
+                           class="hidden lg:flex p-2 text-white/80 hover:text-white bg-gradient-to-r from-[#361444b8] to-[#740699] rounded-full transition-colors group animate-fadeInDown" 
+                           style="animation-delay: 0.7s;"
+                           aria-label="LinkedIn Profile">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
                             <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                                Toggle Sound
+                                LinkedIn
                             </div>
-                        </button>
-    
+                        </a>
+
                         <!-- Mobile Menu Button -->
                         <button 
                             id="navbar-toggle" 
@@ -193,7 +199,7 @@
                         
                         <!-- Short Intro Text - Mobile Friendly -->
                         <p class="text-gray-300 mb-6 max-w-md mx-auto md:mx-0 text-sm sm:text-base">
-                            Building elegant solutions through code, specializing in cloud computing, DevOps and web development.
+                            Aspiring DevOps & FinOps Engineer learning cloud infrastructure, automation, and cost optimization with hands-on projects in Kubernetes & Terraform.
                         </p>
                         
                         <!-- CTA Buttons - Responsive Layout -->
@@ -352,23 +358,23 @@
                         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">About Me</h2>
                         <div class="space-y-3 sm:space-y-4 text-gray-200">
                             <p class="leading-relaxed text-sm sm:text-base">
-                                Hello! I'm <span class="font-semibold text-purple-300">Ayush Pratap Singh</span>, a passionate software developer and <span class="text-purple-300">DevOps Intern at Reltio</span>. I enjoy working on scalable cloud infrastructures, automating workflows, and solving real-world problems using modern DevOps tools and practices.
+                                Hello! I'm <span class="font-semibold text-purple-300">Ayush Pratap Singh</span>, an <span class="text-purple-300">aspiring DevOps & FinOps Engineer</span> passionate about learning cloud technologies and automation. I'm on a journey to master infrastructure management and cost optimization practices.
                             </p>
 
                             <p class="leading-relaxed text-sm sm:text-base">
-                                At Reltio, I contribute to building and maintaining <span class="text-purple-300">CI/CD pipelines, cloud infrastructure (AWS, GCP, Azure)</span>, and scripting automation using <span class="text-purple-300">Python, Shell, and Terraform</span>. I work closely with the TechOps team, gaining hands-on experience in <span class="text-purple-300">Kubernetes, Docker, Linux system optimization</span>, and production-grade deployments.
+                                I'm actively learning <span class="text-purple-300">Kubernetes, Docker, and Terraform</span> while exploring cloud platforms like AWS, Azure, and GCP. I'm particularly interested in <span class="text-purple-300">FinOps practices for understanding cloud costs</span> and how to optimize infrastructure spending.
                             </p>
 
                             <p class="leading-relaxed text-sm sm:text-base">
-                                I also completed a cloud deployment project where I set up infrastructure, built CI/CD pipelines, and automated backend deployment using <span class="text-purple-300">AWS, Docker, and Terraform</span>. My focus was on creating reliable, efficient, and production-ready systems.
+                                I enjoy working with <span class="text-purple-300">CI/CD tools like Jenkins and GitHub Actions</span>, learning monitoring solutions with Prometheus and Grafana, and understanding security concepts like RBAC and authentication. My goal is to bridge the gap between development and operations while keeping costs in mind.
                             </p>
 
                             <p class="leading-relaxed text-sm sm:text-base">
-                                On the web development side, I love crafting intuitive and responsive UIs with <span class="text-purple-300">React.js, Next.js, and Tailwind CSS</span>, paired with scalable backends using <span class="text-purple-300">Node.js and Express.js</span>. I strive to build seamless full-stack applications that perform well and feel great to use.
+                                Currently pursuing my <span class="text-purple-300">B.Tech in Computer Science at Lovely Professional University</span> (CGPA: 8.65), I'm combining academic learning with hands-on projects. I'm excited to grow my skills in DevOps and contribute to meaningful projects.
                             </p>
 
                             <p class="font-bold text-purple-300">
-                                Let's connect and build something extraordinary together!
+                                Let's connect and learn together on this DevOps journey!
                             </p>
                         </div>
                     </div>
@@ -398,167 +404,124 @@
                         Skills & Expertise
                     </h2>
                     <p class="text-gray-400 text-sm max-w-xl mx-auto mt-2">
-                        A combination of technical knowledge and professional capabilities
+                        Learning DevOps practices and exploring FinOps concepts for cloud cost management
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="">
-                        <div class="flex items-center justify-center mb-6">
-                            <div class="bg-purple-500/10 rounded-full p-2 mr-3">
-                                <i data-lucide="code-2" class="w-6 h-6 text-purple-400"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white">Technical Skills</h3>
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex items-center justify-center mb-10">
+                        <div class="bg-purple-500/10 rounded-full p-2 mr-3">
+                            <i data-lucide="code-2" class="w-6 h-6 text-purple-400"></i>
                         </div>
+                        <h3 class="text-3xl font-bold text-white">Technical Expertise</h3>
+                    </div>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <!-- Cloud & DevOps -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- DevOps & Infrastructure -->
                             <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
                                 <div class="flex items-center mb-2">
                                     <i data-lucide="server" class="w-5 h-5 text-purple-400 mr-2"></i>
-                                    <h4 class="text-base font-semibold text-white">Cloud & DevOps</h4>
-                                    <span class="ml-auto text-sm text-purple-400">78%</span>
+                                    <h4 class="text-base font-semibold text-white">DevOps & Infrastructure</h4>
+                                    <span class="ml-auto text-sm text-purple-400">65%</span>
                                 </div>
                                 <div class="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-3">
-                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 78%"></div>
+                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 65%"></div>
                                 </div>
                                 <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Kubernetes</span>
                                     <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Docker</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">AWS</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">GitHub Actions</span>
                                     <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Terraform</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Ansible</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Helm</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Multi-Cloud Platforms -->
+                            <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
+                                <div class="flex items-center mb-2">
+                                    <i data-lucide="cloud" class="w-5 h-5 text-purple-400 mr-2"></i>
+                                    <h4 class="text-base font-semibold text-white">Multi-Cloud Platforms</h4>
+                                    <span class="ml-auto text-sm text-purple-400">60%</span>
+                                </div>
+                                <div class="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-3">
+                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 60%"></div>
+                                </div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">AWS</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Azure</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">GCP</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">DigitalOcean</span>
+                                </div>
+                            </div>
+                            
+                            <!-- FinOps & Cost Management -->
+                            <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
+                                <div class="flex items-center mb-2">
+                                    <i data-lucide="dollar-sign" class="w-5 h-5 text-purple-400 mr-2"></i>
+                                    <h4 class="text-base font-semibold text-white">FinOps & Cost Management</h4>
+                                    <span class="ml-auto text-sm text-purple-400">55%</span>
+                                </div>
+                                <div class="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-3">
+                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 55%"></div>
+                                </div>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Cost Optimization</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Budget Management</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Resource Tagging</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Cost Analytics</span>
+                                </div>
+                            </div>
+                            
+                            <!-- CI/CD & Automation -->
+                            <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
+                                <div class="flex items-center mb-2">
+                                    <i data-lucide="git-branch" class="w-5 h-5 text-purple-400 mr-2"></i>
+                                    <h4 class="text-base font-semibold text-white">CI/CD & Automation</h4>
+                                    <span class="ml-auto text-sm text-purple-400">70%</span>
+                                </div>
+                                <div class="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-3">
+                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 70%"></div>
+                                </div>
+                                <div class="flex flex-wrap gap-1.5">
                                     <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Jenkins</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">GitHub Actions</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">GitLab CI</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Linux</span>
                                 </div>
                             </div>
-                            
-                            <!-- Web Development -->
+
+                            <!-- Monitoring & Observability -->
                             <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
                                 <div class="flex items-center mb-2">
-                                    <i data-lucide="layout" class="w-5 h-5 text-purple-400 mr-2"></i>
-                                    <h4 class="text-base font-semibold text-white">Web Development</h4>
-                                    <span class="ml-auto text-sm text-purple-400">84%</span>
+                                    <i data-lucide="activity" class="w-5 h-5 text-purple-400 mr-2"></i>
+                                    <h4 class="text-base font-semibold text-white">Monitoring & Observability</h4>
+                                    <span class="ml-auto text-sm text-purple-400">58%</span>
                                 </div>
                                 <div class="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-3">
-                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 84%"></div>
+                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 58%"></div>
                                 </div>
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">React</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">MongoDB</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Tailwind CSS</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Node.js</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Prometheus</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Grafana</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">ELK Stack</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">New Relic</span>
                                 </div>
                             </div>
-                            
-                            <!-- Data Science & ML -->
+
+                            <!-- Security & Compliance -->
                             <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
                                 <div class="flex items-center mb-2">
-                                    <i data-lucide="bar-chart" class="w-5 h-5 text-purple-400 mr-2"></i>
-                                    <h4 class="text-base font-semibold text-white">Data Science & ML</h4>
-                                    <span class="ml-auto text-sm text-purple-400">90%</span>
+                                    <i data-lucide="shield" class="w-5 h-5 text-purple-400 mr-2"></i>
+                                    <h4 class="text-base font-semibold text-white">Security & Compliance</h4>
+                                    <span class="ml-auto text-sm text-purple-400">50%</span>
                                 </div>
                                 <div class="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-3">
-                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 90%"></div>
+                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 50%"></div>
                                 </div>
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">R Language</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Python</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Scikit-learn</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Pandas</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">NumPy</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Programming Languages -->
-                            <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
-                                <div class="flex items-center mb-2">
-                                    <i data-lucide="code" class="w-5 h-5 text-purple-400 mr-2"></i>
-                                    <h4 class="text-base font-semibold text-white">Programming Languages</h4>
-                                    <span class="ml-auto text-sm text-purple-400">88%</span>
-                                </div>
-                                <div class="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-3">
-                                    <div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full" style="width: 88%"></div>
-                                </div>
-                                <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">JavaScript</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Python</span>
-                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">C++</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>              
-                    <div>
-                        <div class="flex items-center justify-center mb-6">
-                            <div class="bg-purple-500/10 rounded-full p-2 mr-3">
-                                <i data-lucide="brain" class="w-6 h-6 text-purple-400"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white">Soft Skills</h3>
-                        </div>
-                        
-                        <div class="bg-black/20 backdrop-blur-sm p-12 rounded-lg border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                <!-- Skill Item -->
-                                <div class="text-center">
-                                    <div class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-2">
-                                        <i data-lucide="users" class="w-6 h-6 text-purple-400"></i>
-                                    </div>
-                                    <h4 class="text-base font-semibold text-white">Team Collaboration</h4>
-                                    <div class="mt-2 flex justify-center">
-                                    </div>
-                                </div>
-                                
-                                <!-- Problem Solving -->
-                                <div class="text-center">
-                                    <div class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-2">
-                                        <i data-lucide="puzzle" class="w-6 h-6 text-purple-400"></i>
-                                    </div>
-                                    <h4 class="text-base font-semibold text-white">Problem Solving</h4>
-                                    <div class="mt-2 flex justify-center">
-                                        <div class="flex space-x-1.5">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Communication -->
-                                <div class="text-center">
-                                    <div class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-2">
-                                        <i data-lucide="message-square" class="w-6 h-6 text-purple-400"></i>
-                                    </div>
-                                    <h4 class="text-base font-semibold text-white">Communication</h4>
-                                    <div class="mt-2 flex justify-center">
-                                        
-                                    </div>
-                                </div>
-                                
-                                <!-- Adaptability -->
-                                <div class="text-center">
-                                    <div class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-2">
-                                        <i data-lucide="refresh-cw" class="w-6 h-6 text-purple-400"></i>
-                                    </div>
-                                    <h4 class="text-base font-semibold text-white">Adaptability</h4>
-                                    <div class="mt-2 flex justify-center">
-                                        
-                                    </div>
-                                </div>
-                                
-                                <!-- Time Management -->
-                                <div class="text-center">
-                                    <div class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-2">
-                                        <i data-lucide="clock" class="w-6 h-6 text-purple-400"></i>
-                                    </div>
-                                    <h4 class="text-base font-semibold text-white">Time Management</h4>
-                                    <div class="mt-2 flex justify-center">
-                                        
-                                    </div>
-                                </div>
-                                
-                                <!-- Creativity -->
-                                <div class="text-center">
-                                    <div class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-2">
-                                        <i data-lucide="lightbulb" class="w-6 h-6 text-purple-400"></i>
-                                    </div>
-                                    <h4 class="text-base font-semibold text-white">Creativity</h4>
-                                    <div class="mt-2 flex justify-center">
-                                        
-                                    </div>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">RBAC</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">OAuth2/JWT</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">SSL/TLS</span>
+                                    <span class="px-2 py-1 bg-purple-500/30 rounded-md text-sm text-purple-300">Vault</span>
                                 </div>
                             </div>
                         </div>
@@ -1244,7 +1207,7 @@
                                 Who Am I?
                             </h3>
                             <p class="text-gray-300 leading-relaxed">
-                                A passionate developer dedicated to exploring new technologies and solving complex problems through elegant code solutions.
+                                Aspiring DevOps & FinOps Engineer learning cloud infrastructure automation, cost optimization, and exploring multi-cloud solutions with Kubernetes and Terraform.
                             </p>
                         </div>
                     </div>

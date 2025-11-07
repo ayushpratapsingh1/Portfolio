@@ -1,0 +1,450 @@
+/**
+ * Portfolio Styles - DevOps & FinOps Engineer
+ * Ayush Pratap Singh - Optimized CSS
+ */
+
+/* =============================================================================
+   RESET & BASE STYLES
+============================================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+ul {
+    margin-left: 1rem;
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+============================================================================= */
+
+.pointer-events-none {
+    pointer-events: none !important;
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}
+
+.blurred-bg {
+    filter: blur(5px);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* =============================================================================
+   ANIMATIONS & KEYFRAMES
+============================================================================= */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fillProgress {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =============================================================================
+   COMPONENT ANIMATIONS
+============================================================================= */
+
+.loader {
+    animation: spin 2s linear infinite;
+}
+
+.animate-fadeInDown {
+    animation: fadeInDown 0.5s ease-out forwards;
+}
+
+.animate-fadeRight {
+    animation: fadeRight 1s ease-out forwards;
+}
+
+.animate-fadeLeft {
+    animation: fadeLeft 1s ease-out forwards;
+}
+
+.animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 15s ease infinite;
+}
+
+.modal-animation {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Animation delays */
+.animate-fadeRight-delay-100 { animation-delay: 100ms; }
+.animate-fadeRight-delay-200 { animation-delay: 200ms; }
+.animate-fadeRight-delay-300 { animation-delay: 300ms; }
+.animate-fadeLeft-delay-100 { animation-delay: 100ms; }
+.animate-fadeLeft-delay-200 { animation-delay: 200ms; }
+.animate-fadeLeft-delay-300 { animation-delay: 300ms; }
+
+/* =============================================================================
+   NAVIGATION & HEADER
+============================================================================= */
+
+header {
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-scroll {
+    position: fixed;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 42rem;
+    padding: 0 1rem;
+    z-index: 50;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-scroll.hidden-nav {
+    transform: translateX(-50%) translateY(-100%);
+}
+
+.nav-scroll.visible-nav {
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-scroll .navbar-content {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* =============================================================================
+   SCROLLBAR STYLING
+============================================================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(20, 20, 20, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #5e2176, #9207c1);
+    border-radius: 10px;
+    border: 2px solid rgba(30, 30, 30, 0.5);
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #7928ca, #b80aff);
+    box-shadow: 0 0 10px rgba(146, 7, 193, 0.5);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #9207c1 rgba(20, 20, 20, 0.1);
+}
+
+/* =============================================================================
+   SKILLS SECTION
+============================================================================= */
+
+.skill-progress {
+    height: 100%;
+    transform: translateX(-100%);
+    animation: fillProgress 1.5s ease-out forwards;
+}
+
+.skill-card {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+}
+
+.skill-icon {
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.radial-progress {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #374151;
+    transition: all 0.3s ease;
+}
+
+.radial-progress::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #8b5cf6 calc(var(--progress) * 1%),
+        transparent calc(var(--progress) * 1%)
+    );
+    mask: radial-gradient(transparent 55%, white 56%);
+    -webkit-mask: radial-gradient(transparent 55%, white 56%);
+}
+
+.skill-container:hover .skill-progress {
+    animation: pulse 2s infinite;
+}
+
+/* =============================================================================
+   PROJECT CARDS
+============================================================================= */
+
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.02) translateY(-8px);
+    box-shadow: 0 0 25px 10px rgba(139, 92, 246, 0.3);
+}
+
+/* =============================================================================
+   SOCIAL MENU
+============================================================================= */
+
+.social-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-link {
+    transition: all 0.3s ease-in-out;
+}
+
+/* =============================================================================
+   SELECTION STYLES
+============================================================================= */
+
+::selection {
+    background: rgba(139, 92, 246, 0.3);
+    color: inherit;
+}
+
+/* =============================================================================
+   PARTICLES & BACKGROUND
+============================================================================= */
+
+#tsparticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 1;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+============================================================================= */
+
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    .nav-scroll {
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+    
+    .social-menu {
+        transform: translateX(calc(100% - 5px));
+    }
+    
+    .social-menu:hover,
+    .social-menu.active {
+        transform: translateX(0);
+    }
+    
+    .skill-card {
+        padding: 0.75rem;
+    }
+    
+    .radial-progress {
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .skill-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    body.menu-active #socialMenu {
+        transform: translateX(0);
+    }
+}
+
+/* =============================================================================
+   TAB BUTTONS (for projects page)
+============================================================================= */
+
+.tab-btn {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+    background: linear-gradient(to right, rgba(94, 33, 118, 0.7), rgba(146, 7, 193, 1));
+}
+
+.tab-btn:hover {
+    transform: translateY(-2px);
+}
+
+.tab-btn:active {
+    transform: translateY(0);
+}
+
+.tab-btn::after {
+    display: none;
+}
+
+/* =============================================================================
+   PERFORMANCE OPTIMIZATIONS
+============================================================================= */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* GPU acceleration for animations */
+.skill-card,
+.project-card,
+.nav-scroll,
+.social-menu {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* =============================================================================
+   PRINT STYLES
+============================================================================= */
+
+@media print {
+    .social-menu,
+    .nav-scroll,
+    #scrollToTopBtn,
+    #loading-screen,
+    #tsparticles {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}

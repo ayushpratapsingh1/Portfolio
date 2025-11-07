@@ -30,10 +30,9 @@
         <!-- CSS and Scripts -->
         <link rel="stylesheet" href="output.css">
         <link rel="stylesheet" href="font.css">
-        <link rel="stylesheet" href="style.css">
-        <!-- <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1"></script> -->
-        <!-- <script src="./particle.js" defer></script> -->
+        <link rel="stylesheet" href="styles.css">
         <script src="https://unpkg.com/lucide@latest"></script>
+        <script src="./main.js" defer></script>
     
         <!-- Inline Styling for Transitions and Effects -->
         <style>
@@ -144,7 +143,7 @@
                                 Projects
                             </div>
                         </a>
-                        <a href="/index.html/#contact" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
+                        <a href="./index.html#contact" class="nav-item p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors group animate-fadeInDown">
                             <i data-lucide="mail" class="w-5 h-5"></i>
                             <span class="sr-only">Contact</span>
                             <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
@@ -153,16 +152,19 @@
                         </a>
                     </nav>
     
-                    <!-- Right Corner - Phone -->
+                    <!-- Right Corner - LinkedIn & Mobile Menu -->
                     <div class="flex items-center gap-2">
-                        <button id="soundToggle" class="lg:flex p-2 text-white/80 hover:text-white bg-gradient-to-r from-[#361444b8] to-[#740699] rounded-full transition-colors group animate-fadeInDown" style="animation-delay: 0.7s;">
-                            <i data-lucide="volume-2" class="w-5 h-5"></i>
-                            <span class="sr-only">Toggle Sound</span>
+                        <!-- LinkedIn Button -->
+                        <a href="https://www.linkedin.com/in/ayushpratapsingh1/" target="_blank" 
+                           class="hidden lg:flex p-2 text-white/80 hover:text-white bg-gradient-to-r from-[#361444b8] to-[#740699] rounded-full transition-colors group animate-fadeInDown" 
+                           style="animation-delay: 0.7s;"
+                           aria-label="LinkedIn Profile">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
                             <div class="absolute hidden group-hover:block bg-black/80 text-white text-sm px-2 py-1 rounded-md -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                                Toggle Sound
+                                LinkedIn
                             </div>
-                        </button>
-    
+                        </a>
+
                         <!-- Mobile Menu Button -->
                         <button 
                             id="navbar-toggle" 
@@ -187,7 +189,7 @@
                         <i data-lucide="folder" class="w-5 h-5"></i>
                         <span>Projects</span>
                     </a>                 
-                    <a href="/#contact" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
+                    <a href="./index.html#contact" class="mobile-nav-link flex items-center gap-3 text-white/80 hover:text-white transition-colors p-2">
                         <i data-lucide="mail" class="w-5 h-5"></i>
                         <span>Contact</span>
                     </a>
@@ -506,129 +508,12 @@
                 });
             });
         </script>
-        <script>
-        const socialMenu = document.getElementById('socialMenu');
-            let hideTimeout;
-            function showMenu() {
-                socialMenu.classList.add('active');
-                if (hideTimeout) clearTimeout(hideTimeout);
-                hideTimeout = setTimeout(() => {
-                    hideMenu();
-                }, 5000);
-            }
-            function hideMenu() {
-                if (window.innerWidth <= 768) {
-                    socialMenu.classList.remove('active');
-                }
-            }
-            socialMenu.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    showMenu();
-                }
-            });
-            // Prevent menu from closing when clicking links
-            socialMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-            });
-            // Reset menu state on window resize
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => {
-                    socialMenu.classList.remove('active');
-                }, 250);
-            });
-        </script>
+        <!-- Social menu functionality handled by main.js -->
         <script>
             lucide.createIcons();
         </script>
-        <script>
-            //-------------------------------------------------------------- Navbar and Mobile Menu Functionality
-            const navbarToggle = document.getElementById('navbar-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-                    navbarToggle.addEventListener('click', () => {
-                        mobileMenu.classList.toggle('hidden');
-                    });
-                    mobileMenu.addEventListener('click', () => {
-                        mobileMenu.classList.toggle('hidden');
-                    });
-                    // Close mobile menu when clicking outside
-                    document.addEventListener('click', (e) => {
-                        if (!navbarToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                            mobileMenu.classList.add('hidden');
-                        }
-                    });
-            //-------------------------------------------------------------- Tooltip for Buttons
-            const button = document.querySelector('button');
-            const tooltip = document.querySelector('.tooltip');
-            button.addEventListener('mouseenter', () => tooltip.classList.replace('opacity-0', 'opacity-100'));
-            button.addEventListener('mouseleave', () => tooltip.classList.replace('opacity-100', 'opacity-0'));
-        </script>
-        <audio id="backgroundAudio" autoplay loop playsinline preload="auto">
-            <source src="./assets/sound.mp3" type="audio/mpeg">
-            <!-- <source src="./assets/music/background-music.ogg" type="audio/ogg"> -->
-            Your browser does not support the audio element.
-        </audio>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Social menu mobile toggle
-                const socialToggleBtn = document.getElementById('socialToggleBtn');
-                const socialMenu = document.getElementById('socialMenu');
-                
-                if (socialToggleBtn && socialMenu) {
-                    socialToggleBtn.addEventListener('click', () => {
-                        document.body.classList.toggle('menu-active');
-                        
-                        // Auto-hide after 6 seconds
-                        if (document.body.classList.contains('menu-active')) {
-                            setTimeout(() => {
-                                document.body.classList.remove('menu-active');
-                            }, 6000);
-                        }
-                    });
-                }
-            });
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const backgroundMusic = document.getElementById('backgroundAudio');
-                const toggleMusic = document.getElementById('soundToggle');
-            
-                // Set initial volume
-                backgroundMusic.volume = 0.1;
-            
-                // Try to autoplay on page load (may be blocked by browser)
-                const tryAutoplay = () => {
-                    backgroundMusic.play().then(() => {
-                        console.log('Audio started automatically.');
-                    }).catch((err) => {
-                        console.log('Autoplay prevented. Waiting for user interaction...');
-                        // Listen for first user interaction to start audio
-                        const startOnInteraction = () => {
-                            backgroundMusic.play();
-                            document.removeEventListener('click', startOnInteraction);
-                        };
-                        document.addEventListener('click', startOnInteraction);
-                    });
-                };
-            
-                tryAutoplay();
-            
-                // Toggle button click handler
-                toggleMusic.addEventListener('click', () => {
-                    if (backgroundMusic.paused) {
-                        backgroundMusic.play();
-                        toggleMusic.innerHTML = '<i data-lucide="volume-2"></i>';
-                    } else {
-                        backgroundMusic.pause();
-                        toggleMusic.innerHTML = '<i data-lucide="volume-x"></i>';
-                    }
-                    lucide.createIcons(); // Update Lucide icons
-                });
-            });
-        </script>
+         <!-- Navigation functionality handled by main.js -->
+        <!-- All JavaScript functionality handled by main.js -->
         <script src="./dynamicproject.js"></script>
 </body>
 </html>
