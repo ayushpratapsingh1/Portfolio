@@ -10,11 +10,11 @@
 const CONFIG = {
     typewriter: {
         phrases: [
-            "Aspiring DevOps Engineer",
-            "Learning Cloud Technologies",
-            "Exploring Kubernetes & Docker", 
-            "Building with Terraform",
-            "Growing in DevOps & FinOps"
+            "DevOps & FinOps Engineer",
+            "Cloud Cost Optimization Expert",
+            "AWS Infrastructure Automation", 
+            "Building with Docker & Terraform",
+            "Automating FinOps Workflows"
         ],
         typeSpeed: 70,
         deleteSpeed: 40,

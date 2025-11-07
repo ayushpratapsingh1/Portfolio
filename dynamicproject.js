@@ -249,6 +249,50 @@ const projects = [
         ]
     },
     {
+        id: 15,
+        title: "AWS Cost Optimization & Reporting System",
+        category: ["dev"],
+        image: "./assets/images/crypto.png",
+        technologies: ["Python", "AWS Cost Explorer", "Google Cloud Functions", "BigQuery", "Terraform"],
+        description: [
+            "Developed an enterprise-grade automated cost reporting system that reduced manual reporting time from 5-6 hours to 10 minutes. Built comprehensive cost analysis pipelines using AWS Cost Explorer API, BigQuery for data warehousing, and Google Cloud Functions for serverless processing.",
+            "Implemented spot instance mismatch detection system that identified $1,500/month cost discrepancies by analyzing Ocean controller data against AWS Cost Explorer. Created automated alerting for missing cluster costs and zombie resource cleanup workflows."
+        ],
+        features: [
+            "Automated daily cost reports with anomaly detection",
+            "Spot instance cost mismatch detection and resolution",
+            "Multi-cloud cost allocation and tenant mapping",
+            "AI-powered cost analysis using Gemini API",
+            "Slack integration for real-time cost alerts",
+            "Historical cost baseline analysis with 7-day trending"
+        ],
+        links: [
+            { text: "Cost Dashboard", url: "https://github.com/ayushpratapsingh1/aws-cost-optimization", type: "github" }
+        ]
+    },
+    {
+        id: 16,
+        title: "FinOps AI Agent with Google ADK",
+        category: ["dev"],
+        image: "./assets/images/aistudy.png",
+        technologies: ["Google ADK", "Python", "AWS Cost Explorer", "BigQuery", "AI/ML"],
+        description: [
+            "Built an intelligent FinOps agent using Google Application Development Kit (ADK) to democratize cloud cost analysis. The agent enables non-technical users to query complex cost data, get optimization recommendations, and understand cloud spending patterns through natural language interactions.",
+            "Integrated 13 specialized tools including tenant mapping, cost analysis, optimization recommendations, and context-aware responses. The system provides actionable insights for cost reduction and helps teams make data-driven decisions about cloud resource usage."
+        ],
+        features: [
+            "Natural language cost queries and analysis",
+            "Automated tenant cost mapping and allocation",
+            "AI-powered optimization recommendations",
+            "Context-aware cost analysis with historical data",
+            "Integration with AWS Cost Explorer and BigQuery",
+            "User-friendly interface for non-technical stakeholders"
+        ],
+        links: [
+            { text: "Agent Demo", url: "https://github.com/ayushpratapsingh1/finops-ai-agent", type: "github" }
+        ]
+    },
+    {
         "id": 13,
         "title": "SMS Spam Classifier",
         "category": "ml",
